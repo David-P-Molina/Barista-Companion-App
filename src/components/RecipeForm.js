@@ -17,7 +17,17 @@ class RecipeForm extends Component {
     }
     handleOnSubmit = (e) => {
         e.preventDefault()
-        //createsubmission
+        let formData = {
+            name: this.state.name ,
+            brewMethod: this.state.brewMethod ,
+            temperature: this.state.temperature ,
+            waterWeight: this.state.waterWeight ,
+            coffeeBean: this.state.coffeeBean ,
+            grind: this.state.grind ,
+            time: this.state.time ,
+        }
+        this.sendRecipeData(formData)
+        //Need to create send form data
     }
 
     render() {
