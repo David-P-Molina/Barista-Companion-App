@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 
 class CoffeeBeanForm extends Component {
-    (:name, :roaster_id, :user_id, :roast, :whole_bean, :description, :notes)
     state = {
         name: '',
         roaster: '',
