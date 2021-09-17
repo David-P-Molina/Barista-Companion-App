@@ -11,13 +11,13 @@ class CoffeeBeanForm extends Component {
             <div className='coffee-bean-form'>
                 <form>
                     <label htmlFor='coffee-bean-name'>Name: </label>
-                    <input type='text' value=''>
+                    <input type='text' value={this.handleOnChange}>
                     <label htmlFor='roaster'>Roaster: </label>
-                    <input type='select' />
+                    <input type='select' value={this.handleOnChange} />
                     <label htmlFor='roast-level'>Roast Level: </label>
-                    <input type='select' />
+                    <input type='select' value={this.handleOnChange} />
                     <label htmlFor='whole-bean-boolean'>Whole Bean:</label>
-                    <input type='checkbox' />
+                    <input type='checkbox' value={this.handleOnChange} />
                     <input type='submit' />
                 </form>
                 (:name, :roaster_id, :user_id, :roast, :whole_bean, :description, :notes)
