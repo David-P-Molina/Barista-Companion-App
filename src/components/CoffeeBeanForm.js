@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 
 class CoffeeBeanForm extends Component {
+    handleOnChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
     render() {
         return (
             <div className='coffee-bean-form'>
