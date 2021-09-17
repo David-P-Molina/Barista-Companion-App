@@ -16,6 +16,18 @@ class CoffeeBeanForm extends Component {
             [e.target.name]: e.target.value={this.state.} onChange
         })
     }
+    handleOnSubmit = (e) => {
+        e.preventDefault()
+        let formData = {
+            name: this.state.name ,
+            roaster: this.state.roaster ,
+            userId: this.state.userId ,
+            roast: this.state.roast ,
+            wholeBean: this.state.wholeBean ,
+            description: this.state.description ,
+            notes: this.state.notes ,
+        }
+    }
     render() {
         return (
             <div className='coffee-bean-form'>
