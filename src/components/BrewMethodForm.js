@@ -16,7 +16,7 @@ class BrewMethodForm extends Component {
         let formData = {
             name: this.state.name,
             description: this.state.description,
-            equipment: '',
+            equipment: this.state.equipment,
         }
         this.sendBrewMethodData(formData)
     }
