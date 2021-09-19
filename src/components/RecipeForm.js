@@ -37,38 +37,45 @@ class RecipeForm extends Component {
                     <label htmlFor="recipe-name">Recipe Name: </label> <br />
                     <input 
                         type="text" 
+                        name='name'
                         value={this.state.name} 
                         onChange={this.handleOnChange}
                     /> <br />
                     <label htmlFor="brew-method">Brew Method: </label> <br />
                     <select 
                         type="text" 
+                        name='brewMethod'
                         value={this.state.brewMethod} 
                         onChange={this.handleOnChange}
                     /> <br />
                     <label htmlFor="temperature">Temperature: </label> <br />
                     <input 
                         type="number" 
+                        name='temperature'
                         value={this.state.temperature} 
                         onChange={this.handleOnChange}/> <br />
                     <label htmlFor="water-weight">Water Weight: </label> <br />
                     <input 
                         type="number" 
+                        name='waterWeight'
                         value={this.state.waterWeight} 
                         onChange={this.handleOnChange}/> <br />
                     <label htmlFor="coffee-bean">Coffee Bean: </label> <br />
                     <input 
                         type="text" 
+                        name='coffeeBean'
                         value={this.state.coffeeBean} 
                         onChange={this.handleOnChange}/> <br />
                     <label htmlFor="grind">Grind Size: </label> <br />
                     <option 
                         type="text" 
+                        name='grind'
                         value={this.state.grind} 
                         onChange={this.handleOnChange}/> <br />
                     <label htmlFor="time">Brew Time: </label> <br />
                     <input 
                         type="time" 
+                        name='time'
                         value={this.state.time} 
                         onChange={this.handleOnChange}/> <br />
                     <button type="submit">Create Recipe</button>
