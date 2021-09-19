@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import BrewMethod from '../components/BrewMethod'
+import BrewMethodsList from '../components/BrewMethodsList'
+
 class BrewMethods extends Component {
     state = {
         brewMethods: [],
@@ -7,22 +8,10 @@ class BrewMethods extends Component {
     componentDidMount() {
         fetch('ruby-api-url')
         .then((response) => response.json())
-        .then((data) => this.setState({brewMethods: data.brewMethods}))
-    }
-    
-    renderBrewMethods = () => {
-        return this.state.brewMethods.map((brew) => {
-            return (
-                <BrewMethod data={brew}/>
-            )
-        })
+        .then((data) => this.setState({ brewMethods: data.brewMethods }))
     }
     render() {
-        return (
-            <div className='brew-method-list'>
-                {this.renderBrewMethods()}
-            </div>
-        )
+        return <BrewMethodsList brewMethods={this.state.brewMethods}>
     }
 }
 
