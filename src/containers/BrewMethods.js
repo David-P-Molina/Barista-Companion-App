@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 
 class BrewMethods extends Component {
-    mapOverBrewMethods = () => {
+    state = {
+        brewMethods: [],
+    }
+    renderBrewMethods = () => {
         let brewMethods = {this.props.brewMethods}
         brewMethods.map((brew) => {    
             //iterate over brew methods 
@@ -10,7 +13,7 @@ class BrewMethods extends Component {
     render() {
         return (
             <div>
-                {this.mapOverBrewMethods}
+                {this.renderBrewMethods}
             </div>
         )
     }
