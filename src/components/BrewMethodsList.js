@@ -1,10 +1,12 @@
 import React from 'react'
 import BrewMethod from './BrewMethod'
 
-const BrewMethodsList = ({ brewMethod }) => {
-        <div className='brew-method-list'>
-            
-        </div>
-}
+const BrewMethodsList = ({ brewMethods }) => (
+    <div className='brew-method-list'>
+        {brewMethods.map((brew) => (
+            <BrewMethod data={brew}/>
+        ))}
+    </div>
+)
 
 export default BrewMethodsList
