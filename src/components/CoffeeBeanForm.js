@@ -33,17 +33,41 @@ class CoffeeBeanForm extends Component {
             <div className='coffee-bean-form'>
                 <form>
                     <label htmlFor='coffee-bean-name'>Name: </label>
-                    <input type='text' value={this.state.name} onChange={this.handleOnChange} />
+                    <input 
+                        type='text' 
+                        name='name'
+                        value={this.state.name} 
+                        onChange={this.handleOnChange} />
                     <label htmlFor='roaster'>Roaster: </label>
-                    <input type='select' value={this.state.roaster} onChange={this.handleOnChange} />
+                    <input 
+                        type='select' 
+                        name='roaster'
+                        value={this.state.roaster} 
+                        onChange={this.handleOnChange} />
                     <label htmlFor='roast-level'>Roast Level: </label>
-                    <input type='select' value={this.state.roast} onChange={this.handleOnChange} />
+                    <input 
+                        type='select' 
+                        name='roast'
+                        value={this.state.roast} 
+                        onChange={this.handleOnChange} />
                     <label htmlFor='whole-bean-boolean'>Whole Bean:</label>
-                    <input type='checkbox' value={this.state.wholeBean} onChange={this.handleOnChange} />
+                    <input 
+                        type='checkbox' 
+                        name='wholeBean'
+                        value={this.state.wholeBean} 
+                        onChange={this.handleOnChange} />
                     <label htmlFor='description'>Description: </label>
-                    <input type='text' value={this.state.description} onChange={this.handleOnChange}/>
+                    <input 
+                        type='text' 
+                        name='description'
+                        value={this.state.description} 
+                        onChange={this.handleOnChange}/>
                     <label htmlFor='notes'>Notes: </label>
-                    <input type='text' value={this.state.notes} onChange={this.handleOnChange}/>
+                    <input 
+                        type='text' 
+                        name='notes'
+                        value={this.state.notes} 
+                        onChange={this.handleOnChange}/>
                     <input type='submit' />
                 </form>
             </div>
