@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 
-export class BrewMethods extends Component {
+class BrewMethods extends Component {
     mapOverBrewMethods = () => {
         let brewMethods = {this.props.brewMethods}
-        brewMethods.map((brew) => {     
+        brewMethods.map((brew) => {    
+            //iterate over brew methods 
         })
     }
     render() {
