@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import BrewMethod from '../components/BrewMethod'
 class BrewMethods extends Component {
     state = {
         brewMethods: [],
@@ -13,10 +13,7 @@ class BrewMethods extends Component {
     renderBrewMethods = () => {
         return this.state.brewMethods.map((brew) => {
             return (
-                <div className='brew-method'>
-                    <h2>{brew.name}</h2>
-                    <p>{brew.description}</p>
-                </div>
+                <BrewMethod data={brew}/>
             )
         })
     }
