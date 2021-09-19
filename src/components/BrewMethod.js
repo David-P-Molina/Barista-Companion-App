@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
+import React, from 'react'
 
-class BrewMethod extends Component {
-    render() {
+const BrewMethod = (props) => {
         return (
             <div classname='brew-method'>
-                <h1>{this.props.brewMethod.name}</h1>
-                <p>{this.props.brewMethod.description}</p>
-                <h4>{this.props.brewMethod.equipment}</h4>
-                {/* Iterate over a list of equipment in a ul  */}
+                <h1>{props.brewMethod.name}</h1>
+                <p>{props.brewMethod.description}</p>
+                <h4>{props.brewMethod.equipment}</h4>
+                {/* Iterate over a list of equipment in a ul or import an equipmentlist container */}
             </div>
         )
-    }
 }
 
 export default BrewMethod
