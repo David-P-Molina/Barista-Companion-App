@@ -22,8 +22,8 @@ class BrewMethods extends Component {
     }
     render() {
         return (
-            <div>
-                {this.renderBrewMethods}
+            <div className='brew-method-list'>
+                {this.renderBrewMethods()}
             </div>
         )
     }
