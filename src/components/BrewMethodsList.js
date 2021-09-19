@@ -1,13 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
+import BrewMethod from './BrewMethod'
 
-class BrewMethodsList extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const BrewMethodsList = ({ brewMethod }) => {
+        <div className='brew-method-list'>
+            
+        </div>
 }
 
 export default BrewMethodsList
