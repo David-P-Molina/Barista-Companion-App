@@ -11,9 +11,13 @@ class BrewMethods extends Component {
     }
     
     renderBrewMethods = () => {
-        let brewMethods = {this.props.brewMethods}
-        brewMethods.map((brew) => {    
-            //iterate over brew methods 
+        return this.state.brewMethods.map((brew) => {
+            return (
+                <div className='brew-method'>
+                    <h2>{brew.name}</h2>
+                    <p>{brew.description}</p>
+                </div>
+            )
         })
     }
     render() {
