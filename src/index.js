@@ -2,13 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import CoffeeBeans from './containers/CoffeeBeans'
+import Roasters from './containers/Roasters'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <Router />
-      <Route path='/' component={App} />
+      <>
+        <Route exact path='/' component={App} />
+        <Route exact path='/coffee-beans' component={CoffeeBeans} />
+        <Route exact path='/roasters' component={Roasters} />
+      </>
     </Router
   </React.StrictMode>,
   document.getElementById('root')
