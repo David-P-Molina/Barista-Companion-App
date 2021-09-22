@@ -9,7 +9,9 @@ class CoffeeBeans extends Component {
         }
     }
     componentDidMount() {
-
+        fetch('ruby-api-url')
+        .then((response) => response.json())
+        .then((data) => this.setState({ coffeeBeans: data.coffeeBeans}))
     }
     render() {
         return (
