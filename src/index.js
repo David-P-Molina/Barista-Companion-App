@@ -14,7 +14,9 @@ ReactDOM.render(
   <React.StrictMode>
     <Router />
       <>
-        <Route exact path='/' component={App} />
+        <Route exact path='/'>
+          <App store={store} />
+        </Route>
         <Route exact path='/coffee-beans' component={CoffeeBeans} />
         <Route exact path='/roasters' component={Roasters} />
       </>
