@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import { createStore } from 'redux'
+import { Provider } from 'react-redux'
 import rootReducer from './reducers/rootReducer'
 import App from './App';
 import CoffeeBeans from './containers/CoffeeBeans'
@@ -16,15 +17,17 @@ const store = createStore(
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router />
-      <>
-        <Route exact path='/'>
-          <App store={store} />
-        </Route>
-        <Route exact path='/coffee-beans' component={CoffeeBeans} />
-        <Route exact path='/roasters' component={Roasters} />
-      </>
-    </Router
+    <Provider store={store}>
+      <Router />
+        <>
+          <Route exact path='/'>
+            <App />
+          </Route>
+          <Route exact path='/coffee-beans' component={CoffeeBeans} />
+          <Route exact path='/roasters' component={Roasters} />
+        </>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
