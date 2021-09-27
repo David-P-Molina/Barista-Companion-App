@@ -1,4 +1,6 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
 import Roaster from './Roaster'
 
 const RoastersList = ({ roasters }) => {
@@ -10,5 +12,8 @@ const RoastersList = ({ roasters }) => {
         </div>
     )
 }
+const mapStateToProps = (state) => {
+    return { roasters: state.roasters }
+}
 
-export default RoastersList
+export default connect(mapStateToProps)(RoastersList)
