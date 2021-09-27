@@ -8,7 +8,7 @@ function roastersReducer(state = [], action) {
             
         case 'DELETE_ROASTER':
             idx = state.findIndex((roaster) => roaster.id === action.id)
-            return [...state,slice(0, idx), ...state.slice(idx + 1)]
+            return [...state.slice(0, idx), ...state.slice(idx + 1)]
 
         case 'ADD_COFFEE_BEAN':
             let existingRoaster = state.filter(
