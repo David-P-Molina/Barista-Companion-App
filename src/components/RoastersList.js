@@ -6,8 +6,8 @@ import Roaster from './Roaster'
 const RoastersList = ({ roasters }) => {
     return (
         <div className='roaster-list'>
-            {roasters.map((roaster) => (
-                <Roaster props={roaster} />
+            {roasters.map((roaster, index) => (
+                <Roaster key={index} props={roaster} />
             ))}
         </div>
     )
