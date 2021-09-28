@@ -21,6 +21,11 @@ class BrewMethodForm extends Component {
         }
         this.sendBrewMethodData(formData)//send to database?
         this.props.addBrewMethod(formData)//redux action
+        this.setState({
+            name: '',
+            description: '',
+            equipment: '',
+        })
     }
     render() {
         return (
