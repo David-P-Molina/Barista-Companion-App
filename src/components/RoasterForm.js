@@ -55,6 +55,7 @@ class RoasterForm extends React.Component {
                     name='website'
                     value={this.state.website}
                     onChange={this.handleOnChange}/>
+                <input type='submit'>Add Roaster</input>
             </form>
         )
     }
