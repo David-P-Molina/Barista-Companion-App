@@ -5,7 +5,7 @@ const CoffeeBeansList = ({ coffeeBeans }) => {
     return (
         <div className='coffee-bean-list'>
             {coffeeBeans.map((bean) => (
-                <CoffeeBean data={bean} />
+                <CoffeeBean props={bean} />
             ))}
         </div>
     )

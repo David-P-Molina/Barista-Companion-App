@@ -6,7 +6,7 @@ const RecipesList = ({ recipes }) => {
     return (
         <div className='recipe-list'>
             {recipes.map((recipe) => (
-                <Recipe data={recipe} />
+                <Recipe props={recipe} />
             ))}
         </div>
     )

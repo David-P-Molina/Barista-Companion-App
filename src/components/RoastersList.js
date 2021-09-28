@@ -7,7 +7,7 @@ const RoastersList = ({ roasters }) => {
     return (
         <div className='roaster-list'>
             {roasters.map((roaster) => (
-                <Roaster data={roaster} />
+                <Roaster props={roaster} />
             ))}
         </div>
     )
