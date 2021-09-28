@@ -19,7 +19,8 @@ class BrewMethodForm extends Component {
             description: this.state.description,
             equipment: this.state.equipment,
         }
-        this.sendBrewMethodData(formData)
+        this.sendBrewMethodData(formData)//send to database?
+        this.props.addBrewMethod(formData)//redux action
     }
     render() {
         return (
@@ -50,7 +51,7 @@ class BrewMethodForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-
+        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData})
     }
 }
 
