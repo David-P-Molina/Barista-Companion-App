@@ -1,15 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class CoffeeBean extends Component {
-    render() {
+const CoffeeBean =  (props) => {
         return (
-            <div>
-                <h1>
-                {this.props.name} - {this.props.roasters.name}
-                </h1>
-                {this.props.description}
+            <div className='coffee-bean'>
+                <h1>{props.name} - {props.roasters.name}</h1>
+                <p>{props.description}</p>
             </div>
         )
-    }
 }
 export default CoffeeBean
