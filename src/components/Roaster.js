@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Roaster extends Component {
-    render() {
-        return (
-            <div>
-                
-            </div>
-        )
-    }
+const Roaster = (props) => {
+    return (
+        <div className='roaster-card'>
+            <h1>{props.name}</h1>
+            <p>{props.description}</p>
+        </div>
+    )
 }
 
 export default Roaster
