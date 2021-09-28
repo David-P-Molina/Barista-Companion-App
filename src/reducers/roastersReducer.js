@@ -1,14 +1,18 @@
 import uuid from 'uuid'
 
-function roastersReducer(state = [], action) {
+function roastersReducer(
+    state = {
+        roasters: [], 
+    }, action
+    ) {
     let idx
     switch (action.type) {
         case 'ADD_ROASTER':
-            return [...state, action.recipe]
+            return { roasters: [...state.roasters, action.payload]}
             
         case 'DELETE_ROASTER':
-            idx = state.findIndex((roaster) => roaster.id === action.id)
-            return [...state.slice(0, idx), ...state.slice(idx + 1)]
+            idx = state.roasters.findIndex((roaster) => roaster.id === action.id)
+            return { roasters: [...state.roasters.slice(0, idx), ...state.roasters.slice(idx + 1)] }
 
         case 'ADD_COFFEE_BEAN':
             let existingRoaster = state.filter(
