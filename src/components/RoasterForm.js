@@ -10,7 +10,10 @@ class RoasterForm extends React.Component {
     render() {
         return(      
             <form className='roaster-form' onSubmit={this.handleOnSubmit} >
-                
+                <label htmlFor='roaster-brand-name'>Roaster Brand: </label>
+                <label htmlFor='roaster-description'>Description: </label>
+                <label htmlFor='roaster-year-founded'>Year Established/Founded: </label>
+                <label htmlFor='roaster-website'>Website: </label>
             </form>
         )
     }
