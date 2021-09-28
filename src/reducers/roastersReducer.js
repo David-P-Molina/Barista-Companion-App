@@ -15,13 +15,13 @@ function roastersReducer(
             return { roasters: [...state.roasters.slice(0, idx), ...state.roasters.slice(idx + 1)] }
 
         case 'ADD_COFFEE_BEAN':
-            let existingRoaster = state.filter(
+            let existingRoaster = state.roasters.filter(
                 (roaster) => roaster.roasterName === action.coffeeBean.roasterName
             )
             if (existingRoaster.length > 0) {
                 return state 
             } else {
-                return [...state, {roasterName: action.coffeeBean.roasterName, id: uuid() }]
+                return { coffeeBeans: [...state, {roasterName: action.coffeeBean.roasterName, id: uuid() }]}
             }
         
         default:
