@@ -22,6 +22,7 @@ class RoasterForm extends React.Component {
             website: this.state.website,
         }
         this.sendBrewMethodData(formData)//Calls fetch post
+        this.props.addRoaster(formData)
         this.setState({
             name: '',
             description: '',
