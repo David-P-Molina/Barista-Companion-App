@@ -4,7 +4,7 @@ function roastersReducer(state = [], action) {
     let idx
     switch (action.type) {
         case 'ADD_ROASTER':
-            return [...state, action.book]
+            return [...state, action.recipe]
             
         case 'DELETE_ROASTER':
             idx = state.findIndex((roaster) => roaster.id === action.id)

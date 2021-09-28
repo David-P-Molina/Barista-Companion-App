@@ -2,7 +2,7 @@ function brewMethodsReducer(state = [], action) {
     let idx
     switch (action.type) {
         case 'ADD_BREW_METHOD':
-            return [...state, action.book]
+            return [...state, action.brew]
             
         case 'DELETE_BREW_METHOD':
             idx = state.findIndex((brew) => brew.id === action.id)
