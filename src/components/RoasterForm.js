@@ -1,14 +1,17 @@
 import React from 'react' 
 
 class RoasterForm extends React.Component {
+    handleOnSubmit = (e) => {
+        e.preventDefault()
+        let formData = {
 
+        }
+    }
     render() {
-        return(
-            <div className='roaster-form'>
-                <form>
-                    
-                </form>
-            </div>
+        return(      
+            <form className='roaster-form' onSubmit={this.handleOnSubmit} >
+                
+            </form>
         )
     }
 }
