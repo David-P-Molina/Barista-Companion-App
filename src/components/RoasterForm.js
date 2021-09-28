@@ -15,8 +15,12 @@ class RoasterForm extends React.Component {
     handleOnSubmit = (e) => {
         e.preventDefault()
         let formData = {
-
+            name: this.state.name,
+            description: this.state.description,
+            yearFounded: this.state.yearFounded,
+            website: this.state.website,
         }
+        this.sendBrewMethodData(formData)//Calls fetch post
         this.setState({
             name: '',
             description: '',
