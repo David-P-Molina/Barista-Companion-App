@@ -56,7 +56,7 @@ class BrewMethodForm extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData})
+        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })
     }
 }
 

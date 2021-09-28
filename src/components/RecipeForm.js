@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class RecipeForm extends Component {
     state = {
@@ -27,7 +28,17 @@ class RecipeForm extends Component {
             time: this.state.time ,
         }
         this.sendRecipeData(formData)
+        this.props.addRecipe(formData)
         //Need to create send form data
+        this.setState({
+            name: '',
+            brewMethod: '',
+            temperature: '',
+            waterWeight: '',
+            coffeeBean: '',
+            grind: '',
+            time: '',
+        })
     }
 
     render() {
@@ -84,4 +95,10 @@ class RecipeForm extends Component {
         )
     }
 }
-export default RecipeForm
+
+const mapDispatchToProps = () => {
+    return {
+        addRecipe: (formData) => dispatchEvent({ type: 'ADD_RECIPE', payload: formData })
+    }
+}
+export default connect(null, mapDispatchToProps)(RecipeForm)

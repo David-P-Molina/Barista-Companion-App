@@ -87,7 +87,7 @@ class CoffeeBeanForm extends Component {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addCoffeeBean: (formData) => dispatch({ type "ADD_COFFEE_BEAN", payload: formData })
+        addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
     }
 }
 export default connect(null, mapDispatchToProps)(CoffeeBeanForm)
