@@ -10,7 +10,7 @@ function brewMethodsReducer(
             
         case 'DELETE_BREW_METHOD':
             idx = state.findIndex((brew) => brew.id === action.id)
-            return [...state.slice(0, idx), ...state.slice(idx + 1)]//fix to reflect portion of state
+            return { brewMethods: [...state.brewMethods.slice(0, idx), ...state.brewMethods.slice(idx + 1)]}
 
         default:
             return state
