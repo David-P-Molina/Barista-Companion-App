@@ -1,6 +1,17 @@
 import React from 'react' 
 
 class RoasterForm extends React.Component {
+    state = {
+        name: '',
+        description: '',
+        yearFounded: '',
+        website: '',
+    }
+    handleOnChange = (e) => {
+        this.setState({
+            [e.target.name]: e.target.value
+        })
+    }
     handleOnSubmit = (e) => {
         e.preventDefault()
         let formData = {
