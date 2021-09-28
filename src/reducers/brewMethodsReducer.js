@@ -9,7 +9,7 @@ function brewMethodsReducer(
             return { brewMethods: [...state.brewMethods, action.payload]}
             
         case 'DELETE_BREW_METHOD':
-            idx = state.findIndex((brew) => brew.id === action.id)
+            idx = state.brewMethods.findIndex((brew) => brew.id === action.id)
             return { brewMethods: [...state.brewMethods.slice(0, idx), ...state.brewMethods.slice(idx + 1)]}
 
         default:
