@@ -28,6 +28,16 @@ class CoffeeBeanForm extends Component {
             notes: this.state.notes ,
         }
         this.sendCoffeeBeanData(formData)
+        this.props.addCoffeeBean(formData)
+        this.setState({
+            name: '',
+            roaster: '',
+            userId: '',
+            roast: '',
+            wholeBean: '',
+            description: '',
+            notes: '',
+        })
     }
     render() {
         return (
