@@ -17,6 +17,12 @@ class RoasterForm extends React.Component {
         let formData = {
 
         }
+        this.setState({
+            name: '',
+            description: '',
+            yearFounded: '',
+            website: '',
+        })
     }
     render() {
         return(      
