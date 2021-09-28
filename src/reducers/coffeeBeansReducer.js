@@ -1,8 +1,12 @@
-function coffeeBeansReducer(state = [], action) {
+function coffeeBeansReducer(
+    state = {
+        coffeeBeans: [],
+    }, action
+    ) {
     let idx
     switch (action.type) {
         case 'ADD_COFFEE_BEAN':
-            return [...state, action.coffeeBean]
+            return { coffeeBeans: [...state.coffeeBeans, action.payload]}
 
         case 'DELETE_COFFEE_BEAN':
             idx = state.findIndex((bean) => bean.id === action.id)
