@@ -3,7 +3,7 @@ import BrewMethodsList from '../components/BrewMethodsList'
 import { connect } from 'react-redux'
 import BrewMethodForm from '../components/BrewMethodForm'
 
-class BrewMethods extends Component {
+class BrewMethodsContainer extends Component {
     state = {
         brewMethods: [],
     }
@@ -27,4 +27,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(BrewMethods)
+export default connect(mapStateToProps, mapDispatchToProps)(BrewMethodsContainer)

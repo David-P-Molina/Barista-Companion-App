@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import CoffeeBeanForm from '../components/CoffeeBeanForm'
 import CoffeeBeanList from '../components/CoffeeBeanList'
 
-class CoffeeBeans extends Component {
+class CoffeeBeansContainer extends Component {
     constructor() {
         super()
         this.state = {
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
         addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)CoffeeBeans
+export default connect(mapStateToProps, mapDispatchToProps)(CoffeeBeansContainer)
