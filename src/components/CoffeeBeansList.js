@@ -4,9 +4,9 @@ import CoffeeBean from './CoffeeBean'
 const CoffeeBeansList = ({ coffeeBeans }) => {
     return (
         <div className='coffee-bean-list'>
-            {coffeeBeans.map((bean, index) => (
-                <CoffeeBean key={index} props={bean} />
-            ))}
+            {coffeeBeans.map((bean, index) => {
+               return <CoffeeBean key={index} bean={bean} />
+            })}
         </div>
     )
 }

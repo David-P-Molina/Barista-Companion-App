@@ -3,9 +3,9 @@ import BrewMethod from './BrewMethod'
 
 const BrewMethodsList = ({ brewMethods }) => (
     <div className='brew-method-list'>
-        {brewMethods.map((brew, index) => (
-            <BrewMethod key={index} props={brew}/>
-        ))}
+        {brewMethods.map((brew, index) => {
+           return <BrewMethod key={index} brew={brew}/>
+        })}
     </div>
 )
 

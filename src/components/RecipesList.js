@@ -4,9 +4,9 @@ import Recipe from './Recipe'
 const RecipesList = ({ recipes }) => {
     return (
         <div className='recipe-list'>
-            {recipes.map((recipe, index) => (
-                <Recipe key={index} props={recipe} />
-            ))}
+            {recipes.map((recipe, index) => {
+               return <Recipe key={index} recipe={recipe} />
+            })}
         </div>
     )
 }
