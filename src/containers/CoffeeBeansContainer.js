@@ -19,14 +19,15 @@ class CoffeeBeans extends Component {
         return (
             <div>
                 <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean}/>
-                <CoffeeBeanList />
+                <CoffeeBeanList coffeeBeans={this.props.coffeeBeans}/>
             </div>
         )
     }
 }
+const mapStateToProps = ({coffeeBeans}) => ({coffeeBeans})
 const mapDispatchToProps = (dispatch) => {
     return {
         addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
     }
 }
-export default connect(null, mapDispatchToProps)CoffeeBeans
+export default connect(mapStateToProps, mapDispatchToProps)CoffeeBeans
