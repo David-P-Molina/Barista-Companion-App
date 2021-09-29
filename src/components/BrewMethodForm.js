@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class BrewMethodForm extends Component {
     state = {
@@ -54,10 +53,4 @@ class BrewMethodForm extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })
-    }
-}
-
-export default connect(null, mapDispatchToProps)(BrewMethodForm)
+export default BrewMethodForm

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import BrewMethodsList from '../components/BrewMethodsList'
+import { connect } from 'react-redux'
 
 class BrewMethods extends Component {
     state = {
@@ -14,5 +15,10 @@ class BrewMethods extends Component {
         return <BrewMethodsList brewMethods={this.state.brewMethods}>
     }
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })
+    }
+}
 
-export default BrewMethods
+export default connect(null, mapDispatchToProps)(BrewMethods)
