@@ -16,15 +16,15 @@ class BrewMethods extends Component {
         return (
             <>
             <BrewMethodForm addBrewMethod={this.props.addBrewMethod}/>
-            <BrewMethodsList brewMethods={this.state.brewMethods} />
+            <BrewMethodsList brewMethods={this.props.brewMethods} />
             </>)
     }
 }
-
+const mapStateToProps =({brewMethods}) => ({brewMethods})
 const mapDispatchToProps = (dispatch) => {
     return {
         addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })
     }
 }
 
-export default connect(null, mapDispatchToProps)(BrewMethods)
+export default connect(mapStateToProps, mapDispatchToProps)(BrewMethods)
