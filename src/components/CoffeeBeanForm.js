@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class CoffeeBeanForm extends Component {
     state = {
@@ -13,7 +12,7 @@ class CoffeeBeanForm extends Component {
     }
     handleOnChange = (e) => {
         this.setState({
-            [e.target.name]: e.target.value={this.state.} onChange
+            [e.target.name]: e.target.value
         })
     }
     handleOnSubmit = (e) => {
@@ -85,9 +84,5 @@ class CoffeeBeanForm extends Component {
         )
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
-    }
-}
-export default connect(null, mapDispatchToProps)(CoffeeBeanForm)
+
+export default CoffeeBeanForm

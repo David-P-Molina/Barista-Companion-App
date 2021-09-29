@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import CoffeeBeanForm from '../components/CoffeeBeanForm'
 import CoffeeBeanList from '../components/CoffeeBeanList'
 
 class CoffeeBeans extends Component {
@@ -16,10 +18,15 @@ class CoffeeBeans extends Component {
     render() {
         return (
             <div>
-                
+                <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean}/>
+                <CoffeeBeanList />
             </div>
         )
     }
 }
-
-export default CoffeeBeans
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
+    }
+}
+export default connect(null, mapDispatchToProps)CoffeeBeans
