@@ -17,7 +17,7 @@ class CoffeeBeans extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='coffee-bean-container'>
                 <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean}/>
                 <CoffeeBeanList coffeeBeans={this.props.coffeeBeans}/>
             </div>
