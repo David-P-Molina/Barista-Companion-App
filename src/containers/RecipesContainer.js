@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 class RecipesContainer extends Component {
     
@@ -10,5 +11,9 @@ class RecipesContainer extends Component {
         )
     }
 }
-
-export default RecipesContainer
+const mapDispatchToProps = () => {
+    return {
+        addRecipe: (formData) => dispatchEvent({ type: 'ADD_RECIPE', payload: formData })
+    }
+}
+export default connect(null, mapDispatchToProps)(RecipesContainer)

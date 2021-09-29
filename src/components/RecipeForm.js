@@ -96,9 +96,4 @@ class RecipeForm extends Component {
     }
 }
 
-const mapDispatchToProps = () => {
-    return {
-        addRecipe: (formData) => dispatchEvent({ type: 'ADD_RECIPE', payload: formData })
-    }
-}
-export default connect(null, mapDispatchToProps)(RecipeForm)
+export default RecipeForm
