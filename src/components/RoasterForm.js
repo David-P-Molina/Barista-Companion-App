@@ -1,5 +1,4 @@
 import React from 'react' 
-import { connect } from 'react-redux'
 
 class RoasterForm extends React.Component {
     state = {
@@ -63,9 +62,4 @@ class RoasterForm extends React.Component {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addRoaster: (formData) => dispatch({ type: "ADD_ROASTER", payload: formData })
-    }
-}
-export default connect(null, mapDispatchToProps)(RoasterForm)
+export default RoasterForm
