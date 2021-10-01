@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CoffeeBeanForm from '../components/CoffeeBeanForm'
-import CoffeeBeanList from '../components/CoffeeBeanList'
+import CoffeeBeanList from '../components/CoffeeBeansList'
 
 class CoffeeBeansContainer extends Component {
     constructor() {

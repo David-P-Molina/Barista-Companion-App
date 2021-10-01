@@ -5,8 +5,8 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers/rootReducer'
 import App from './App';
-import CoffeeBeans from './containers/CoffeeBeans'
-import Roasters from './containers/Roasters'
+import CoffeeBeansContainer from './containers/CoffeeBeansContainer'
+import RoastersContainer from './containers/RoastersContainer'
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
@@ -18,13 +18,13 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router />
+      <Router>
         <>
           <Route exact path='/'>
             <App />
           </Route>
-          <Route exact path='/coffee-beans' component={CoffeeBeans} />
-          <Route exact path='/roasters' component={Roasters} />
+          <Route exact path='/coffee-beans' component={CoffeeBeansContainer} />
+          <Route exact path='/roasters' component={RoastersContainer} />
         </>
       </Router>
     </Provider>
