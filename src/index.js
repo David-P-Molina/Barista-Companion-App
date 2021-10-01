@@ -5,10 +5,7 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducers/rootReducer'
 import App from './App';
-import CoffeeBeansContainer from './containers/CoffeeBeansContainer'
-import RoastersContainer from './containers/RoastersContainer'
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router, Route } from 'react-router-dom'
 
 const store = createStore(
   rootReducer,
@@ -18,15 +15,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Router>
-        <>
-          <Route exact path='/'>
-            <App />
-          </Route>
-          <Route exact path='/coffee-beans' component={CoffeeBeansContainer} />
-          <Route exact path='/roasters' component={RoastersContainer} />
-        </>
-      </Router>
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
