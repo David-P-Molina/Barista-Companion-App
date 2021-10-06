@@ -20,7 +20,9 @@ class BrewMethodsContainer extends Component {
             </div>)
     }
 }
-const mapStateToProps =({brewMethods}) => ({brewMethods})
+const mapStateToProps =(state) => {
+    debugger
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })

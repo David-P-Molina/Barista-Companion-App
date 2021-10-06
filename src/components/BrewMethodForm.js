@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux' 
+import { sendBrewMethodData } from '../actions/BrewActions'
 
 class BrewMethodForm extends Component {
     state = {
@@ -18,8 +20,8 @@ class BrewMethodForm extends Component {
             description: this.state.description,
             equipment: this.state.equipment,
         }
-        this.sendBrewMethodData(formData)//send to database?
-        this.props.addBrewMethod(formData)//redux action//can pass this.state too
+        this.props.sendBrewMethodDataWithDispatchFn(formData)//send to database? Goes into action
+        //this.props.addBrewMethod(formData)//redux action//can pass this.state too//abstract to action.js 
         this.setState({
             name: '',
             description: '',
@@ -27,6 +29,7 @@ class BrewMethodForm extends Component {
         })
     }
     render() {
+        debugger
         return (
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
                 <label htmlFor='brew-method-name'>Brew Method: </label>
@@ -53,4 +56,11 @@ class BrewMethodForm extends Component {
     }
 }
 
-export default BrewMethodForm
+const mapDispatchToProps = (dispatchFn) => {
+    return {
+        sendBrewMethodDataWithDispatchFn: (data) => dispatchFn(sendBrewMethodData(data))
+    }
+}
+export default connect(null, mapDispatchToProps)(BrewMethodForm)
+//mapDispatchToProps gives action creator access to dispatch functionality//adds a copy of an action creator w/
+//dispatch adds to the properties of the component
