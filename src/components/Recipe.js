@@ -1,4 +1,5 @@
 import React from 'react'
+// import Timer from './Timer'
 
 const Recipe = (props) => {
     return (
@@ -7,6 +8,7 @@ const Recipe = (props) => {
             <ul>
                 <li>Ingredients</li>
             </ul>
+            {/* <Timer /> */}
         </div>
     )
 }
