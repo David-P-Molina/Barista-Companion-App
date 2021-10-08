@@ -1,4 +1,4 @@
-export const sendBrewMethodData = (formData) => {
+export const sendBrewMethodDataAction = (formData) => {
      return (passingDispatch) => {
          const configObj = {
         headers: {
