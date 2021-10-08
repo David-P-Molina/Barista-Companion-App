@@ -87,4 +87,9 @@ class CoffeeBeanForm extends Component {
     }
 }
 
-export default CoffeeBeanForm
+const mapDispatchToProps = (dispatchFn) => {
+    return {
+        sendCoffeeBeanDataWithDispatchFn: (data) => dispatchFn(sendCoffeeBeanDataAction(data))
+    }
+}
+export default connect(null, mapDispatchToProps)(CoffeeBeanForm)
