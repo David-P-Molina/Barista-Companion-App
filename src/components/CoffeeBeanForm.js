@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { sendCoffeeBeanDataAction } from '../actions/CoffeeBeanAction'
 
 class CoffeeBeanForm extends Component {
     state = {
@@ -26,8 +28,8 @@ class CoffeeBeanForm extends Component {
             description: this.state.description ,
             notes: this.state.notes ,
         }
-        this.sendCoffeeBeanData(formData)
-        this.props.addCoffeeBean(formData)
+        this.sendCoffeeBeanDataWithDispatchFn(formData)
+        //this.props.addCoffeeBean(formData)
         this.setState({
             name: '',
             roaster: '',
