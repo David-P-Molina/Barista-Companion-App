@@ -8,6 +8,10 @@ export const sendCoffeeBeanDataAction = (data) => {
             method: "POST",
             body: JSON.stringify(data)
         }
-    
+        fetch("database-url", configObj)
+        .then((response) => response.json())
+        .then ((data) => {
+            
+        })
     }
 }
