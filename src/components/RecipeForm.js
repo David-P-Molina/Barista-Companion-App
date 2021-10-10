@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { sendRecipeFormDataAction } from '../actions/RecipeAction'
 
 class RecipeForm extends Component {
     state = {
@@ -95,4 +97,4 @@ class RecipeForm extends Component {
     }
 }
 
-export default RecipeForm
+export default connect(null, mapDispatchToProps)(RecipeForm)
