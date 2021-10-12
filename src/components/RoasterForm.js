@@ -64,4 +64,9 @@ class RoasterForm extends React.Component {
     }
 }
 
-export default RoasterForm
+const mapDispatchToProps = (dispatchFn) => {
+    return {
+        sendRoasterDataWithDispatchFn: (data) => dispatchFn(sendRoasterDataAction(data))
+    }
+}
+export default connect(null, mapDispatchToProps)(RoasterForm)
