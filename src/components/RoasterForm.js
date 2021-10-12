@@ -1,4 +1,6 @@
 import React from 'react' 
+import { connect } from 'react-redux'
+import { sendRoasterDataAction } from '../actions/RoasterAction'
 
 class RoasterForm extends React.Component {
     state = {
