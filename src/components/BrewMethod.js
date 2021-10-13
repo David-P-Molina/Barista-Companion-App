@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BrewMethod = (props) => {
+const BrewMethod = ({props}) => {
         return (
             <div className='brew-method'>
                 <h1>{props.name}</h1>

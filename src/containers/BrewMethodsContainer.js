@@ -15,7 +15,7 @@ class BrewMethodsContainer extends Component {
         return (
             <div className='brew-method-container'>
                 <BrewMethodForm addBrewMethod={this.props.addBrewMethod}/>
-                {/* <BrewMethodsList brewMethods={this.props.brewMethods} /> */}
+                <BrewMethodsList brewMethods={this.props.brewMethods} />
             </div>)
     }
 }
