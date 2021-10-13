@@ -4,7 +4,7 @@ import './index.css';
 import { createStore, applyMiddleware } from 'redux'//createStore returns an object w/ getState and dispatch
 //dispatch is used to update the store/global state
 //getState gets the Global store
-
+import BrewMethodsContainer from './containers/BrewMethodsContainer';
 import { composeWithDevTools } from 'redux-devtools-extension'
 import { Provider } from 'react-redux'//middleman between redux and react//
 import thunk from 'redux-thunk'
@@ -20,7 +20,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <BrewMethodsContainer />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

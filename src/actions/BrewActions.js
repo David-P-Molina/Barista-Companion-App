@@ -14,3 +14,18 @@ export const sendBrewMethodDataAction = (formData) => {
         debugger
     })}
 }
+
+export function fetchBrewMethods() {
+    return (dispatch) => {
+        fetch('http://localhost:3000/brew_methods')
+        .then((response => {
+            if (response.ok) {
+                return response.json()
+                .then((data) => console.log(data))
+            } else {
+                return response.json()
+                .catch((errors) => console.log(errors))
+            }
+        }))
+    }
+}

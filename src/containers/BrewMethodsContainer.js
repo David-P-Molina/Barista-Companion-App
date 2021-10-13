@@ -8,16 +8,7 @@ class BrewMethodsContainer extends Component {
         brewMethods: [],
     }
     componentDidMount() {
-        fetch('http://localhost:3000/brew_methods')
-        .then((response => {
-            if (response.ok) {
-                return response.json()
-                .then((data) => this.setState({ brewMethods: data.brewMethods }))
-            } else {
-                return response.json()
-                .catch((errors) => console.log(errors))
-            }
-        }))
+        
     }
     render() {
         return (
@@ -28,7 +19,7 @@ class BrewMethodsContainer extends Component {
     }
 }
 const mapStateToProps =(state) => {
-    debugger
+    return state.brewMethods
 }
 const mapDispatchToProps = (dispatch) => {
     return {
