@@ -21,7 +21,7 @@ export function fetchBrewMethods() {
         .then((response => {
             if (response.ok) {
                 return response.json()
-                .then((data) => console.log(data))
+                .then((brewMethods) => dispatch({ type: "FETCH_BREW_METHODS", brewMethods}))
             } else {
                 return response.json()
                 .catch((errors) => console.log(errors))

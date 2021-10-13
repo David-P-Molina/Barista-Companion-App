@@ -5,6 +5,11 @@ function brewMethodsReducer(
     ) {
     let idx
     switch (action.type) {
+        case 'FETCH_BREW_METHODS':
+            return {
+                ...state,
+                brewMethods: action.brewMethods.data
+            }
         case 'ADD_BREW_METHOD':
             return { brewMethods: [...state.brewMethods, action.payload]}
             
