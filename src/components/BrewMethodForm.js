@@ -36,18 +36,21 @@ class BrewMethodForm extends Component {
                 <input 
                     type='text' 
                     name='name'
+                    placeholder='Brewing Method'
                     value={this.state.name} 
                     onChange={this.handleOnChange} />
                 <label htmlFor='brew-method-description'>Description: </label>
                 <input 
                     type='text' 
                     name='description'
+                    placeholder='Description'
                     value={this.state.description} 
                     onChange={this.handleOnChange} />
                 <label htmlFor='brew-method-equipment'>Equipment: </label>
                 <input 
                     type='text' 
                     name='equipment'
+                    placeholder='List of equipment needed'
                     value={this.state.equipment} 
                     onChange={this.handleOnChange} />
                 <input  type='submit'> Create Brew Method </input>

@@ -48,6 +48,7 @@ class CoffeeBeanForm extends Component {
                     <input 
                         type='text' 
                         name='name'
+                        placeholder='Coffee Bean'
                         value={this.state.name} 
                         onChange={this.handleOnChange} />
                     <label htmlFor='roaster'>Roaster: </label>
@@ -72,12 +73,14 @@ class CoffeeBeanForm extends Component {
                     <input 
                         type='text' 
                         name='description'
+                        placeholder='Story behind the bean'
                         value={this.state.description} 
                         onChange={this.handleOnChange}/>
                     <label htmlFor='notes'>Notes: </label>
                     <input 
                         type='text' 
                         name='notes'
+                        placeholder='Hint of Lemon, Dark Chocolate, etc.'
                         value={this.state.notes} 
                         onChange={this.handleOnChange}/>
                     <input type='submit' />

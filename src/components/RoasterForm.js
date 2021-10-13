@@ -38,12 +38,14 @@ class RoasterForm extends React.Component {
                 <input
                     type='text'
                     name='name'
+                    placeholder='Brand Name'
                     value={this.state.name}
                     onChange={this.handleOnChange}/>
                 <label htmlFor='roaster-description'>Description: </label>
                 <input
                     type='text'
                     name='description'
+                    placeholder='History of Brand'
                     value={this.state.description}
                     onChange={this.handleOnChange}/>
                 <label htmlFor='roaster-year-founded'>Year Established/Founded: </label>
@@ -56,6 +58,7 @@ class RoasterForm extends React.Component {
                 <input
                     type='text'
                     name='website'
+                    placeholder='www.roaster-website-url.com'
                     value={this.state.website}
                     onChange={this.handleOnChange}/>
                 <input type='submit'>Add Roaster</input>

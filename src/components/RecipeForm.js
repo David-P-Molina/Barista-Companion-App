@@ -50,6 +50,7 @@ class RecipeForm extends Component {
                     <input 
                         type="text" 
                         name='name'
+                        placeholder='Take 2, Use Different Filter, etc.'
                         value={this.state.name} 
                         onChange={this.handleOnChange}
                     /> <br />
@@ -66,7 +67,7 @@ class RecipeForm extends Component {
                         name='temperature'
                         value={this.state.temperature} 
                         onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="water-weight">Water Weight: </label> <br />
+                    <label htmlFor="water-weight">Grams of Water: </label> <br />
                     <input 
                         type="number" 
                         name='waterWeight'
