@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import BrewMethodsList from '../components/BrewMethodsList'
 import { connect } from 'react-redux'
 import BrewMethodForm from '../components/BrewMethodForm'
-import { fetchBrewMethods as fetchBrewMethodsAction } from '../actions/BrewActions'
+import { fetchBrewMethods } from '../actions/BrewActions'
 
 class BrewMethodsContainer extends Component {
     state = {
@@ -20,11 +20,11 @@ class BrewMethodsContainer extends Component {
     }
 }
 const mapStateToProps =(state) => {
-    return state.brewMethods
+    return {brewMethods: state.brewMethods}
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchBrewMethods: () => dispatch(fetchBrewMethodsAction()),
+        fetchBrewMethods: () => dispatch(fetchBrewMethods()),
         addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })
     }
 }

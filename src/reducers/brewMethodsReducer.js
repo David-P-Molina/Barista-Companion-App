@@ -1,14 +1,21 @@
 function brewMethodsReducer(
     state = {
         brewMethods: [],
+        loadingBrewMethods: false
     }, action
     ) {
     let idx
     switch (action.type) {
+        case "START_LOADING_BREW_METHODS":
+            return {
+                ...state,
+                loadingBrewMethods: true,
+            }
         case 'FETCH_BREW_METHODS':
             return {
                 ...state,
-                brewMethods: action.brewMethods.data
+                brewMethods: action.brewMethods.data,
+                loadingBrewMethods: false,
             }
         case 'ADD_BREW_METHOD':
             return { brewMethods: [...state.brewMethods, action.payload]}

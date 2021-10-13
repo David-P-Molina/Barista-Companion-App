@@ -52,7 +52,7 @@ class BrewMethodForm extends Component {
                     placeholder='List of equipment needed'
                     value={this.state.equipment} 
                     onChange={this.handleOnChange} />
-                <input  type='submit' value='Create Brew Method' />
+                <input  type='submit' name='Create Brew Method' />
             </form>
         )
     }

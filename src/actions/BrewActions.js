@@ -17,6 +17,7 @@ export const sendBrewMethodDataAction = (formData) => {
 
 export function fetchBrewMethods() {
     return (dispatch) => {
+        dispatch({ type: "START_LOADING_BREW_METHODS"})
         fetch('http://localhost:3000/brew_methods')
         .then((response => {
             if (response.ok) {
