@@ -40,6 +40,9 @@ class CoffeeBeanForm extends Component {
             notes: '',
         })
     }
+    const renderRoasters = () => {
+        return this.props.roasters.map((roaster) => <option value={roaster.name}>{roaster.name}</option>)
+    }
     render() {
         return (
             <div className='coffee-bean-form'>
@@ -52,11 +55,12 @@ class CoffeeBeanForm extends Component {
                         value={this.state.name} 
                         onChange={this.handleOnChange} />
                     <label htmlFor='roaster'>Roaster: </label>
-                    <input 
-                        type='select' 
+                    <select 
                         name='roaster'
                         value={this.state.roaster} 
-                        onChange={this.handleOnChange} />
+                        onChange={this.handleOnChange}>
+                        {this.renderRoasters()}
+                    </select>
                     <label htmlFor='roast-level'>Roast Level: </label>
                     <input 
                         type='select' 
