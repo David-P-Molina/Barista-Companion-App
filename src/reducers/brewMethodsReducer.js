@@ -14,7 +14,7 @@ function brewMethodsReducer(
         case 'FETCH_BREW_METHODS':
             return {
                 ...state,
-                brewMethods: action.brewMethods.data,
+                brewMethods: action.brewMethods,
                 loadingBrewMethods: false,
             }
         case 'ADD_BREW_METHOD':

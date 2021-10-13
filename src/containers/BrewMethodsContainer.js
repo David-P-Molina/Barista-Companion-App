@@ -15,12 +15,12 @@ class BrewMethodsContainer extends Component {
         return (
             <div className='brew-method-container'>
                 <BrewMethodForm addBrewMethod={this.props.addBrewMethod}/>
-                <BrewMethodsList brewMethods={this.props.brewMethods} />
+                {/* <BrewMethodsList brewMethods={this.props.brewMethods} /> */}
             </div>)
     }
 }
 const mapStateToProps =(state) => {
-    return {brewMethods: state.brewMethods}
+    return {brewMethods: state.brewMethods.brewMethods}
 }
 const mapDispatchToProps = (dispatch) => {
     return {
