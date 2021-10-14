@@ -23,7 +23,10 @@ class CoffeeBeansContainer extends Component {
         )
     }
 }
-const mapStateToProps = ({coffeeBeans}) => ({coffeeBeans})
+const mapStateToProps = (state) => {
+    return {coffeeBeans: state.coffeeBeans.coffeeBeans}
+}
+
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchCoffeeBeans: () => dispatch(fetchCoffeeBeans()) ,
