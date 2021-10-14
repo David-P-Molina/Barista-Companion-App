@@ -24,9 +24,7 @@ export function fetchBrewMethods() {
                 return response.json()
                 .then((brewMethods) => {
                     let brewArray = [] 
-                    console.log(brewMethods.data.valid)
                     brewMethods.data.forEach((brew) => brewArray.push(brew.attributes))
-                    console.log(brewArray)
                 dispatch({ type: "FETCH_BREW_METHODS", brewMethods: brewArray})})
             } else {
                 return response.json()
