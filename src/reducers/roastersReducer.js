@@ -3,10 +3,24 @@ import uuid from 'uuid'
 function roastersReducer(
     state = {
         roasters: [], 
+        loadingRoasters: false
     }, action
     ) {
     let idx
     switch (action.type) {
+        case 'START_LOADING_ROASTERS':
+            return {
+                ...state,
+                loadingRoasters: true,
+            }
+
+        case 'FETCH_ROASTERS':
+            return {
+                ...state,
+                roasters: action.roasters,
+                loadingRoasters: false,
+            }
+            
         case 'ADD_ROASTER':
             return { roasters: [...state.roasters, action.payload]}
             
