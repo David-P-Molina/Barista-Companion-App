@@ -16,3 +16,23 @@ export const sendRoasterDataAction = (data) => {
         })
     }
 }
+
+export function fetchRoasters() {
+    return (dispatch) => {
+        dispatch({type: 'START_LOADING_ROASTERS'})
+        fetch('http://localhost:3000/roasters')
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+                .then((roasters) => {
+                    const roasterArray = []
+                    roasters.data.map((roaster) => roasterArray.push(roaster.attributes))
+                    dispatch({ type:'FETCH_ROASTERS', roasters: roasterArray})
+                })
+            } else {
+                return response.json()
+                .catch((errors) => console.log(errors))
+            }
+        })
+    }
+}

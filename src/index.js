@@ -10,7 +10,7 @@ import thunk from 'redux-thunk'
 import rootReducer from './reducers/rootReducer'
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import CoffeeBeansContainer from './containers/CoffeeBeansContainer';
+import RoastersContainer from './containers/RoastersContainer';
 
 const store = createStore(
   rootReducer,
@@ -20,7 +20,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <CoffeeBeansContainer />
+      <RoastersContainer />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

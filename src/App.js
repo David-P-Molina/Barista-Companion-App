@@ -17,8 +17,8 @@ function App() {
           <Route exact path='/'>
             <BrewMethodsContainer />
           </Route>
-          <Route exact path='/coffee-beans' component={CoffeeBeansContainer} />
-          <Route exact path='/roasters' component={RoastersContainer} />
+          {/* <Route exact path='/coffee-beans' component={CoffeeBeansContainer} />
+          <Route exact path='/roasters' component={RoastersContainer} /> */}
         </>
       </Router>
     </div>
