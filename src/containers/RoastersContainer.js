@@ -8,9 +8,7 @@ class RoastersContainer extends Component {
         roaster: [],
     }
     componentDidMount() {
-        fetch('ruby-api-url')
-        .then((response) => response.json())
-        .then((data) => this.setState({ roasters: data.roasters }))
+        
     }
     render() {
         return (
