@@ -4,10 +4,13 @@ const CoffeeBean =  ({props}) => {
         return (
             <div className='coffee-bean'>
                 <h1>{props.name} by <i>{props.roaster_name}</i></h1>
-                <p>{props.blend_type}</p>
-                <span>{props.notes}</span>
+                <p>Type: {props.blend_type}</p>
+                Region: {props.region} 
+                <span>Tasting Notes: {props.notes}</span>
                 <p>{props.description}</p>
-                {props.drying_method} {props.processing_method} {props.region} {props.roast} {props.whole_bean}
+                Drying Method: {props.drying_method} 
+                Processing Method: {props.processing_method} 
+                Roast Level: {props.roast} {props.whole_bean}
             </div>
         )
 }
