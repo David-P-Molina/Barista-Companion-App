@@ -19,7 +19,9 @@ class RoastersContainer extends Component {
             </div>)
     }
 }
-const mapStateToProps =({roasters}) => ({roasters})
+const mapStateToProps = (state) => {
+    return {roasters: state.roasters.roasters}
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchRoasters: () => dispatch(fetchRoasters()),
