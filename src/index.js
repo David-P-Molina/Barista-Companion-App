@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 import './index.css';
+import { Provider } from 'react-redux'//middleman between redux and react//
 import { createStore, applyMiddleware } from 'redux'//createStore returns an object w/ getState and dispatch
+import thunk from 'redux-thunk'
+import rootReducer from './reducers/rootReducer'
 //dispatch is used to update the store/global state
 //getState gets the Global store
 import { composeWithDevTools } from 'redux-devtools-extension'
-import { Provider } from 'react-redux'//middleman between redux and react//
-import thunk from 'redux-thunk'
-import rootReducer from './reducers/rootReducer'
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import RoastersContainer from './containers/RoastersContainer';
+import RecipesContainer from './containers/RecipesContainer';
 
 const store = createStore(
   rootReducer,
@@ -20,7 +20,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RoastersContainer />
+      <RecipesContainer />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')
