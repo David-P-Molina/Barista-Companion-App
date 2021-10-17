@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RecipeForm from '../components/RecipeForm'
 import RecipesList from '../components/RecipesList'
+import { fetchRecipes } from '../actions/RecipeAction'
 
 class RecipesContainer extends Component {
     render() {
@@ -14,9 +15,10 @@ class RecipesContainer extends Component {
     }
 }
 const mapStateToProps = ({recipes}) => ({recipes})
-const mapDispatchToProps = () => {
+const mapDispatchToProps = (dispatchFn) => {
     return {
-        addRecipe: (formData) => dispatchEvent({ type: 'ADD_RECIPE', payload: formData })
+        fetchRecipes: () => dispatchFn(fetchRecipes()),
+        addRecipe: (formData) => dispatchFn({ type: 'ADD_RECIPE', payload: formData })
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer)
