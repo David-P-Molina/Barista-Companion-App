@@ -5,6 +5,9 @@ import RecipesList from '../components/RecipesList'
 import { fetchRecipes } from '../actions/RecipeAction'
 
 class RecipesContainer extends Component {
+    componentDidMount() {
+        this.props.fetchRecipes()
+    }
     render() {
         return (
             <div className='recipes-container'>
