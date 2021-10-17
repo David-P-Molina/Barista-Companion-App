@@ -16,10 +16,10 @@ function recipesReducer(
                 recipes: action.recipes,
                 loadingRecipes: false,
             }
-        case 'ADD_RECIPE':
-            return
+        // case 'ADD_RECIPE':
+        //     return
         default:
             return state
-}
+}}
 
 export default recipesReducer
