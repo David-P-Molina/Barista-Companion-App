@@ -1,4 +1,4 @@
-export const sendRecipeDataAction = (data) => {
+export const sendRecipeFormDataAction = (data) => {
     return (passingDispatchFn) => {
         const configObj = {
             headers: {

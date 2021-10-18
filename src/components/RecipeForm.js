@@ -99,7 +99,7 @@ class RecipeForm extends Component {
 }
 const mapDispatchToProps = (dispatchFn) => {
     return {
-        sendRecipeFormDataWithDispatchFn: (data) => dispatchFn(sendRecipeDataAction(data))
+        sendRecipeFormDataWithDispatchFn: (data) => dispatchFn(sendRecipeFormDataAction(data))
     }
 }
 export default connect(null, mapDispatchToProps)(RecipeForm)
