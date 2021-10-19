@@ -7,14 +7,14 @@ class RecipeForm extends Component {
         name: '',
         dateAttempted: '',
         brewMethod: '',
-        temperature: '',
-        waterWeight: '',
-        coffeeWeight: '',
         coffeeBean: '',
         roastDate: '',
         grind: '',
-        time: '',
+        coffeeWeight: '',
+        waterWeight: '',
+        temperature: '',
         filter: '',
+        time: '',
         bloomTime: '',
         notes: '',
     }
@@ -29,14 +29,14 @@ class RecipeForm extends Component {
             name: this.state.name,
             dateAttempted: this.state.dateAttempted,
             brewMethod: this.state.brewMethod,
-            temperature: this.state.temperature,
-            waterWeight: this.state.waterWeight,
-            coffeeWeight: this.state.coffeeWeight,
             coffeeBean: this.state.coffeeBean,
             roastDate: this.state.roastDate,
             grind: this.state.grind,
-            time: this.state.time,
+            coffeeWeight: this.state.coffeeWeight,
+            waterWeight: this.state.waterWeight,
+            temperature: this.state.temperature,
             filter: this.state.filter,
+            time: this.state.time,
             bloomTime: this.state.bloomTime,
             notes: this.state.notes
         }
@@ -46,14 +46,14 @@ class RecipeForm extends Component {
             name: '',
             dateAttempted: '',
             brewMethod: '',
-            temperature: '',
-            waterWeight: '',
-            coffeeWeight: '',
             coffeeBean: '',
             roastDate: '',
             grind: '',
-            time: '',
+            coffeeWeight: '',
+            waterWeight: '',
+            temperature: '',
             filter: '',
+            time: '',
             bloomTime: '',
             notes: '',
         })
@@ -62,10 +62,10 @@ class RecipeForm extends Component {
     render() {
         return (
             <div>
-                <form className="recipe-form" onSubmit={this.handleOnSubmit}>
-                    <label htmlFor="recipe-name">Recipe Name: </label> <br />
+                <form className='recipe-form' onSubmit={this.handleOnSubmit}>
+                    <label htmlFor='recipe-name'>Recipe Name: </label> <br />
                     <input 
-                        type="text" 
+                        type='text' 
                         name='name'
                         placeholder='Take 2, Use Different Filter, etc.'
                         value={this.state.name} 
@@ -79,66 +79,81 @@ class RecipeForm extends Component {
                         value={this.state.dateAttempted}
                         onChange={this.handleOnChange}
                     /><br />
-                    <label htmlFor="coffee-bean">Coffee Bean: </label> <br />
-                    <input 
-                        type="text" 
-                        name='coffeeBean'
-                        value={this.state.coffeeBean} 
-                        onChange={this.handleOnChange}/> <br />
-                    <input 
-                        type='date'
-                        name='roast-date'
-                        value={this.state.roastDate}
-                        onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="brew-method">Brew Method: </label> <br />
+                    <label htmlFor='brew-method'>Brew Method: </label> <br />
                     <select 
-                        type="text" 
+                        type='text' 
                         name='brewMethod'
                         value={this.state.brewMethod} 
                         onChange={this.handleOnChange}
                     /> <br />
-                    <label htmlFor="temperature">Temperature: </label> <br />
+                    <label htmlFor='coffee-bean'>Coffee Bean: </label> <br />
                     <input 
-                        type="number" 
-                        name='temperature'
-                        value={this.state.temperature} 
-                        onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="water-weight">Grams of Water: </label> <br />
+                        type='text' 
+                        name='coffeeBean'
+                        value={this.state.coffeeBean} 
+                        onChange={this.handleOnChange}
+                    /> <br />
                     <input 
-                        type="number" 
-                        name='waterWeight'
-                        value={this.state.waterWeight} 
-                        onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="coffee-weight">Grams of Coffee: </label> <br />
+                        type='date'
+                        name='roast-date'
+                        value={this.state.roastDate}
+                        onChange={this.handleOnChange}
+                    /> <br />
+                        <label htmlFor='grind'>Grind Size: </label> <br />
+                    <option 
+                        type='text' 
+                        name='grind'
+                        value={this.state.grind} 
+                        onChange={this.handleOnChange}
+                    /> <br />
+                    <label htmlFor='coffee-weight'>Grams of Coffee: </label> <br />
                     <input 
-                        type="number" 
+                        type='number' 
                         name='coffeeWeight'
                         value={this.state.coffeeWeight} 
                         onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="grind">Grind Size: </label> <br />
-                    <option 
-                        type="text" 
-                        name='grind'
-                        value={this.state.grind} 
-                        onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="time">Brew Time: </label> <br />
+                    <label htmlFor='water-weight'>Grams of Water: </label> <br />
                     <input 
-                        type="time" 
+                        type='number' 
+                        name='waterWeight'
+                        value={this.state.waterWeight} 
+                        onChange={this.handleOnChange}
+                    /> <br />
+                    <label htmlFor='temperature'>Temperature: </label> <br />
+                    <input 
+                        type='number' 
+                        name='temperature'
+                        value={this.state.temperature} 
+                        onChange={this.handleOnChange}
+                    /> <br />
+                    <label htmlFor='filter'>Filter Needed: </label>
+                    <input
+                        type='checkbox'
+                        name='filter'
+                        value={this.state.filter}
+                        onChange={this.handleOnChange}
+                    
+                /> <br />
+                    <label htmlFor='time'>Brew Time: </label> <br />
+                    <input 
+                        type='time' 
                         name='time'
                         value={this.state.time} 
-                        onChange={this.handleOnChange}/> <br />
+                        onChange={this.handleOnChange}
+                    /> <br />
                     <input 
-                        type="time" 
+                        type='time' 
                         name='bloomTime'
                         value={this.state.bloomTime} 
-                        onChange={this.handleOnChange}/> <br />
+                        onChange={this.handleOnChange}
+                    /> <br />
                     <input
                         type='text'
                         name='notes'
                         value={this.state.notes}
                         onChange={this.handleOnChange}
                     />
-                    <button type="submit">Create Recipe</button>
+                    <button type='submit'>Create Recipe</button>
                 </form>
             </div>
         )
