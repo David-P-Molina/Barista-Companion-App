@@ -11,6 +11,7 @@ class RecipeForm extends Component {
         waterWeight: '',
         coffeeWeight: '',
         coffeeBean: '',
+        roastDate: '',
         grind: '',
         time: '',
         filter: '',
@@ -32,6 +33,7 @@ class RecipeForm extends Component {
             waterWeight: this.state.waterWeight,
             coffeeWeight: this.state.coffeeWeight,
             coffeeBean: this.state.coffeeBean,
+            roastDate: this.state.roastDate,
             grind: this.state.grind,
             time: this.state.time,
             filter: this.state.filter,
@@ -48,6 +50,7 @@ class RecipeForm extends Component {
             waterWeight: '',
             coffeeWeight: '',
             coffeeBean: '',
+            roastDate: '',
             grind: '',
             time: '',
             filter: '',
@@ -81,6 +84,11 @@ class RecipeForm extends Component {
                         type="text" 
                         name='coffeeBean'
                         value={this.state.coffeeBean} 
+                        onChange={this.handleOnChange}/> <br />
+                    <input 
+                        type='date'
+                        name='roast-date'
+                        value={this.state.roastDate}
                         onChange={this.handleOnChange}/> <br />
                     <label htmlFor="brew-method">Brew Method: </label> <br />
                     <select 
