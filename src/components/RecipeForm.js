@@ -5,6 +5,7 @@ import { sendRecipeFormDataAction } from '../actions/RecipeAction'
 class RecipeForm extends Component {
     state = {
         name: '',
+        dateAttempted: '',
         brewMethod: '',
         temperature: '',
         waterWeight: '',
@@ -14,6 +15,7 @@ class RecipeForm extends Component {
         time: '',
         filter: '',
         bloomTime: '',
+        notes: '',
     }
     handleOnChange = (e) => {
         this.setState({
@@ -23,19 +25,25 @@ class RecipeForm extends Component {
     handleOnSubmit = (e) => {
         e.preventDefault()
         let formData = {
-            name: this.state.name ,
-            brewMethod: this.state.brewMethod ,
-            temperature: this.state.temperature ,
-            waterWeight: this.state.waterWeight ,
-            coffeeBean: this.state.coffeeBean ,
-            grind: this.state.grind ,
-            time: this.state.time ,
+            name: this.state.name,
+            dateAttempted: this.state.dateAttempted,
+            brewMethod: this.state.brewMethod,
+            temperature: this.state.temperature,
+            waterWeight: this.state.waterWeight,
+            coffeeWeight: this.state.coffeeWeight,
+            coffeeBean: this.state.coffeeBean,
+            grind: this.state.grind,
+            time: this.state.time,
+            filter: this.state.filter,
+            bloomTime: this.state.bloomTime,
+            notes: this.state.notes
         }
         this.sendRecipeData(formData)
         this.props.addRecipe(formData)
         //Need to create send form data
         this.setState({
             name: '',
+            dateAttempted: '',
             brewMethod: '',
             temperature: '',
             waterWeight: '',
@@ -45,6 +53,7 @@ class RecipeForm extends Component {
             time: '',
             filter: '',
             bloomTime: '',
+            notes: '',
         })
     }
 
@@ -60,6 +69,12 @@ class RecipeForm extends Component {
                         value={this.state.name} 
                         onChange={this.handleOnChange}
                     /> <br />
+                    <label htmlFor="coffee-bean">Coffee Bean: </label> <br />
+                    <input 
+                        type="text" 
+                        name='coffeeBean'
+                        value={this.state.coffeeBean} 
+                        onChange={this.handleOnChange}/> <br />
                     <label htmlFor="brew-method">Brew Method: </label> <br />
                     <select 
                         type="text" 
@@ -78,12 +93,6 @@ class RecipeForm extends Component {
                         type="number" 
                         name='waterWeight'
                         value={this.state.waterWeight} 
-                        onChange={this.handleOnChange}/> <br />
-                    <label htmlFor="coffee-bean">Coffee Bean: </label> <br />
-                    <input 
-                        type="text" 
-                        name='coffeeBean'
-                        value={this.state.coffeeBean} 
                         onChange={this.handleOnChange}/> <br />
                     <label htmlFor="grind">Grind Size: </label> <br />
                     <option 
