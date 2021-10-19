@@ -6,7 +6,7 @@ import { fetchRoasters } from '../actions/RoasterAction'
 
 class RoastersContainer extends Component {
     state = {
-        roaster: [],
+        roasters: [],
     }
     componentDidMount() {
         this.props.fetchRoasters()

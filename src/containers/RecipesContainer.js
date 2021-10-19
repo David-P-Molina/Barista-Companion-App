@@ -5,6 +5,9 @@ import RecipesList from '../components/RecipesList'
 import { fetchRecipes } from '../actions/RecipeAction'
 
 class RecipesContainer extends Component {
+    state = {
+        recipes: []
+    }
     componentDidMount() {
         this.props.fetchRecipes()
     }
@@ -17,7 +20,10 @@ class RecipesContainer extends Component {
         )
     }
 }
-const mapStateToProps = ({recipes}) => ({recipes})
+const mapStateToProps = (state) => {
+    return {recipes: state.recipes.recipes}
+}
+
 const mapDispatchToProps = (dispatchFn) => {
     return {
         fetchRecipes: () => dispatchFn(fetchRecipes()),
