@@ -59,6 +59,12 @@ class RecipeForm extends Component {
         })
     }
 
+    renderBrewOption() {
+
+    }
+    renderCoffeeBeans() {
+
+    }
     render() {
         return (
             <div>
@@ -70,8 +76,8 @@ class RecipeForm extends Component {
                         placeholder='Take 2, Use Different Filter, etc.'
                         value={this.state.name} 
                         onChange={this.handleOnChange}
-                    />  
-                    <label htmlFor='date-recipe-attempted'>Recipe was brewed on </label>
+                    />  <br />
+                    <label htmlFor='date-recipe-attempted'>Brew Date: </label>
                     <input 
                         type='date'
                         name='dateAttempted'
@@ -85,47 +91,61 @@ class RecipeForm extends Component {
                         name='brewMethod'
                         value={this.state.brewMethod} 
                         onChange={this.handleOnChange}
-                    /> <br />
+                    >
+                        {this.renderBrewOption()}
+                    </select>
+                         <br />
                     <label htmlFor='coffee-bean'>Coffee Bean: </label> <br />
-                    <input 
+                    <select 
                         type='text' 
                         name='coffeeBean'
                         value={this.state.coffeeBean} 
                         onChange={this.handleOnChange}
-                    /> <br />
+                    >
+                        {this.renderCoffeeBeans()}
+                    </select> <br />
+                    <label htmlFor='coffee-bean-roast-date'>Roasted on </label>
                     <input 
                         type='date'
                         name='roast-date'
                         value={this.state.roastDate}
                         onChange={this.handleOnChange}
                     /> <br />
-                        <label htmlFor='grind'>Grind Size: </label> <br />
-                    <option 
+                    <label htmlFor='grind'>Grind Size: </label> <br />
+                    <select
                         type='text' 
                         name='grind'
                         value={this.state.grind} 
                         onChange={this.handleOnChange}
-                    /> <br />
-                    <label htmlFor='coffee-weight'>Grams of Coffee: </label> <br />
+                    >
+                        <option>--Select Grind Level--</option>
+                        <option value='Coarse'>Coarse</option>
+                        <option value='Medium Coarse'>Medium-Coarse</option>
+                        <option value='Medium'>Medium</option>
+                        <option value='Medium-Fine'>Medium-Fine</option>
+                        <option value='Fine'>Fine</option>
+                        <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
+                    </select> <br />
+                    <label htmlFor='coffee-weight'>Coffee: </label> <br />
                     <input 
                         type='number' 
                         name='coffeeWeight'
                         value={this.state.coffeeWeight} 
-                        onChange={this.handleOnChange}/> <br />
-                    <label htmlFor='water-weight'>Grams of Water: </label> <br />
+                        onChange={this.handleOnChange}/> Grams<br />
+                    <label htmlFor='water-weight'>Water: </label> <br />
                     <input 
                         type='number' 
                         name='waterWeight'
                         value={this.state.waterWeight} 
                         onChange={this.handleOnChange}
-                    /> <br />
+                    /> Grams<br />
                     <label htmlFor='temperature'>Temperature: </label> <br />
                     <input 
                         type='number' 
                         name='temperature'
                         value={this.state.temperature} 
                         onChange={this.handleOnChange}
-                    /> <br />
+                    /> Fahrenheit <br />
                     <label htmlFor='filter'>Filter Needed: </label>
                     <input
                         type='checkbox'
