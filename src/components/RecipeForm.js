@@ -8,9 +8,12 @@ class RecipeForm extends Component {
         brewMethod: '',
         temperature: '',
         waterWeight: '',
+        coffeeWeight: '',
         coffeeBean: '',
         grind: '',
         time: '',
+        filter: '',
+        bloomTime: '',
     }
     handleOnChange = (e) => {
         this.setState({
@@ -36,9 +39,12 @@ class RecipeForm extends Component {
             brewMethod: '',
             temperature: '',
             waterWeight: '',
+            coffeeWeight: '',
             coffeeBean: '',
             grind: '',
             time: '',
+            filter: '',
+            bloomTime: '',
         })
     }
 
