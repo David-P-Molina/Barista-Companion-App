@@ -6,7 +6,6 @@ class CoffeeBeanForm extends Component {
     state = {
         name: '',
         roaster: '',
-        userId: '',
         roast: '',
         wholeBean: '',
         description: '',
@@ -21,10 +20,9 @@ class CoffeeBeanForm extends Component {
         e.preventDefault()
         let formData = {
             name: this.state.name ,
-            roaster: this.state.roaster ,
-            userId: this.state.userId ,
+            roaster_id: this.state.roaster ,
             roast: this.state.roast ,
-            wholeBean: this.state.wholeBean ,
+            whole_bean: this.state.wholeBean ,
             description: this.state.description ,
             notes: this.state.notes ,
         }

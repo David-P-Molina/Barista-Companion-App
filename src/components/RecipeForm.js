@@ -27,17 +27,17 @@ class RecipeForm extends Component {
         e.preventDefault()
         let formData = {
             name: this.state.name,
-            dateAttempted: this.state.dateAttempted,
-            brewMethod: this.state.brewMethod,
-            coffeeBean: this.state.coffeeBean,
-            roastDate: this.state.roastDate,
+            date_attempted: this.state.dateAttempted,
+            brew_method_id: this.state.brewMethod,
+            coffee_bean_id: this.state.coffeeBean,
+            roast_date: this.state.roastDate,
             grind: this.state.grind,
-            coffeeWeight: this.state.coffeeWeight,
-            waterWeight: this.state.waterWeight,
+            coffee_in_grams: this.state.coffeeWeight,
+            water_in_grams: this.state.waterWeight,
             temperature: this.state.temperature,
             filter: this.state.filter,
             time: this.state.time,
-            bloomTime: this.state.bloomTime,
+            bloom_time: this.state.bloomTime,
             notes: this.state.notes
         }
         //this.sendRecipeData(formData)
@@ -71,7 +71,7 @@ class RecipeForm extends Component {
                         value={this.state.name} 
                         onChange={this.handleOnChange}
                     />  
-                    <label htmlFor='date-recipe-attempted'>Date Recipe was Brewed: </label>
+                    <label htmlFor='date-recipe-attempted'>Recipe was brewed on </label>
                     <input 
                         type='date'
                         name='dateAttempted'
