@@ -38,9 +38,8 @@ class RecipeForm extends Component {
             bloomTime: this.state.bloomTime,
             notes: this.state.notes
         }
-        this.sendRecipeData(formData)
-        this.props.addRecipe(formData)
-        //Need to create send form data
+        //this.sendRecipeData(formData)
+        // this.props.addRecipe(formData)
         this.setState({
             name: '',
             dateAttempted: '',
@@ -68,7 +67,15 @@ class RecipeForm extends Component {
                         placeholder='Take 2, Use Different Filter, etc.'
                         value={this.state.name} 
                         onChange={this.handleOnChange}
-                    /> <br />
+                    />  
+                    <label htmlFor='date-recipe-attempted'>Date Recipe was Brewed: </label>
+                    <input 
+                        type='date'
+                        name='dateAttempted'
+                        placeholder={Date.now}
+                        value={this.state.dateAttempted}
+                        onChange={this.handleOnChange}
+                    /><br />
                     <label htmlFor="coffee-bean">Coffee Bean: </label> <br />
                     <input 
                         type="text" 
@@ -94,6 +101,12 @@ class RecipeForm extends Component {
                         name='waterWeight'
                         value={this.state.waterWeight} 
                         onChange={this.handleOnChange}/> <br />
+                    <label htmlFor="coffee-weight">Grams of Coffee: </label> <br />
+                    <input 
+                        type="number" 
+                        name='coffeeWeight'
+                        value={this.state.coffeeWeight} 
+                        onChange={this.handleOnChange}/> <br />
                     <label htmlFor="grind">Grind Size: </label> <br />
                     <option 
                         type="text" 
@@ -106,6 +119,17 @@ class RecipeForm extends Component {
                         name='time'
                         value={this.state.time} 
                         onChange={this.handleOnChange}/> <br />
+                    <input 
+                        type="time" 
+                        name='bloomTime'
+                        value={this.state.bloomTime} 
+                        onChange={this.handleOnChange}/> <br />
+                    <input
+                        type='text'
+                        name='notes'
+                        value={this.state.notes}
+                        onChange={this.handleOnChange}
+                    />
                     <button type="submit">Create Recipe</button>
                 </form>
             </div>
