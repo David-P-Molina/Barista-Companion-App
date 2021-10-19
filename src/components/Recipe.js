@@ -1,7 +1,6 @@
 import React from 'react'
-// import Timer from './Timer'
 
-const Recipe = (props) => {
+const Recipe = ({props}) => {
     return (
         <div className='recipe'>
             <h1>{props.name}</h1>
