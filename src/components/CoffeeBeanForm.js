@@ -44,14 +44,15 @@ class CoffeeBeanForm extends Component {
     render() {
         return (
             <div className='coffee-bean-form'>
+                <h1>Create Coffee Bean Information</h1>
                 <form>
-                    <label htmlFor='coffee-bean-name'>Name: </label>
+                    <label htmlFor='coffee-bean-name'>Name: </label> <br />
                     <input 
                         type='text' 
                         name='name'
                         placeholder='Coffee Bean'
                         value={this.state.name} 
-                        onChange={this.handleOnChange} />
+                        onChange={this.handleOnChange} /> <br />
                     <label htmlFor='roaster'>Roaster: </label>
                     <select 
                         type='text'
@@ -61,34 +62,42 @@ class CoffeeBeanForm extends Component {
                         >
                             <option>Select a Roaster From List</option>
                         {/* {this.renderRoasters()} */}
-                    </select>
-                    <label htmlFor='roast-level'>Roast Level: </label>
-                    <input 
+                    </select> <br />
+                    <label htmlFor='roast-level'>Roast Level: </label><br />
+                    <select 
                         type='select' 
                         name='roast'
                         value={this.state.roast} 
-                        onChange={this.handleOnChange} />
-                    <label htmlFor='whole-bean-boolean'>Whole Bean:</label>
+                        onChange={this.handleOnChange}>
+                            <option value=''>Select Roast Level: </option>
+                            <option value='Blonde Roast'>Blonde Roast</option>
+                            <option value='Light/ City Roast'>Light/ City Roast</option>
+                            <option value='Light-Medium/ City +'>Light-Medium/ City +</option>
+                            <option value='Medium/ Full City'>Medium/ Full City</option>
+                            <option value='Medium-Dark/ Full City +'>Medium-Dark/ Full City +</option>
+                            <option value='Dark Roast/ Vienna-French'>Dark Roast/ Vienna-French</option>
+                    </select> <br />
+                    <label htmlFor='whole-bean-boolean'>Whole Bean: </label>
                     <input 
                         type='checkbox' 
                         name='wholeBean'
                         value={this.state.wholeBean} 
-                        onChange={this.handleOnChange} />
-                    <label htmlFor='description'>Description: </label>
+                        onChange={this.handleOnChange} /><br />
+                    <label htmlFor='description'>Description: </label><br />
                     <input 
                         type='text' 
                         name='description'
                         placeholder='Story behind the bean'
                         value={this.state.description} 
-                        onChange={this.handleOnChange}/>
-                    <label htmlFor='notes'>Notes: </label>
+                        onChange={this.handleOnChange}/><br />
+                    <label htmlFor='notes'>Notes: </label><br />
                     <input 
                         type='text' 
                         name='notes'
                         placeholder='Hint of Lemon, Dark Chocolate, etc.'
                         value={this.state.notes} 
-                        onChange={this.handleOnChange}/>
-                    <input type='submit' />
+                        onChange={this.handleOnChange}/><br /><br />
+                    <button type='submit'>Add Coffee Bean</button>
                 </form>
             </div>
         )
