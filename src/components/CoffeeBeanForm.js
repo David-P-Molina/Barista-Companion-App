@@ -43,9 +43,9 @@ class CoffeeBeanForm extends Component {
     // }
     render() {
         return (
-            <div className='coffee-bean-form'>
+            <div>
                 <h1>Create Coffee Bean Information</h1>
-                <form>
+                <form className='coffee-bean-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='coffee-bean-name'>Name: </label> <br />
                     <input 
                         type='text' 

@@ -30,6 +30,7 @@ class BrewMethodForm extends Component {
     }
     render() {
         return (
+            <div>
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
                 <label htmlFor='brew-method-name'>Brew Method: </label>
                 <input 
@@ -54,6 +55,7 @@ class BrewMethodForm extends Component {
                     onChange={this.handleOnChange} />
                 <input  type='submit' name='Create Brew Method' />
             </form>
+            </div>
         )
     }
 }
