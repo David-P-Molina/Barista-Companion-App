@@ -68,6 +68,7 @@ class RecipeForm extends Component {
     render() {
         return (
             <div>
+                <h1>Create Recipe</h1>
                 <form className='recipe-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='recipe-name'>Recipe Name: </label> <br />
                     <input 
@@ -125,13 +126,13 @@ class RecipeForm extends Component {
                         <option value='Fine'>Fine</option>
                         <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
                     </select> <br />
-                    <label htmlFor='coffee-weight'>Coffee: </label> <br />
+                    <label htmlFor='coffee-weight'>Coffee Weight: </label> <br />
                     <input 
                         type='number' 
                         name='coffeeWeight'
                         value={this.state.coffeeWeight} 
                         onChange={this.handleOnChange}/> Grams<br />
-                    <label htmlFor='water-weight'>Water: </label> <br />
+                    <label htmlFor='water-weight'>Water Weight: </label> <br />
                     <input 
                         type='number' 
                         name='waterWeight'
@@ -144,15 +145,14 @@ class RecipeForm extends Component {
                         name='temperature'
                         value={this.state.temperature} 
                         onChange={this.handleOnChange}
-                    /> Fahrenheit <br />
+                    /> °F <br />
                     <label htmlFor='filter'>Filter Needed: </label>
                     <input
                         type='checkbox'
                         name='filter'
                         value={this.state.filter}
                         onChange={this.handleOnChange}
-                    
-                /> <br />
+                    /> <br />
                     <label htmlFor='time'>Brew Time: </label> <br />
                     <input 
                         type='time' 
