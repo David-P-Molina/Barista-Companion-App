@@ -27,9 +27,7 @@ class App extends Component {
       <div className="App">
       <Router>
         <NavBar />
-            <Route exact path='/'>
-              <BrewMethodsContainer />
-            </Route>
+            <Route exact path='/brew-methods' component={BrewMethodsContainer}/>
             <Route exact path='/coffee-beans' component={CoffeeBeansContainer} />
             <Route exact path='/recipes' component={RecipesContainer} />
             <Route exact path='/roasters' component={RoastersContainer} />
