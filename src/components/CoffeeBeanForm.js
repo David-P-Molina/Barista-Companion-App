@@ -38,9 +38,9 @@ class CoffeeBeanForm extends Component {
             notes: '',
         })
     }
-    // renderRoasters = () => {
-    //     return this.props.roasters.map((roaster) => <option value={roaster.name}>{roaster.name}</option>)
-    // }
+    renderRoasters = () => {
+        return this.props.roasters.map((roaster) => <option key={roaster.id} value={roaster.name}>{roaster.name}</option>)
+    }
     render() {
         return (
             <div>
@@ -61,7 +61,7 @@ class CoffeeBeanForm extends Component {
                         onChange={this.handleOnChange}
                         >
                             <option>Select a Roaster From List</option>
-                        {/* {this.renderRoasters()} */}
+                        {this.renderRoasters()}
                     </select> <br />
                     <label htmlFor='roast-level'>Roast Level: </label><br />
                     <select 
@@ -103,10 +103,15 @@ class CoffeeBeanForm extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        roasters: state.roasters.roasters
+    }
+}
 
 const mapDispatchToProps = (dispatchFn) => {
     return {
         sendCoffeeBeanDataWithDispatchFn: (data) => dispatchFn(sendCoffeeBeanDataAction(data))
     }
 }
-export default connect(null, mapDispatchToProps)(CoffeeBeanForm)
+export default connect(mapStateToProps, mapDispatchToProps)(CoffeeBeanForm)
