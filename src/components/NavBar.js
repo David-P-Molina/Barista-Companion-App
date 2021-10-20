@@ -11,6 +11,7 @@ class NavBar extends Component {
                 <NavLink to='/coffee-beans'> Coffee Beans </NavLink>
                 <NavLink to='/brew-methods'> Brew Methods </NavLink>
                 <NavLink to='/recipes'> Recipes </NavLink>
+                <NavLink to='/about'>About</NavLink>
             </div>
         )
     }
