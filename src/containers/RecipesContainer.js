@@ -14,14 +14,18 @@ class RecipesContainer extends Component {
     render() {
         return (
             <div className='recipes-container'>
-                <RecipeForm addRecipe={this.props.addRecipe} />
+                <RecipeForm addRecipe={this.props.addRecipe} coffeeBeansList={this.props.coffeeBeans} brewMethodsList={this.props.brewMethods} />
                 <RecipesList recipes={this.props.recipes} />
             </div>
         )
     }
 }
 const mapStateToProps = (state) => {
-    return {recipes: state.recipes.recipes}
+    return {
+        recipes: state.recipes.recipes,
+        coffeeBeans: state.coffeeBeans.coffeeBeans,
+        brewMethods: state.brewMethods.brewMethods,
+    }
 }
 
 const mapDispatchToProps = (dispatchFn) => {

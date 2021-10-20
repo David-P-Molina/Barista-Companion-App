@@ -60,11 +60,11 @@ class RecipeForm extends Component {
     }
 
     renderBrewMethods = () => {
-        return this.props.brewMethods.map((brew) => <option key={brew.id} value={brew.id}>{brew.name}</option>)
+        return this.props.brewMethodsList.map((brew) => <option key={brew.id} value={brew.id}>{brew.name}</option>)
     }
     renderCoffeeBeans = () => {
         return (
-            this.props.coffeeBeans.map((bean) => (
+            this.props.coffeeBeansList.map((bean) => (
                 <option 
                     key={bean.id} 
                     value={bean.id}>
@@ -187,16 +187,10 @@ class RecipeForm extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        coffeeBeans: state.coffeeBeans.coffeeBeans,
-        brewMethods: state.brewMethods.brewMethods
-    }
-}
 
 const mapDispatchToProps = (dispatchFn) => {
     return {
         sendRecipeFormDataWithDispatchFn: (data) => dispatchFn(sendRecipeFormDataAction(data))
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(RecipeForm)
+export default connect(null, mapDispatchToProps)(RecipeForm)
