@@ -61,7 +61,7 @@ class RoasterForm extends React.Component {
                     placeholder='www.roaster-website-url.com'
                     value={this.state.website}
                     onChange={this.handleOnChange}/>
-                <input type='submit'>Add Roaster</input>
+                <button type='submit'>Add Roaster</button>
             </form>
         )
     }

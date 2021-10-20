@@ -14,7 +14,7 @@ class RoastersContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                {/* <RoasterForm addRoaster={this.props.addRoaster}/> */}
+                <RoasterForm addRoaster={this.props.addRoaster}/>
                 <RoastersList roasters={this.props.roasters} />
             </div>)
     }
