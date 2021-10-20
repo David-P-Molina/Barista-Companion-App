@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CoffeeBeanForm from '../components/CoffeeBeanForm'
 import CoffeeBeanList from '../components/CoffeeBeansList'
-import { fetchCoffeeBeans } from '../actions/CoffeeBeanActions'
 
 class CoffeeBeansContainer extends Component {
     constructor() {
@@ -11,9 +10,7 @@ class CoffeeBeansContainer extends Component {
             coffeeBeans: [],
         }
     }
-    componentDidMount() {
-        this.props.fetchCoffeeBeans()
-    }
+
     render() {
         return (
             <div className='coffee-bean-container'>
@@ -32,7 +29,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchCoffeeBeans: () => dispatch(fetchCoffeeBeans()) ,
         addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
     }
 }

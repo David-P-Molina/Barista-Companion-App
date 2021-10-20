@@ -2,14 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RoastersList from '../components/RoastersList'
 import RoasterForm from '../components/RoasterForm'
-import { fetchRoasters } from '../actions/RoasterActions'
 
 class RoastersContainer extends Component {
     state = {
         roasters: [],
-    }
-    componentDidMount() {
-        this.props.fetchRoasters()
     }
     render() {
         return (
@@ -24,7 +20,6 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchRoasters: () => dispatch(fetchRoasters()),
         addRoaster: (formData) => dispatch({ type: "ADD_ROASTER", payload: formData })
     }
 }
