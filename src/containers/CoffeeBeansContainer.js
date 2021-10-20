@@ -17,14 +17,17 @@ class CoffeeBeansContainer extends Component {
     render() {
         return (
             <div className='coffee-bean-container'>
-                <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean}/>
+                <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean} roastersList={this.props.roastersList}/>
                 <CoffeeBeanList coffeeBeans={this.props.coffeeBeans}/>
             </div>
         )
     }
 }
 const mapStateToProps = (state) => {
-    return {coffeeBeans: state.coffeeBeans.coffeeBeans}
+    return {
+        coffeeBeans: state.coffeeBeans.coffeeBeans,
+        roastersList: state.roasters.roasters
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {

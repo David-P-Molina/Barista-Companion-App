@@ -39,7 +39,7 @@ class CoffeeBeanForm extends Component {
         })
     }
     renderRoasters = () => {
-        return this.props.roasters.map((roaster) => <option key={roaster.id} value={roaster.id}>{roaster.name}</option>)
+        return this.props.roastersList.map((roaster) => <option key={roaster.id} value={roaster.id}>{roaster.name}</option>)
     }
     render() {
         return (
@@ -103,15 +103,11 @@ class CoffeeBeanForm extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        roasters: state.roasters.roasters
-    }
-}
+
 
 const mapDispatchToProps = (dispatchFn) => {
     return {
         sendCoffeeBeanDataWithDispatchFn: (data) => dispatchFn(sendCoffeeBeanDataAction(data))
     }
 }
-export default connect(mapStateToProps, mapDispatchToProps)(CoffeeBeanForm)
+export default connect(null, mapDispatchToProps)(CoffeeBeanForm)
