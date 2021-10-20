@@ -3,7 +3,7 @@ import CoffeeBean from './CoffeeBean'
 
 const CoffeeBeansList = ({ coffeeBeans }) => {
     const coffeeBeansList = coffeeBeans.map((bean) => {
-        return <CoffeeBean key={bean.name} props={bean} />
+        return <CoffeeBean key={bean.id} props={bean} />
      })
     return (
         <div className='coffee-bean-list'>

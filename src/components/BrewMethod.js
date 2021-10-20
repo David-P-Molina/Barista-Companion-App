@@ -2,7 +2,7 @@ import React from 'react'
 
 const BrewMethod = ({props}) => {
     const equipmentArray =  props.equipment.split(", ")
-    const listOfEquipment = equipmentArray.map((equipment) => <li>{equipment}</li>)
+    const listOfEquipment = equipmentArray.map((equipment, index) => <li key={index}>{equipment}</li>)
     console.log(equipmentArray)
         return (
             <div className='brew-method'>

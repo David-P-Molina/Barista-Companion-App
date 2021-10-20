@@ -81,7 +81,6 @@ class RecipeForm extends Component {
                     <input 
                         type='date'
                         name='dateAttempted'
-                        placeholder={Date.now}
                         value={this.state.dateAttempted}
                         onChange={this.handleOnChange}
                     /><br />
