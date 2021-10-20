@@ -33,36 +33,39 @@ class RoasterForm extends React.Component {
     }
     render() {
         return(      
+            <div>
+                <h1>Add New Roaster</h1>
             <form className='roaster-form' onSubmit={this.handleOnSubmit} >
-                <label htmlFor='roaster-brand-name'>Roaster Brand: </label>
+                <label htmlFor='roaster-brand-name'>Roaster Brand: </label><br />
                 <input
                     type='text'
                     name='name'
                     placeholder='Brand Name'
                     value={this.state.name}
-                    onChange={this.handleOnChange}/>
-                <label htmlFor='roaster-description'>Description: </label>
+                    onChange={this.handleOnChange}/><br />
+                <label htmlFor='roaster-description'>Description: </label><br />
                 <input
                     type='text'
                     name='description'
                     placeholder='History of Brand'
                     value={this.state.description}
-                    onChange={this.handleOnChange}/>
-                <label htmlFor='roaster-year-founded'>Year Established/Founded: </label>
+                    onChange={this.handleOnChange}/><br />
+                <label htmlFor='roaster-year-founded'>Year Established/Founded: </label><br />
                 <input
                     type='text'
                     name='year-founded'
                     value={this.state.yearFounded}
-                    onChange={this.handleOnChange}/>
-                <label htmlFor='roaster-website'>Website: </label>
+                    onChange={this.handleOnChange}/><br />
+                <label htmlFor='roaster-website'>Website: </label><br />
                 <input
                     type='text'
                     name='website'
                     placeholder='www.roaster-website-url.com'
                     value={this.state.website}
-                    onChange={this.handleOnChange}/>
+                    onChange={this.handleOnChange}/><br />
                 <button type='submit'>Add Roaster</button>
             </form>
+            </div>
         )
     }
 }
