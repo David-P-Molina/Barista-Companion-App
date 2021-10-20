@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RecipeForm from '../components/RecipeForm'
 import RecipesList from '../components/RecipesList'
-import { fetchRecipes } from '../actions/RecipeAction'
+import { fetchRecipes } from '../actions/RecipeActions'
 
 class RecipesContainer extends Component {
     state = {

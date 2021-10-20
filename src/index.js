@@ -10,10 +10,6 @@ import rootReducer from './reducers/rootReducer'
 //getState gets the Global store
 import { composeWithDevTools } from 'redux-devtools-extension'
 import reportWebVitals from './reportWebVitals';
-import RecipesContainer from './containers/RecipesContainer';
-import BrewMethodsContainer from './containers/BrewMethodsContainer';
-import CoffeeBeansContainer from './containers/CoffeeBeansContainer';
-import RoastersContainer from './containers/RoastersContainer';
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(thunk))
@@ -22,10 +18,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <RecipesContainer />
-      <BrewMethodsContainer />
-      <RoastersContainer />
-      <CoffeeBeansContainer />
+      <App />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

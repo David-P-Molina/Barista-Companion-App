@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RoastersList from '../components/RoastersList'
 import RoasterForm from '../components/RoasterForm'
-import { fetchRoasters } from '../actions/RoasterAction'
+import { fetchRoasters } from '../actions/RoasterActions'
 
 class RoastersContainer extends Component {
     state = {

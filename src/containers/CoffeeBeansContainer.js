@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CoffeeBeanForm from '../components/CoffeeBeanForm'
 import CoffeeBeanList from '../components/CoffeeBeansList'
-import { fetchCoffeeBeans } from '../actions/CoffeeBeanAction'
+import { fetchCoffeeBeans } from '../actions/CoffeeBeanActions'
 
 class CoffeeBeansContainer extends Component {
     constructor() {
