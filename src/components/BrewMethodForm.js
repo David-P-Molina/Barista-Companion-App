@@ -31,29 +31,30 @@ class BrewMethodForm extends Component {
     render() {
         return (
             <div>
+                <h1>Add A New Brew Method</h1>
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
-                <label htmlFor='brew-method-name'>Brew Method: </label>
+                <label htmlFor='brew-method-name'>Brew Method: </label><br />
                 <input 
                     type='text' 
                     name='name'
                     placeholder='Brewing Method'
                     value={this.state.name} 
-                    onChange={this.handleOnChange} />
-                <label htmlFor='brew-method-description'>Description: </label>
+                    onChange={this.handleOnChange} /><br />
+                <label htmlFor='brew-method-description'>Description: </label><br />
                 <input 
                     type='text' 
                     name='description'
                     placeholder='Description'
                     value={this.state.description} 
-                    onChange={this.handleOnChange} />
-                <label htmlFor='brew-method-equipment'>Equipment: </label>
+                    onChange={this.handleOnChange} /><br />
+                <label htmlFor='brew-method-equipment'>Equipment: </label><br />
                 <input 
                     type='text' 
                     name='equipment'
                     placeholder='List of equipment needed'
                     value={this.state.equipment} 
-                    onChange={this.handleOnChange} />
-                <input  type='submit' name='Create Brew Method' />
+                    onChange={this.handleOnChange} /><br /><br />
+                <button  type='submit'>Add Brew Method</button>
             </form>
             </div>
         )

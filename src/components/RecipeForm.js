@@ -99,6 +99,7 @@ class RecipeForm extends Component {
                         value={this.state.brewMethod} 
                         onChange={this.handleOnChange}
                     >
+                         <option value=''>Select a Brew Method</option>   
                         {this.renderBrewMethods()}
                     </select>
                          <br />
@@ -109,6 +110,7 @@ class RecipeForm extends Component {
                         value={this.state.coffeeBean} 
                         onChange={this.handleOnChange}
                     >
+                        <option value=''>Select a Coffeebean</option>
                         {this.renderCoffeeBeans()}
                     </select> <br />
                     <label htmlFor='coffee-bean-roast-date'>Roasted on </label>
