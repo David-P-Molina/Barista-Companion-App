@@ -59,11 +59,18 @@ class RecipeForm extends Component {
         })
     }
 
-    renderBrewOption() {
-
+    renderBrewMethods = () => {
+        return this.props.brewMethods.map((brew) => <option key={brew.id} value={brew.id}>{brew.name}</option>)
     }
-    renderCoffeeBeans() {
-
+    renderCoffeeBeans = () => {
+        return (
+            this.props.coffeeBeans.map((bean) => (
+                <option 
+                    key={bean.id} 
+                    value={bean.id}>
+                    {bean.name} by {bean.roaster_name} 
+                </option>)
+            ))
     }
     render() {
         return (
@@ -92,7 +99,7 @@ class RecipeForm extends Component {
                         value={this.state.brewMethod} 
                         onChange={this.handleOnChange}
                     >
-                        {this.renderBrewOption()}
+                        {this.renderBrewMethods()}
                     </select>
                          <br />
                     <label htmlFor='coffee-bean'>Coffee Bean: </label> <br />
@@ -178,9 +185,16 @@ class RecipeForm extends Component {
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        coffeeBeans: state.coffeeBeans.coffeeBeans,
+        brewMethods: state.brewMethods.brewMethods
+    }
+}
+
 const mapDispatchToProps = (dispatchFn) => {
     return {
         sendRecipeFormDataWithDispatchFn: (data) => dispatchFn(sendRecipeFormDataAction(data))
     }
 }
-export default connect(null, mapDispatchToProps)(RecipeForm)
+export default connect(mapStateToProps, mapDispatchToProps)(RecipeForm)

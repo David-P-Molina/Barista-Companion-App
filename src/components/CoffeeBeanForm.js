@@ -39,7 +39,7 @@ class CoffeeBeanForm extends Component {
         })
     }
     renderRoasters = () => {
-        return this.props.roasters.map((roaster) => <option key={roaster.id} value={roaster.name}>{roaster.name}</option>)
+        return this.props.roasters.map((roaster) => <option key={roaster.id} value={roaster.id}>{roaster.name}</option>)
     }
     render() {
         return (
