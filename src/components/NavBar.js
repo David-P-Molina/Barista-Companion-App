@@ -5,10 +5,12 @@ class NavBar extends Component {
     render() {
         return (
             <div>
-                <NavLink to="/roasters"> Roasters </NavLink>
-                <NavLink to="/coffee-beans"> Coffee Beans </NavLink>
-                <NavLink to="/brew-methods"> Brew Methods </NavLink>
-                <NavLink to="/recipes"> Recipes </NavLink>
+                NavBar
+                <NavLink to='/'></NavLink>
+                <NavLink to='/roasters'> Roasters </NavLink>
+                <NavLink to='/coffee-beans'> Coffee Beans </NavLink>
+                <NavLink to='/brew-methods'> Brew Methods </NavLink>
+                <NavLink to='/recipes'> Recipes </NavLink>
             </div>
         )
     }
