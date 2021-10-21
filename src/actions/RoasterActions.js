@@ -14,7 +14,7 @@ export const sendRoasterDataAction = (data) => {
         fetch(`${URL}/roasters`, configObj)
         .then((response) => response.json())
         .then((data) => {
-
+            passingDispatchFn({ type: 'ADD_ROASTER', payload: data})
         })
     }
 }

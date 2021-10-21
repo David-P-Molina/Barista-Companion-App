@@ -13,7 +13,7 @@ export const sendCoffeeBeanDataAction = (data) => {
         fetch(`${URL}/coffee_beans`, configObj)
         .then((response) => response.json())
         .then ((data) => {
-            
+            passingDispatchFn({type: 'ADD_COFFEE_BEAN', payload: data})
         })
     }
 }

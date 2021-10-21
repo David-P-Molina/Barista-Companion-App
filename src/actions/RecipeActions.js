@@ -1,7 +1,7 @@
 import URL from "../URL"
 
 export const sendRecipeFormDataAction = (data) => {
-    return (passingDispatchFn) => {
+    return (dispatch) => {
         const configObj = {
             headers: {
                 "content-type": "application/json",
@@ -14,7 +14,7 @@ export const sendRecipeFormDataAction = (data) => {
         fetch(`${URL}/recipes`, configObj)
         .then((response) => response.json())
         .then((data)=> {
-            
+            dispatch({type: 'ADD_RECIPE', payload: data})
         })
     }
 }

@@ -10,10 +10,10 @@ export const sendBrewMethodDataAction = (formData) => {
         method: 'POST',
         body: JSON.stringify(formData)
     }
-    fetch(`${URL}/brew-methods`, configObj)
+    fetch(`${URL}/brew_methods`, configObj)
     .then((response) => response.json())
     .then((data) => {
-        debugger
+        passingDispatch({type: 'ADD_BREW_METHOD', payload: data})
     })}
 }
 
@@ -22,7 +22,6 @@ export function fetchBrewMethods() {
         dispatch({ type: "START_LOADING_BREW_METHODS"})
         fetch(`${URL}/brew_methods`)
         .then((response => {
-            debugger
             if (response.ok) {
                 return response.json()
                 .then((brewMethods) => {
