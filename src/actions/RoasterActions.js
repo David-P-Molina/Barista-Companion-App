@@ -1,3 +1,5 @@
+import URL from "../URL"
+
 export const sendRoasterDataAction = (data) => {
     return (passingDispatchFn) => {
         const configObj = {
@@ -9,7 +11,7 @@ export const sendRoasterDataAction = (data) => {
             body: JSON.stringify(data)
         }
 
-        fetch("database-url", configObj)
+        fetch(`${URL}/roasters`, configObj)
         .then((response) => response.json())
         .then((data) => {
 
@@ -20,7 +22,7 @@ export const sendRoasterDataAction = (data) => {
 export function fetchRoasters() {
     return (dispatch) => {
         dispatch({type: 'START_LOADING_ROASTERS'})
-        fetch('http://localhost:3000/roasters')
+        fetch(`${URL}/roasters`)
         .then((response) => {
             if (response.ok) {
                 return response.json()

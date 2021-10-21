@@ -1,3 +1,5 @@
+import URL from "../URL"
+
 export const sendBrewMethodDataAction = (formData) => {
      return (passingDispatch) => {
          const configObj = {
@@ -8,7 +10,7 @@ export const sendBrewMethodDataAction = (formData) => {
         method: 'POST',
         body: JSON.stringify(formData)
     }
-    fetch('localhost:3000/brew-method-api', configObj)
+    fetch(`${URL}/brew-methods`, configObj)
     .then((response) => response.json())
     .then((data) => {
         debugger
@@ -18,8 +20,9 @@ export const sendBrewMethodDataAction = (formData) => {
 export function fetchBrewMethods() {
     return (dispatch) => {
         dispatch({ type: "START_LOADING_BREW_METHODS"})
-        fetch('http://localhost:3000/brew_methods')
+        fetch(`${URL}/brew_methods`)
         .then((response => {
+            debugger
             if (response.ok) {
                 return response.json()
                 .then((brewMethods) => {

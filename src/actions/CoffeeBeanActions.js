@@ -1,3 +1,5 @@
+import URL from "../URL"
+
 export const sendCoffeeBeanDataAction = (data) => {
     return (passingDispatchFn) => {
         const configObj = {
@@ -8,7 +10,7 @@ export const sendCoffeeBeanDataAction = (data) => {
             method: "POST",
             body: JSON.stringify(data)
         }
-        fetch("database-url", configObj)
+        fetch(`${URL}/coffee_beans`, configObj)
         .then((response) => response.json())
         .then ((data) => {
             
@@ -19,7 +21,7 @@ export const sendCoffeeBeanDataAction = (data) => {
 export function fetchCoffeeBeans() {
     return (dispatch) => {
         dispatch({type: 'START_LOADING_COFFEE_BEANS'})
-        fetch('http://localhost:3000/coffee_beans')
+        fetch(`${URL}/coffee_beans`)
         .then((response) => {
             if (response.ok) {
                 return response.json()

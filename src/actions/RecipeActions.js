@@ -1,3 +1,5 @@
+import URL from "../URL"
+
 export const sendRecipeFormDataAction = (data) => {
     return (passingDispatchFn) => {
         const configObj = {
@@ -9,7 +11,7 @@ export const sendRecipeFormDataAction = (data) => {
             body: JSON.stringify(data)
         }
 
-        fetch("database-url", configObj)
+        fetch(`${URL}/recipes`, configObj)
         .then((response) => response.json())
         .then((data)=> {
             
@@ -20,7 +22,7 @@ export const sendRecipeFormDataAction = (data) => {
 export function fetchRecipes () {
     return (dispatch) => {
         dispatch({ type: 'START_LOADING RECIPES'})
-        fetch('http://localhost:3000/recipes')
+        fetch(`${URL}/recipes`)
         .then((response) => {
             if (response.ok) {
                 return response.json()
