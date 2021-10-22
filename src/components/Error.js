@@ -1,5 +1,12 @@
 import React from 'react'
 
-const Error = (props) => <div className='error-message'>{props.error}</div> 
+const Error = ({props}) => {
+    return (
+        <div className='error-message'>
+            {/* {props.errors} */}
+            {console.log(props.errors)}
+        </div>
+    )
+}
 
 export default Error

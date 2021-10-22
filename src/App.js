@@ -31,7 +31,7 @@ class App extends Component {
       <Router>
         <NavBar />
         <br />
-        <Error />
+        <Error props={this.props.errors}/>
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
             <Route exact path='/brew-methods' component={BrewMethodsContainer} />
@@ -43,7 +43,11 @@ class App extends Component {
     );
   }
 }
-
+const mapStateToProps = (state) => {
+  return {
+    errors: state.errors
+  }
+}
 const mapDispatchToProps = (dispatchFn) => {
   return {
     fetchBrewMethods: () => dispatchFn(fetchBrewMethods()),
@@ -53,4 +57,4 @@ const mapDispatchToProps = (dispatchFn) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

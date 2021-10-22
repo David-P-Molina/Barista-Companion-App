@@ -15,11 +15,13 @@ export const sendBrewMethodDataAction = (formData) => {
         if (response.ok) {
             return response.json()
             .then((data) => {
+                debugger
             passingDispatch({type: 'ADD_BREW_METHOD', payload: data})})
         } else {
             return response.json()
             .catch((errors) => {
                 passingDispatch({ type: 'DISPLAY_ERROR', errors})
+                console.log(errors)
             })
     }}
     )}
