@@ -2,8 +2,8 @@ import React from 'react'
 import Roaster from './Roaster'
 
 const RoastersList = ({ roasters }) => {
-    const roastersList = roasters.map((roaster) => {
-        return <Roaster key={roaster.id} props={roaster} />
+    const roastersList = roasters.map((roaster, index) => {
+        return <Roaster key={index} props={roaster} />
      })
     return (
         <div className='roaster-list'>

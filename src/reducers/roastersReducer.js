@@ -1,5 +1,3 @@
-import uuid from 'uuid'
-
 function roastersReducer(
     state = {
         roasters: [], 
@@ -33,19 +31,19 @@ function roastersReducer(
                 ...state.roasters.slice(idx + 1)] 
             }
 
-        case 'ADD_COFFEE_BEAN':
-            let existingRoaster = state.roasters.filter(
-                (roaster) => roaster.roasterName === action.coffeeBean.roasterName
-            )
-            if (existingRoaster.length > 0) {
-                return state 
-            } else {
-                return { 
-                    coffeeBeans: [...state, 
-                    {roasterName: action.coffeeBean.roasterName, 
-                    id: uuid() }]
-            }
-            }
+        // case 'ADD_COFFEE_BEAN':
+        //     let existingRoaster = state.roasters.filter(
+        //         (roaster) => roaster.roasterName === action.coffeeBean.roasterName
+        //     )
+        //     if (existingRoaster.length > 0) {
+        //         return state 
+        //     } else {
+        //         return { 
+        //             coffeeBeans: [...state, 
+        //             {roasterName: action.coffeeBean.roasterName, 
+        //             id: uuid() }]
+        //     }
+        //     }
         
         default:
             return state

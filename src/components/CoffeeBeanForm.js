@@ -26,7 +26,7 @@ class CoffeeBeanForm extends Component {
             description: this.state.description ,
             notes: this.state.notes ,
         }
-        this.sendCoffeeBeanDataWithDispatchFn(formData)
+        this.props.sendCoffeeBeanDataWithDispatchFn(formData)
         this.setState({
             name: '',
             roaster: '',
@@ -38,7 +38,7 @@ class CoffeeBeanForm extends Component {
         })
     }
     renderRoasters = () => {
-        return this.props.roastersList.map((roaster) => <option key={roaster.id} value={roaster.id}>{roaster.name}</option>)
+        return this.props.roastersList.map((roaster) => <option key={roaster.name} value={roaster.id}>{roaster.name}</option>)
     }
     render() {
         return (
