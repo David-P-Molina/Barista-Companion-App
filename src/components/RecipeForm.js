@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { sendRecipeFormDataAction } from '../actions/RecipeActions'
+import Error from './Error'
 
 class RecipeForm extends Component {
     state = {
@@ -75,6 +76,9 @@ class RecipeForm extends Component {
         return (
             <div>
                 <h1>Create Recipe</h1>
+                <div className='errors'>
+                    <Error props={this.props.errors}/>
+                </div>
                 <form className='recipe-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='recipe-name'>Recipe Name: </label> <br />
                     <input 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { sendCoffeeBeanDataAction } from '../actions/CoffeeBeanActions'
+import Error from './Error'
 
 class CoffeeBeanForm extends Component {
     state = {
@@ -44,6 +45,9 @@ class CoffeeBeanForm extends Component {
         return (
             <div>
                 <h1>Create Coffee Bean Information</h1>
+                <div className='errors'>
+                    <Error props={this.props.errors}/>
+                </div>
                 <form className='coffee-bean-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='coffee-bean-name'>Name: </label> <br />
                     <input 

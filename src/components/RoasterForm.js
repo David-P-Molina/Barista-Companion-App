@@ -1,6 +1,7 @@
 import React from 'react' 
 import { connect } from 'react-redux'
 import { sendRoasterDataAction } from '../actions/RoasterActions'
+import Error from './Error'
 
 class RoasterForm extends React.Component {
     state = {
@@ -34,6 +35,9 @@ class RoasterForm extends React.Component {
         return(      
             <div>
                 <h1>Add New Roaster</h1>
+                <div className='errors'>
+                    <Error props={this.props.errors}/>
+                </div>
             <form className='roaster-form' onSubmit={this.handleOnSubmit} >
                 <label htmlFor='roaster-brand-name'>Roaster Brand: </label><br />
                 <input
