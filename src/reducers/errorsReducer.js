@@ -27,6 +27,14 @@ function errorsReducer(
                 ...state,
                 roasterErrors: action.errors,
             }
+        case 'CLEAR_ERRORS':
+            return {
+                ...state,
+                brewMethodErrors: [],
+                coffeeBeanErrors: [],
+                recipeErrors: [],
+                roasterErrors: [],
+            }
         default:
             return state
     }
