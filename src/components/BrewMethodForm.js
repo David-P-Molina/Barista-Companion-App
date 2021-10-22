@@ -36,7 +36,6 @@ class BrewMethodForm extends Component {
                 <input 
                     required type='text' 
                     name='name'
-                    required='required'
                     placeholder='Brewing Method'
                     value={this.state.name} 
                     onChange={this.handleOnChange} /><br />
@@ -45,7 +44,6 @@ class BrewMethodForm extends Component {
                     required type='text' 
                     name='description'
                     placeholder='Description'
-                    required='required'
                     value={this.state.description} 
                     onChange={this.handleOnChange} /><br />
                 <label htmlFor='brew-method-equipment'>Equipment: (Separated by ", ")</label><br />
@@ -53,7 +51,6 @@ class BrewMethodForm extends Component {
                     required type='text' 
                     name='equipment'
                     placeholder='List of equipment needed'
-                    required='required'
                     value={this.state.equipment} 
                     onChange={this.handleOnChange} /><br /><br />
                 <button  type='submit'>Add Brew Method</button>
