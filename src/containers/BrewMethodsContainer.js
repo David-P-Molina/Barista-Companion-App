@@ -17,7 +17,7 @@ class BrewMethodsContainer extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        errors: state.errors.errors,
+        errors: state.errors.brewMethodErrors,
         brewMethods: state.brewMethods.brewMethods
     }
 }

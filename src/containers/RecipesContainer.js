@@ -19,7 +19,7 @@ class RecipesContainer extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        errors: state.errors.errors,
+        errors: state.errors.recipeErrors,
         recipes: state.recipes.recipes,
         coffeeBeans: state.coffeeBeans.coffeeBeans,
         brewMethods: state.brewMethods.brewMethods,

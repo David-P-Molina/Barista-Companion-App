@@ -22,7 +22,7 @@ class CoffeeBeansContainer extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        errors: state.errors.errors,
+        errors: state.errors.coffeeBeanErrors,
         coffeeBeans: state.coffeeBeans.coffeeBeans,
         roastersList: state.roasters.roasters
     }
