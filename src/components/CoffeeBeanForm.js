@@ -27,7 +27,6 @@ class CoffeeBeanForm extends Component {
             notes: this.state.notes ,
         }
         this.sendCoffeeBeanDataWithDispatchFn(formData)
-        //this.props.addCoffeeBean(formData)
         this.setState({
             name: '',
             roaster: '',

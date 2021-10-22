@@ -40,8 +40,7 @@ class RecipeForm extends Component {
             bloom_time: this.state.bloomTime,
             notes: this.state.notes
         }
-        //this.sendRecipeData(formData)
-        // this.props.addRecipe(formData)
+        this.props.sendRecipeFormDataWithDispatchFn(formData)
         this.setState({
             name: '',
             dateAttempted: '',
