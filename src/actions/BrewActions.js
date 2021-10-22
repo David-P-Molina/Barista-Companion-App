@@ -11,10 +11,18 @@ export const sendBrewMethodDataAction = (formData) => {
         body: JSON.stringify(formData)
     }
     fetch(`${URL}/brew_methods`, configObj)
-    .then((response) => response.json())
-    .then((data) => {
-        passingDispatch({type: 'ADD_BREW_METHOD', payload: data})
-    })}
+    .then((response) => {
+        if (response.ok) {
+            return response.json()
+            .then((data) => {
+            passingDispatch({type: 'ADD_BREW_METHOD', payload: data})})
+        } else {
+            return response.json()
+            .catch((errors) => {
+                passingDispatch({ type: 'DISPLAY_ERROR', errors})
+            })
+    }}
+    )}
 }
 
 export function fetchBrewMethods() {
