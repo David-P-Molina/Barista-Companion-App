@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux' 
 import { sendBrewMethodDataAction } from '../actions/BrewActions'
+import Error from './Error'
 
 class BrewMethodForm extends Component {
     state = {
@@ -31,6 +32,7 @@ class BrewMethodForm extends Component {
         return (
             <div>
                 <h1>Add A New Brew Method</h1>
+                <div className='errors'><Error props={this.props.errors}/></div>
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
                 <label htmlFor='brew-method-name'>Brew Method: </label><br />
                 <input 

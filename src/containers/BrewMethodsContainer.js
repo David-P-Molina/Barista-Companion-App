@@ -10,13 +10,16 @@ class BrewMethodsContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <BrewMethodForm addBrewMethod={this.props.addBrewMethod}/>
+                <BrewMethodForm addBrewMethod={this.props.addBrewMethod}errors={this.props.errors}/>
                 <BrewMethodsList brewMethods={this.props.brewMethods} />
             </div>)
     }
 }
-const mapStateToProps =(state) => {
-    return {brewMethods: state.brewMethods.brewMethods}
+const mapStateToProps = (state) => {
+    return {
+        errors: state.errors.errors,
+        brewMethods: state.brewMethods.brewMethods
+    }
 }
 const mapDispatchToProps = (dispatch) => {
     return {

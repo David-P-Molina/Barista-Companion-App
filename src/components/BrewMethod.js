@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BrewMethod = ({props}) => {
-    const equipmentArray =  props.equipment.split(", ")
+    const equipmentArray =  props.equipment.split(",")
     const listOfEquipment = equipmentArray.map((equipment, index) => <li key={index}>{equipment}</li>)
 
         return (
