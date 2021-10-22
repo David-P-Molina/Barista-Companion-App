@@ -2,6 +2,7 @@ import './App.css';
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import NavBar from './components/NavBar'
+import Error from './components/Error'
 import Home from './components/Home'
 import About from './components/About'
 import RecipesContainer from './containers/RecipesContainer'
@@ -29,6 +30,8 @@ class App extends Component {
       <div className="App">
       <Router>
         <NavBar />
+        <br />
+        <Error />
         <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
             <Route exact path='/brew-methods' component={BrewMethodsContainer} />

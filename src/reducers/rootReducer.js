@@ -3,6 +3,7 @@ import brewMethodsReducer from './brewMethodsReducer'
 import coffeeBeansReducer from './coffeeBeansReducer'
 import recipesReducer from './recipesReducer'
 import roastersReducer from './roastersReducer'
+import errorsReducer from './errorsReducer'
 // import userReducer from './userReducer'
 
 const rootReducer = combineReducers({
@@ -10,7 +11,8 @@ const rootReducer = combineReducers({
     coffeeBeans: coffeeBeansReducer,
     recipes: recipesReducer,
     // user: userReducer,
-    roasters: roastersReducer
+    roasters: roastersReducer,
+    errors: errorsReducer
 })
 
 export default rootReducer
