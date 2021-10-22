@@ -37,14 +37,14 @@ class RoasterForm extends React.Component {
             <form className='roaster-form' onSubmit={this.handleOnSubmit} >
                 <label htmlFor='roaster-brand-name'>Roaster Brand: </label><br />
                 <input
-                    type='text'
+                    required type='text'
                     name='name'
                     placeholder='Brand Name'
                     value={this.state.name}
                     onChange={this.handleOnChange}/><br />
                 <label htmlFor='roaster-description'>Description: </label><br />
                 <input
-                    type='text'
+                    required type='text'
                     name='description'
                     placeholder='History of Brand'
                     value={this.state.description}

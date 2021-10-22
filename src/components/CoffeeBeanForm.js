@@ -47,7 +47,7 @@ class CoffeeBeanForm extends Component {
                 <form className='coffee-bean-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='coffee-bean-name'>Name: </label> <br />
                     <input 
-                        type='text' 
+                        required type='text' 
                         name='name'
                         placeholder='Coffee Bean'
                         value={this.state.name} 

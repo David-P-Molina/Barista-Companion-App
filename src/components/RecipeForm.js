@@ -78,7 +78,7 @@ class RecipeForm extends Component {
                 <form className='recipe-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='recipe-name'>Recipe Name: </label> <br />
                     <input 
-                        type='text' 
+                        required type='text' 
                         name='name'
                         placeholder='Take 2, Use Different Filter, etc.'
                         value={this.state.name} 
@@ -86,14 +86,14 @@ class RecipeForm extends Component {
                     />  <br />
                     <label htmlFor='date-recipe-attempted'>Brew Date: </label>
                     <input 
-                        type='date'
+                        required type='date'
                         name='dateAttempted'
                         value={this.state.dateAttempted}
                         onChange={this.handleOnChange}
                     /><br />
                     <label htmlFor='brew-method'>Brew Method: </label> <br />
                     <select 
-                        type='text' 
+                        required type='text' 
                         name='brewMethod'
                         value={this.state.brewMethod} 
                         onChange={this.handleOnChange}
@@ -104,7 +104,7 @@ class RecipeForm extends Component {
                          <br />
                     <label htmlFor='coffee-bean'>Coffee Bean: </label> <br />
                     <select 
-                        type='text' 
+                        required type='text' 
                         name='coffeeBean'
                         value={this.state.coffeeBean} 
                         onChange={this.handleOnChange}

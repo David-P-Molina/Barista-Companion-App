@@ -34,7 +34,7 @@ class BrewMethodForm extends Component {
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
                 <label htmlFor='brew-method-name'>Brew Method: </label><br />
                 <input 
-                    type='text' 
+                    required type='text' 
                     name='name'
                     required='required'
                     placeholder='Brewing Method'
@@ -42,15 +42,15 @@ class BrewMethodForm extends Component {
                     onChange={this.handleOnChange} /><br />
                 <label htmlFor='brew-method-description'>Description: </label><br />
                 <input 
-                    type='text' 
+                    required type='text' 
                     name='description'
                     placeholder='Description'
                     required='required'
                     value={this.state.description} 
                     onChange={this.handleOnChange} /><br />
-                <label htmlFor='brew-method-equipment'>Equipment: </label><br />
+                <label htmlFor='brew-method-equipment'>Equipment: (Separated by ", ")</label><br />
                 <input 
-                    type='text' 
+                    required type='text' 
                     name='equipment'
                     placeholder='List of equipment needed'
                     required='required'
