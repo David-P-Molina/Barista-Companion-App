@@ -19,7 +19,7 @@ export const sendBrewMethodDataAction = (formData) => {
         } else {
             return response.json()
             .then((errors) => {
-                passingDispatch({ type: 'DISPLAY_ERROR', errors})
+                passingDispatch({ type: 'DISPLAY_BREW_METHOD_ERROR', errors})
                 console.log(errors)
             })
     }}

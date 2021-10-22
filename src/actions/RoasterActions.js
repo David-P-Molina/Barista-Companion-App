@@ -12,12 +12,19 @@ export const sendRoasterDataAction = (data) => {
         }
 
         fetch(`${URL}/roasters`, configObj)
-        .then((response) => response.json())
-        .then((data) => {
-            passingDispatchFn({ type: 'ADD_ROASTER', payload: data})
-        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+                .then((data) => {
+                passingDispatchFn({type: 'ADD_ROASTER', payload: data})})
+            } else {
+                return response.json()
+                .then((errors) => {
+                    passingDispatchFn({ type: 'DISPLAY_ROASTER_ERROR', errors})
+                })
+        }}
+        )}
     }
-}
 
 export function fetchRoasters() {
     return (dispatch) => {

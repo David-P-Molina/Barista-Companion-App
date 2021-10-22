@@ -12,13 +12,19 @@ export const sendRecipeFormDataAction = (data) => {
         }
 
         fetch(`${URL}/recipes`, configObj)
-        .then((response) => response.json())
-        .then((data)=> {
-            dispatch({type: 'ADD_RECIPE', payload: data})
-        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+                .then((data) => {
+                dispatch({type: 'ADD_RECIPE', payload: data})})
+            } else {
+                return response.json()
+                .then((errors) => {
+                    dispatch({ type: 'DISPLAY_RECIPE_ERROR', errors})
+                })
+        }}
+        )}
     }
-}
-
 export function fetchRecipes () {
     return (dispatch) => {
         dispatch({ type: 'START_LOADING RECIPES'})

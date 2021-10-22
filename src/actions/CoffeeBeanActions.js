@@ -11,12 +11,19 @@ export const sendCoffeeBeanDataAction = (data) => {
             body: JSON.stringify(data)
         }
         fetch(`${URL}/coffee_beans`, configObj)
-        .then((response) => response.json())
-        .then ((data) => {
-            passingDispatchFn({type: 'ADD_COFFEE_BEAN', payload: data})
-        })
+        .then((response) => {
+            if (response.ok) {
+                return response.json()
+                .then((data) => {
+                passingDispatchFn({type: 'ADD_COFFEE_BEAN', payload: data})})
+            } else {
+                return response.json()
+                .then((errors) => {
+                    passingDispatchFn({ type: 'DISPLAY_COFFEE_BEAN_ERROR', errors})
+                })
+        }}
+        )}
     }
-}
 
 export function fetchCoffeeBeans() {
     return (dispatch) => {
