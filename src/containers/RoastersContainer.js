@@ -10,13 +10,16 @@ class RoastersContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <RoasterForm addRoaster={this.props.addRoaster}/>
+                <RoasterForm addRoaster={this.props.addRoaster} errors={this.props.errors}/>
                 <RoastersList roasters={this.props.roasters} />
             </div>)
     }
 }
 const mapStateToProps = (state) => {
-    return {roasters: state.roasters.roasters}
+    return {
+        errors: state.errors.errors,
+        roasters: state.roasters.roasters
+    }
 }
 const mapDispatchToProps = (dispatch) => {
     return {

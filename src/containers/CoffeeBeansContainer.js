@@ -14,7 +14,7 @@ class CoffeeBeansContainer extends Component {
     render() {
         return (
             <div className='coffee-bean-container'>
-                <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean} roastersList={this.props.roastersList}/>
+                <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean} roastersList={this.props.roastersList} errors={this.props.errors}/>
                 <CoffeeBeanList coffeeBeans={this.props.coffeeBeans}/>
             </div>
         )
@@ -22,6 +22,7 @@ class CoffeeBeansContainer extends Component {
 }
 const mapStateToProps = (state) => {
     return {
+        errors: state.errors.errors,
         coffeeBeans: state.coffeeBeans.coffeeBeans,
         roastersList: state.roasters.roasters
     }
