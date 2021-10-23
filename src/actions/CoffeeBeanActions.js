@@ -25,7 +25,7 @@ export const sendCoffeeBeanDataAction = (data) => {
         )}
     }
 
-export function fetchCoffeeBeans() {
+export const fetchCoffeeBeans = () => {
     return (dispatch) => {
         dispatch({type: 'START_LOADING_COFFEE_BEANS'})
         fetch(`${URL}/coffee_beans`)

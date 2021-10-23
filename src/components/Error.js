@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { clearErrorsAction } from '../actions/ErrorAction'
 
 export class Error extends Component {
     componentDidUpdate() {
@@ -18,7 +19,7 @@ export class Error extends Component {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        clearErrors: () => dispatch({type: 'CLEAR_ERRORS'})
+        clearErrors: () => dispatch(clearErrorsAction())
     }
 }
 

@@ -26,7 +26,7 @@ export const sendRoasterDataAction = (data) => {
         )}
     }
 
-export function fetchRoasters() {
+export const fetchRoasters = () => {
     return (dispatch) => {
         dispatch({type: 'START_LOADING_ROASTERS'})
         fetch(`${URL}/roasters`)

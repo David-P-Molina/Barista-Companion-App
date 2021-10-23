@@ -25,7 +25,7 @@ export const sendRecipeFormDataAction = (data) => {
         }}
         )}
     }
-export function fetchRecipes () {
+export const fetchRecipes = () => {
     return (dispatch) => {
         dispatch({ type: 'START_LOADING RECIPES'})
         fetch(`${URL}/recipes`)

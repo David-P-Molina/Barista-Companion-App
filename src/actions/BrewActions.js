@@ -26,7 +26,7 @@ export const sendBrewMethodDataAction = (formData) => {
     )}
 }
 
-export function fetchBrewMethods() {
+export const fetchBrewMethods= () => {
     return (dispatch) => {
         dispatch({ type: "START_LOADING_BREW_METHODS"})
         fetch(`${URL}/brew_methods`)
