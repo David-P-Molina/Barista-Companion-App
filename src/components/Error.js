@@ -1,14 +1,20 @@
-import React from 'react'
 
-const Error = ({props}) => {
-    const renderErrors = props.map((e) => <li>{e}</li>)
-    return (
-        <div className='error-message'>
-            <br/>
-            {renderErrors}
-            <br/>
-        </div>
-    )
+import React, { Component } from 'react'
+
+export class Error extends Component {
+    componentDidMount() {
+        
+    }
+    render() {
+        const renderErrors = this.props.errors.map((e) => <div key={e}>{e}</div>)
+        return (
+            <div className='error-messages'>
+                <br/>
+                {renderErrors}
+                <br/>
+            </div>
+        )
+    }
 }
 
 export default Error

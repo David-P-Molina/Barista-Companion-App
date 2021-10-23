@@ -36,7 +36,7 @@ class RoasterForm extends React.Component {
             <div>
                 <h1>Add New Roaster</h1>
                 <div className='errors'>
-                    <Error props={this.props.errors}/>
+                    <Error errors={this.props.errors}/>
                 </div>
             <form className='roaster-form' onSubmit={this.handleOnSubmit} >
                 <label htmlFor='roaster-brand-name'>Roaster Brand: </label><br />

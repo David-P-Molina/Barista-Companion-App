@@ -33,7 +33,7 @@ class BrewMethodForm extends Component {
             <div>
                 <h1>Add A New Brew Method</h1>
                 <div className='errors'>
-                    <Error props={this.props.errors}/>
+                    <Error errors={this.props.errors}/>
                 </div>
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
                 <label htmlFor='brew-method-name'>Brew Method: </label><br />

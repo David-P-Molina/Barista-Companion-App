@@ -77,7 +77,7 @@ class RecipeForm extends Component {
             <div>
                 <h1>Create Recipe</h1>
                 <div className='errors'>
-                    <Error props={this.props.errors}/>
+                    <Error errors={this.props.errors}/>
                 </div>
                 <form className='recipe-form' onSubmit={this.handleOnSubmit}>
                     <label htmlFor='recipe-name'>Recipe Name: </label> <br />
