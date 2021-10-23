@@ -2,16 +2,24 @@ import React from 'react'
 
 const Recipe = ({props}) => {
     const ratio = (props.water_in_grams / props.coffee_in_grams).toFixed(2) 
+    const filter = () => {
+        if (props.filter) {
+        return "Filter Used"
+    } else {
+        return "No Filter Used"
+    }
+}
     return (
         <div className='recipe'>
             <h1>{props.name} Brewed on {props.date_attempted}</h1> 
-            <span>{props.brew_method_name}</span>
-            Bean: {props.coffee_bean_name} by {props.roaster_name} Roast Date: {props.roast_date}
-            Grind Size: {props.grind} Coffee Weight: {props.coffee_in_grams} grams- Grind Consistency: {props.grind}
-            <h4>Water: {props.water_in_grams} grams</h4><h4>{props.temperature} °F</h4> 1:{ratio} Water to Coffee Ratio
-            <h4>Filter {props.filter}</h4> 
-            <h4>Brew Time: {props.time}, Bloom Time: {props.bloom_time}</h4>
-            Notes: {props.notes}
+            <h2><i>{props.brew_method_name}</i> - {filter()}</h2>
+            <h3>{props.coffee_bean_name} by <i>{props.roaster_name}</i> roasted on {props.roast_date}</h3>
+            <p>Coffee Weight: {props.coffee_in_grams}grams Grind Consistency: {props.grind}
+            Water: {props.water_in_grams}grams{props.temperature} °F</p>
+             <h5>1:{ratio} Water to Coffee Ratio</h5>
+            <p>
+            Brew Time: {props.time}, Bloom Time: {props.bloom_time}</p>
+            <p>Feedback/Tasting Notes: {props.notes}</p>
         </div>
     )
  }
