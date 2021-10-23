@@ -1,9 +1,9 @@
-
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 export class Error extends Component {
-    componentDidMount() {
-        
+    componentDidUpdate() {
+        setTimeout(() => this.props.clearErrors() , 5500);
     }
     render() {
         const renderErrors = this.props.errors.map((e) => <div key={e}>{e}</div>)
@@ -16,5 +16,10 @@ export class Error extends Component {
         )
     }
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        clearErrors: () => dispatch({type: 'CLEAR_ERRORS'})
+    }
+}
 
-export default Error
+export default connect(null, mapDispatchToProps)(Error)
