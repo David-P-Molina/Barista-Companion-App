@@ -32,6 +32,7 @@ class RoasterForm extends React.Component {
         })
     }
     render() {
+        let currentYear = new Date().getFullYear()
         return(      
             <div>
                 <h1>Add New Roaster</h1>
@@ -55,13 +56,15 @@ class RoasterForm extends React.Component {
                     onChange={this.handleOnChange}/><br />
                 <label htmlFor='roaster-year-founded'>Year Established/Founded: </label><br />
                 <input
-                    type='text'
-                    name='year-founded'
+                    type='number'
+                    name='yearFounded'
+                    min='1870'
+                    max={currentYear}
                     value={this.state.yearFounded}
                     onChange={this.handleOnChange}/><br />
                 <label htmlFor='roaster-website'>Website: </label><br />
                 <input
-                    type='text'
+                    type='url'
                     name='website'
                     placeholder='www.roaster-website-url.com'
                     value={this.state.website}
