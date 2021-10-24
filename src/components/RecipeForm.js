@@ -130,7 +130,7 @@ class RecipeForm extends Component {
                         value={this.state.grind} 
                         onChange={this.handleOnChange}
                     >
-                        <option>--Select Grind Level--</option>
+                        <option value=''>--Select Grind Level--</option>
                         <option value='Coarse'>Coarse</option>
                         <option value='Medium Coarse'>Medium-Coarse</option>
                         <option value='Medium'>Medium</option>
@@ -155,6 +155,7 @@ class RecipeForm extends Component {
                     <input 
                         type='number' 
                         name='temperature'
+                        placeholder='Fahrenheit'
                         value={this.state.temperature} 
                         onChange={this.handleOnChange}
                     /> °F <br />
@@ -181,6 +182,7 @@ class RecipeForm extends Component {
                     <input
                         type='text'
                         name='notes'
+                        placeholder='Tasting Notes, Changes to be made, etc'
                         value={this.state.notes}
                         onChange={this.handleOnChange}
                     />
