@@ -63,7 +63,7 @@ class CoffeeBeanForm extends Component {
                         value={this.state.roaster} 
                         onChange={this.handleOnChange}
                         >
-                            <option>Select a Roaster From List</option>
+                            <option value=''>Select a Roaster From List</option>
                         {this.renderRoasters()}
                     </select> <br />
                     <label htmlFor='roast-level'>Roast Level: </label><br />
