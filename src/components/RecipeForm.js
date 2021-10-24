@@ -60,7 +60,11 @@ class RecipeForm extends Component {
     }
 
     renderBrewMethods = () => {
-        return this.props.brewMethodsList.map((brew) => <option key={brew.name} value={brew.id}>{brew.name}</option>)
+        return (
+            this.props.brewMethodsList.map((brew) => {
+                return <option key={brew.name} value={brew.id}>{brew.name}</option>
+            })
+        )
     }
     renderCoffeeBeans = () => {
         return (

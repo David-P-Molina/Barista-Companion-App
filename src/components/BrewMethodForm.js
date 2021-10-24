@@ -21,7 +21,7 @@ class BrewMethodForm extends Component {
             description: this.state.description,
             equipment: this.state.equipment,
         }
-        this.props.sendBrewMethodDataWithDispatchFn(formData)//send to database? Goes into action
+        this.props.sendBrewMethodDataWithDispatchFn(formData)
         this.setState({
             name: '',
             description: '',
@@ -70,5 +70,3 @@ const mapDispatchToProps = (dispatchFn) => {
     }
 }
 export default connect(null, mapDispatchToProps)(BrewMethodForm)
-//mapDispatchToProps gives action creator access to dispatch functionality//adds a copy of an action creator w/
-//dispatch adds to the properties of the component
