@@ -4,7 +4,9 @@ import { clearErrorsAction } from '../actions/ErrorAction'
 
 export class Error extends Component {
     componentDidUpdate() {
-        setTimeout(() => this.props.clearErrors() , 5500);
+       if(this.props.errors.length !== 0) {
+           return setTimeout(() => this.props.clearErrors() , 5500)
+       } 
     }
     render() {
         const renderErrors = this.props.errors.map((e) => <div key={e}>{e}</div>)

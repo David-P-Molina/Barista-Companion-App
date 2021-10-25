@@ -21,7 +21,7 @@ class RecipeForm extends Component {
     }
     handleOnChange = (e) => {
         this.setState({
-        [e.target.name]: e.target.value
+            [e.target.name]: e.target.value
         })
     }
     handleOnSubmit = (e) => {
@@ -123,7 +123,7 @@ class RecipeForm extends Component {
                     <label htmlFor='coffee-bean-roast-date'>Roasted on </label>
                     <input 
                         type='date'
-                        name='roast-date'
+                        name='roastDate'
                         value={this.state.roastDate}
                         onChange={this.handleOnChange}
                     /> <br />
