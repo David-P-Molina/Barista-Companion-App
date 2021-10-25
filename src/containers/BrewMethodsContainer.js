@@ -10,8 +10,14 @@ class BrewMethodsContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <BrewMethodForm addBrewMethod={this.props.addBrewMethod}errors={this.props.errors}/>
-                <BrewMethodsList brewMethods={this.props.brewMethods} />
+                <BrewMethodForm 
+                    addBrewMethod={this.props.addBrewMethod} 
+                    errors={this.props.errors}
+                />
+                <BrewMethodsList 
+                    brewMethods={this.props.brewMethods} 
+                    deleteBrewMethod={this.props.deleteBrewMethod}
+                />
             </div>)
     }
 }
@@ -23,7 +29,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData })
+        addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData }),
+        deleteBrewMethod: (id) => dispatch({type: 'DELETE_BREW_METHOD', id})
     }
 }
 

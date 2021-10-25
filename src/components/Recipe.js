@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Recipe = ({props}) => {
+    const deleteBtn = this
     const ratio = (props.water_in_grams / props.coffee_in_grams).toFixed(1) 
     const filter = () => {
         if (props.filter) {

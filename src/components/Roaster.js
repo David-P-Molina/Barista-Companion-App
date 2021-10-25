@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Roaster = ({props}) => {
+    const deleteBtn = this
     return (
         <div className='roaster-card' id={props.id}>
             <a href={props.url}><h1>{props.name}</h1></a>

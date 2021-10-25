@@ -1,6 +1,7 @@
 import React from 'react'
 
 const CoffeeBean =  ({props}) => {
+    const deleteBtn = this.test
         return (
             <div className='coffee-bean' id={props.id}>
                 <h1>{props.name} by <i>{props.roaster_name}</i></h1>

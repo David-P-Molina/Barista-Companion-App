@@ -24,10 +24,10 @@ function brewMethodsReducer(
             }
             
         case 'DELETE_BREW_METHOD':
-            idx = state.brewMethods.findIndex((brew) => brew.id === action.id)
-            return { 
-                brewMethods: [...state.brewMethods.slice(0, idx), 
-                    ...state.brewMethods.slice(idx + 1)]
+            const brewMethods= state.brewMethods.filter((brew) => brew.id !== action.id)
+            // idx = state.brewMethods.findIndex((brew) => brew.id === action.id)
+            return { ...state,
+                brewMethods: [brewMethods]
             }
 
         default:
