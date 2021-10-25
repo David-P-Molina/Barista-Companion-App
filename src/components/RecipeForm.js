@@ -15,10 +15,10 @@ class RecipeForm extends Component {
         waterWeight: '',
         temperature: '',
         filter: '',
-        hrTime: '',
-        minTime: '',
-        secTime: '',
-        bloomTime: '',
+        hrTime: '0',
+        minTime: '0',
+        secTime: '0',
+        bloomTime: '0',
         notes: '',
     }
     handleOnChange = (e) => {
@@ -43,6 +43,7 @@ class RecipeForm extends Component {
             bloom_time: this.state.bloomTime,
             notes: this.state.notes
         }
+        debugger
         this.props.sendRecipeFormDataWithDispatchFn(formData)
         this.setState({
             name: '',
@@ -55,10 +56,10 @@ class RecipeForm extends Component {
             waterWeight: '',
             temperature: '',
             filter: '',
-            hrTime: '',
-            minTime: '',
-            secTime: '',
-            bloomTime: '',
+            hrTime: '0',
+            minTime: '0',
+            secTime: '0',
+            bloomTime: '0',
             notes: '',
         })
     }
@@ -99,7 +100,7 @@ class RecipeForm extends Component {
                     max='24'
                     onChange={this.handleOnChange}
                 >
-                    <option value=''>Hour(s)</option>
+                    <option value='0'>Hour(s)</option>
                     {this.renderNumOptions(24)}
                  </select>
             )
@@ -208,7 +209,7 @@ class RecipeForm extends Component {
                         max='60'
                         onChange={this.handleOnChange}
                     >
-                        <option value=''>Minute(s)</option>
+                        <option value='0'>Minute(s)</option>
                         {this.renderNumOptions(59)}
                     </select> 
                     <select 
@@ -218,7 +219,7 @@ class RecipeForm extends Component {
                         max='60'
                         onChange={this.handleOnChange}
                         >
-                        <option value=''>Sec(s)</option>
+                        <option value='0'>Sec(s)</option>
                         {this.renderNumOptions(59)}
                     </select> <br />
                     <label htmlFor='time'>Bloom Time: </label> <br />
@@ -228,7 +229,7 @@ class RecipeForm extends Component {
                         value={this.state.bloomTime} 
                         onChange={this.handleOnChange}
                     >
-                        <option value=''>Select BloomTime</option>
+                        <option value='0'> Select Bloom Time </option>
                         {this.renderNumOptions(60)} 
                     </select> <br />
                     <label htmlFor='recipe-notes'>Notes</label>
