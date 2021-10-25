@@ -11,6 +11,10 @@ class CoffeeBeanForm extends Component {
         wholeBean: '',
         description: '',
         notes: '',
+        blendType: '',
+        region: '',
+        processingMethod: '',
+        dryingMethod: '',
     }
     handleOnChange = (e) => {
         this.setState({
@@ -26,20 +30,35 @@ class CoffeeBeanForm extends Component {
             whole_bean: this.state.wholeBean ,
             description: this.state.description ,
             notes: this.state.notes ,
+            blend_type: this.state.blendType,
+            region: this.state.region,
+            processing_method: this.state.processingMethod,
+            drying_method: this.state.dryingMethod,
         }
         this.props.sendCoffeeBeanDataWithDispatchFn(formData)
         this.setState({
             name: '',
             roaster: '',
-            userId: '',
             roast: '',
             wholeBean: '',
             description: '',
             notes: '',
+            blendType: '',
+            region: '',
+            processingMethod: '',
+            dryingMethod: '',
         })
     }
     renderRoasters = () => {
         return this.props.roastersList.map((roaster) => <option key={roaster.name} value={roaster.id}>{roaster.name}</option>)
+    }
+    renderRoastLevels = () => {
+        const roastArray = ['Blonde Roast', 'Light/ City Roast', 'Light-Medium/ City +', 'Medium/ Full City', 'Medium-Dark/ Full City +', 'Dark Roast/ Vienna-French']
+        return roastArray.map((r) => <option key={r} value={r}>{r}</option>)
+    }
+    renderBlendType = () => {
+        const blendsArray = ["Espresso", "Single-Origin", "Blend", "Decaf", "Decaf Espresso"]
+        return blendsArray.map((blend) => <option key={blend} value={blend}>{blend}</option>)
     }
     render() {
         return (
@@ -66,19 +85,24 @@ class CoffeeBeanForm extends Component {
                             <option value=''>Select a Roaster From List</option>
                         {this.renderRoasters()}
                     </select> <br />
+                    <label htmlFor='blend-type'>Blend Type: </label>
+                    <select
+                        name='blendType'
+                        value={this.state.blendType}
+                        onChange={this.handleOnChange}
+                    >
+                        <option value=''>Select Blend Type</option>
+                        {this.renderBlendType()}
+                        </select> <br />
                     <label htmlFor='roast-level'>Roast Level: </label><br />
                     <select 
                         type='select' 
                         name='roast'
                         value={this.state.roast} 
-                        onChange={this.handleOnChange}>
-                            <option value=''>Select Roast Level: </option>
-                            <option value='Blonde Roast'>Blonde Roast</option>
-                            <option value='Light/ City Roast'>Light/ City Roast</option>
-                            <option value='Light-Medium/ City +'>Light-Medium/ City +</option>
-                            <option value='Medium/ Full City'>Medium/ Full City</option>
-                            <option value='Medium-Dark/ Full City +'>Medium-Dark/ Full City +</option>
-                            <option value='Dark Roast/ Vienna-French'>Dark Roast/ Vienna-French</option>
+                        onChange={this.handleOnChange}
+                    >
+                        <option value=''>Select Roast Level: </option>
+                        {this.renderRoastLevels()}
                     </select> <br />
                     <label htmlFor='whole-bean-boolean'>Whole Bean: </label>
                     <input 
@@ -86,6 +110,24 @@ class CoffeeBeanForm extends Component {
                         name='wholeBean'
                         value={this.state.wholeBean} 
                         onChange={this.handleOnChange} /><br />
+                    <label htmlFor='region'>Region: </label>
+                    <input 
+                        type='text' 
+                        name='region'
+                        value={this.state.region} 
+                        onChange={this.handleOnChange} /><br />
+                    <label htmlFor='processing-method'>Processing Method: </label>
+                    <input 
+                        type='text' 
+                        name='processingMethod'
+                        value={this.state.processingMethod} 
+                        onChange={this.handleOnChange} /><br />
+                    <label htmlFor='drying-method'>Drying Method: </label>
+                    <input 
+                        type='text' 
+                        name='dryingMethod'
+                        value={this.state.dryingMethod} 
+                        onChange={this.handleOnChange} /><br />    
                     <label htmlFor='description'>Description: </label><br />
                     <input 
                         type='text' 
@@ -93,7 +135,7 @@ class CoffeeBeanForm extends Component {
                         placeholder='Story behind the bean'
                         value={this.state.description} 
                         onChange={this.handleOnChange}/><br />
-                    <label htmlFor='notes'>Notes: </label><br />
+                    <label htmlFor='notes'>Tasting Notes: </label><br />
                     <input 
                         type='text' 
                         name='notes'
