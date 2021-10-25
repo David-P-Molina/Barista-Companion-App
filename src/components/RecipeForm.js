@@ -89,6 +89,22 @@ class RecipeForm extends Component {
             <option key={number} value={number}>{number}</option>
         ))
     }
+    renderHourTimerForColdBrew = () => {
+        if (this.state.brewMethod === "6") {
+            return (
+                <select 
+                    type='number' 
+                    name='hrTime'
+                    value={this.state.hrTime} 
+                    max='24'
+                    onChange={this.handleOnChange}
+                >
+                    <option value=''>Hour(s)</option>
+                    {this.renderNumOptions(24)}
+                 </select>
+            )
+        }
+    }
     render() {
         return (
             <div>
@@ -184,16 +200,7 @@ class RecipeForm extends Component {
                         onChange={this.handleOnChange}
                     /> <br />
                     <label htmlFor='time'>Brew Time: </label> <br />
-                    <select 
-                        type='number' 
-                        name='hrTime'
-                        value={this.state.hrTime} 
-                        max='24'
-                        onChange={this.handleOnChange}
-                    >
-                        <option value=''>Hour(s)</option>
-                        {this.renderNumOptions(24)}
-                    </select>
+                    {this.renderHourTimerForColdBrew()}
                     <select 
                         type='number' 
                         name='minTime'
@@ -211,16 +218,19 @@ class RecipeForm extends Component {
                         max='60'
                         onChange={this.handleOnChange}
                         >
-                        <option value=''>Second(s)</option>
+                        <option value=''>Sec(s)</option>
                         {this.renderNumOptions(59)}
                     </select> <br />
                     <label htmlFor='time'>Bloom Time: </label> <br />
-                    <input 
-                        type='time' 
+                    <select
+                        type='number' 
                         name='bloomTime'
                         value={this.state.bloomTime} 
                         onChange={this.handleOnChange}
-                    /> <br />
+                    >
+                        <option value=''>Select BloomTime</option>
+                        {this.renderNumOptions(60)} 
+                    </select> <br />
                     <label htmlFor='recipe-notes'>Notes</label>
                     <input
                         type='text'
