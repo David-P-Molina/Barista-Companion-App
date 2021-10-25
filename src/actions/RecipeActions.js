@@ -1,4 +1,5 @@
 import URL from "../URL"
+import { displayRecipeError } from "./ErrorAction"
 
 export const sendRecipeFormDataAction = (data) => {
     return (dispatch) => {
@@ -20,7 +21,7 @@ export const sendRecipeFormDataAction = (data) => {
             } else {
                 return response.json()
                 .then((errors) => {
-                    dispatch({ type: 'DISPLAY_RECIPE_ERROR', errors})
+                    dispatch(displayRecipeError(errors))
                 })
         }}
         )}

@@ -90,7 +90,7 @@ class RecipeForm extends Component {
         ))
     }
     renderHourTimerForColdBrew = () => {
-        if (this.state.brewMethod === "6") {
+        if (this.state.brewMethod === "6" || this.state.brewMethod === "10") {
             return (
                 <select 
                     type='number' 

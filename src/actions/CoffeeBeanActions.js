@@ -1,4 +1,5 @@
 import URL from "../URL"
+import { displayCoffeeBeanError } from "./ErrorAction"
 
 export const sendCoffeeBeanDataAction = (data) => {
     return (passingDispatchFn) => {
@@ -19,7 +20,7 @@ export const sendCoffeeBeanDataAction = (data) => {
             } else {
                 return response.json()
                 .then((errors) => {
-                    passingDispatchFn({ type: 'DISPLAY_COFFEE_BEAN_ERROR', errors})
+                    passingDispatchFn(displayCoffeeBeanError(errors))
                 })
             .catch((error) => alert(error))
         }}

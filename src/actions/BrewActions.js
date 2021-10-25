@@ -1,4 +1,5 @@
 import URL from "../URL"
+import { displayBrewMethodError } from "./ErrorAction"
 
 export const sendBrewMethodDataAction = (formData) => {
      return (passingDispatch) => {
@@ -19,7 +20,7 @@ export const sendBrewMethodDataAction = (formData) => {
         } else {
             return response.json()
             .then((errors) => {
-                passingDispatch({ type: 'DISPLAY_BREW_METHOD_ERROR', errors})
+                passingDispatch(displayBrewMethodError(errors))
                 console.log(errors)
             })
     }}

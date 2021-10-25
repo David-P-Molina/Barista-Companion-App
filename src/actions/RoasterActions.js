@@ -1,4 +1,5 @@
 import URL from "../URL"
+import { displayRoasterError } from "./ErrorAction"
 
 export const sendRoasterDataAction = (data) => {
     return (passingDispatchFn) => {
@@ -20,7 +21,7 @@ export const sendRoasterDataAction = (data) => {
             } else {
                 return response.json()
                 .then((errors) => {
-                    passingDispatchFn({ type: 'DISPLAY_ROASTER_ERROR', errors})
+                    passingDispatchFn(displayRoasterError(errors))
                 })
         }}
         )}

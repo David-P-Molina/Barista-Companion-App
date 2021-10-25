@@ -2,7 +2,7 @@ import React from 'react'
 
 const CoffeeBean =  ({props}) => {
         return (
-            <div className='coffee-bean'>
+            <div className='coffee-bean' id={props.id}>
                 <h1>{props.name} by <i>{props.roaster_name}</i></h1>
                 <p>Type: {props.blend_type}</p>
                 Region: {props.region} 

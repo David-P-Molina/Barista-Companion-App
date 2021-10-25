@@ -10,7 +10,7 @@ const Recipe = ({props}) => {
     }
 }
     return (
-        <div className='recipe'>
+        <div className='recipe' id={props.id}>
             <h1>{props.name} Brewed on {props.date_attempted}</h1> 
             <h2><i>{props.brew_method_name}</i> - {filter()}</h2>
             <h3>{props.coffee_bean_name} by <i>{props.roaster_name}</i> roasted on {props.roast_date}</h3>
