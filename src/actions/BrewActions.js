@@ -12,17 +12,14 @@ export const sendBrewMethodDataAction = (formData) => {
         body: JSON.stringify(formData)
     }
     fetch(`${URL}/brew_methods`, configObj)
-    .then((response) => {
+    .then(async (response) => {
         if (response.ok) {
-            return response.json()
-            .then((data) => {
-            passingDispatch({type: 'ADD_BREW_METHOD', payload: data})})
+            const data = await response.json()
+            passingDispatch({ type: 'ADD_BREW_METHOD', payload: data })
         } else {
-            return response.json()
-            .then((errors) => {
-                passingDispatch(displayBrewMethodError(errors))
-                console.log(errors)
-            })
+            const errors = await response.json()
+            passingDispatch(displayBrewMethodError(errors))
+            console.log(errors)
     }}
     )}
 }
@@ -31,16 +28,18 @@ export const fetchBrewMethods= () => {
     return (dispatch) => {
         dispatch({ type: "START_LOADING_BREW_METHODS"})
         fetch(`${URL}/brew_methods`)
-        .then((response => {
+        .then((async response => {
             if (response.ok) {
-                return response.json()
-                .then((brewMethods) => {
-                    let brewArray = [] 
-                    brewMethods.data.forEach((brew) => brewArray.push(brew.attributes))
-                dispatch({ type: "FETCH_BREW_METHODS", brewMethods: brewArray})})
+                const brewMethods = await response.json()
+                let brewArray = []
+                brewMethods.data.forEach((brew) => brewArray.push(brew.attributes))
+                dispatch({ type: "FETCH_BREW_METHODS", brewMethods: brewArray })
             } else {
-                return response.json()
-                .catch((errors) => console.log(errors))
+                try {
+                    return response.json()
+                } catch (errors) {
+                    return console.log(errors)
+                }
             }
         })).catch(() => {
             alert('API Server Not Running!')

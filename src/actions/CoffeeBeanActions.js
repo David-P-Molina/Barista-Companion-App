@@ -12,17 +12,17 @@ export const sendCoffeeBeanDataAction = (data) => {
             body: JSON.stringify(data)
         }
         fetch(`${URL}/coffee_beans`, configObj)
-        .then((response) => {
+        .then(async (response) => {
             if (response.ok) {
-                return response.json()
-                .then((data) => {
-                passingDispatchFn({type: 'ADD_COFFEE_BEAN', payload: data})})
+                const data = await response.json()
+                passingDispatchFn({ type: 'ADD_COFFEE_BEAN', payload: data })
             } else {
-                return response.json()
-                .then((errors) => {
+                try {
+                    const errors = await response.json()
                     passingDispatchFn(displayCoffeeBeanError(errors))
-                })
-            .catch((error) => alert(error))
+                } catch (error) {
+                    return alert(error)
+                }
         }}
         )}
     }
@@ -31,17 +31,18 @@ export const fetchCoffeeBeans = () => {
     return (dispatch) => {
         dispatch({type: 'START_LOADING_COFFEE_BEANS'})
         fetch(`${URL}/coffee_beans`)
-        .then((response) => {
+        .then(async (response) => {
             if (response.ok) {
-                return response.json()
-                .then((coffeeBeans) => {
-                    let beansArray = []
-                    coffeeBeans.data.forEach((bean) => beansArray.push(bean.attributes))
-                    dispatch({type: 'FETCH_COFFEE_BEANS', coffeeBeans: beansArray})
-                })
+                const coffeeBeans = await response.json()
+                let beansArray = []
+                coffeeBeans.data.forEach((bean) => beansArray.push(bean.attributes))
+                dispatch({ type: 'FETCH_COFFEE_BEANS', coffeeBeans: beansArray })
             } else {
-                return response.json()
-                .catch((errors) => console.log(errors))
+                try {
+                    return response.json()
+                } catch (errors) {
+                    return console.log(errors)
+                }
             }
         }).catch((errors) => {
             console.log(errors)

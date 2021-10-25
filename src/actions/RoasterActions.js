@@ -13,16 +13,13 @@ export const sendRoasterDataAction = (data) => {
         }
 
         fetch(`${URL}/roasters`, configObj)
-        .then((response) => {
+        .then(async (response) => {
             if (response.ok) {
-                return response.json()
-                .then((data) => {
-                passingDispatchFn({type: 'ADD_ROASTER', payload: data})})
+                const data = await response.json()
+                passingDispatchFn({ type: 'ADD_ROASTER', payload: data })
             } else {
-                return response.json()
-                .then((errors) => {
-                    passingDispatchFn(displayRoasterError(errors))
-                })
+                const errors = await response.json()
+                passingDispatchFn(displayRoasterError(errors))
         }}
         )}
     }
@@ -31,17 +28,18 @@ export const fetchRoasters = () => {
     return (dispatch) => {
         dispatch({type: 'START_LOADING_ROASTERS'})
         fetch(`${URL}/roasters`)
-        .then((response) => {
+        .then(async (response) => {
             if (response.ok) {
-                return response.json()
-                .then((roasters) => {
-                    const roasterArray = []
-                    roasters.data.map((roaster) => roasterArray.push(roaster.attributes))
-                    dispatch({ type:'FETCH_ROASTERS', roasters: roasterArray})
-                })
+                const roasters = await response.json()
+                const roasterArray = []
+                roasters.data.map((roaster) => roasterArray.push(roaster.attributes))
+                dispatch({ type: 'FETCH_ROASTERS', roasters: roasterArray })
             } else {
-                return response.json()
-                .catch((errors) => console.log(errors))
+                try {
+                    return response.json()
+                } catch (errors) {
+                    return console.log(errors)
+                }
             }
         }).catch((errors) => {
             console.log(errors)
