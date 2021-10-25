@@ -10,7 +10,6 @@ function coffeeBeansReducer(
             return {
                 ...state,
                 loadingCoffeeBeans: true,
-            
             }
 
         case 'FETCH_COFFEE_BEANS':
@@ -23,15 +22,20 @@ function coffeeBeansReducer(
         case 'ADD_COFFEE_BEAN':
             return { 
                 ...state,
-                coffeeBeans: [...state.coffeeBeans, action.payload]
+                coffeeBeans: [
+                    ...state.coffeeBeans, 
+                    action.payload
+                ]
             }
 
         case 'DELETE_COFFEE_BEAN':
             idx = state.coffeeBeans.findIndex((bean) => bean.id === action.id)
             return { 
                 ...state,
-                coffeeBeans: [...state.coffeeBeans.slice(0, idx), 
-                ...state.coffeeBeans.slice(idx + 1)]
+                coffeeBeans: [
+                    ...state.coffeeBeans.slice(0, idx), 
+                    ...state.coffeeBeans.slice(idx + 1)
+                ]
             }
 
         default:

@@ -16,8 +16,13 @@ function recipesReducer(
                 recipes: action.recipes,
                 loadingRecipes: false,
             }
-        // case 'ADD_RECIPE':
-        //     return
+        case 'ADD_RECIPE':
+            return { 
+                recipes: [
+                    ...state.recipes, 
+                    action.payload
+                ]
+            }
         default:
             return state
 }}

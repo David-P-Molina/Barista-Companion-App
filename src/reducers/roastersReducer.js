@@ -21,16 +21,20 @@ function roastersReducer(
 
         case 'ADD_ROASTER':
             return { 
-                roasters: [...state.roasters, action.payload]
+                roasters: [
+                    ...state.roasters, 
+                    action.payload
+                ]
             }
             
         case 'DELETE_ROASTER':
             idx = state.roasters.findIndex((roaster) => roaster.id === action.id)
             return { 
-                roasters: [...state.roasters.slice(0, idx), 
-                ...state.roasters.slice(idx + 1)] 
+                roasters: [
+                    ...state.roasters.slice(0, idx), 
+                    ...state.roasters.slice(idx + 1)
+                ] 
             }
-
         // case 'ADD_COFFEE_BEAN':
         //     let existingRoaster = state.roasters.filter(
         //         (roaster) => roaster.roasterName === action.coffeeBean.roasterName

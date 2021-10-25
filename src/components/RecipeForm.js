@@ -39,11 +39,10 @@ class RecipeForm extends Component {
             water_in_grams: this.state.waterWeight,
             temperature: this.state.temperature,
             filter: this.state.filter,
-            time: (this.state.hrTime * 3600) + (this.state.minTime * 60) + this.state.secTime,
+            time: (parseInt(this.state.hrTime) * 3600) + (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime),
             bloom_time: this.state.bloomTime,
             notes: this.state.notes
         }
-        debugger
         this.props.sendRecipeFormDataWithDispatchFn(formData)
         this.setState({
             name: '',
