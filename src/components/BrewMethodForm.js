@@ -50,7 +50,7 @@ class BrewMethodForm extends Component {
                     placeholder='Description'
                     value={this.state.description} 
                     onChange={this.handleOnChange} /><br />
-                <label htmlFor='brew-method-equipment'>Equipment: (Separated by ", ")</label><br />
+                <label htmlFor='brew-method-equipment'>Equipment: (Please Separate by ",")</label><br />
                 <input 
                     required type='text' 
                     name='equipment'

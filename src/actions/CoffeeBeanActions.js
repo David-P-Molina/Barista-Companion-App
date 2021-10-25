@@ -21,6 +21,7 @@ export const sendCoffeeBeanDataAction = (data) => {
                 .then((errors) => {
                     passingDispatchFn({ type: 'DISPLAY_COFFEE_BEAN_ERROR', errors})
                 })
+            .catch((error) => alert(error))
         }}
         )}
     }
@@ -41,6 +42,8 @@ export const fetchCoffeeBeans = () => {
                 return response.json()
                 .catch((errors) => console.log(errors))
             }
+        }).catch((errors) => {
+            console.log(errors)
         })
     }
 }

@@ -40,6 +40,8 @@ export const fetchRecipes = () => {
                 return response.json()
                 .catch((errors) => console.log(errors))
             }
+        }).catch((errors) => {
+            console.log(errors)
         })
     }
 }

@@ -41,6 +41,8 @@ export const fetchBrewMethods= () => {
                 return response.json()
                 .catch((errors) => console.log(errors))
             }
-        }))
+        })).catch(() => {
+            alert('API Server Not Running!')
+        })
     }
 }
