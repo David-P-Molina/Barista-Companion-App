@@ -15,7 +15,9 @@ class RecipeForm extends Component {
         waterWeight: '',
         temperature: '',
         filter: '',
-        time: '',
+        hrTime: '',
+        minTime: '',
+        secTime: '',
         bloomTime: '',
         notes: '',
     }
@@ -53,7 +55,9 @@ class RecipeForm extends Component {
             waterWeight: '',
             temperature: '',
             filter: '',
-            time: '',
+            hrTime: '',
+            minTime: '',
+            secTime: '',
             bloomTime: '',
             notes: '',
         })
@@ -75,6 +79,15 @@ class RecipeForm extends Component {
                     {bean.name} by {bean.roaster_name} 
                 </option>)
             ))
+    }
+    renderNumOptions(numbers) {
+        const numArray = []
+        for (let i = 0; i <= numbers; i++) {
+            numArray.push(i)
+        }
+        return numArray.map((number) => (
+            <option key={number} value={number}>{number}</option>
+        ))
     }
     render() {
         return (
@@ -117,7 +130,7 @@ class RecipeForm extends Component {
                         value={this.state.coffeeBean} 
                         onChange={this.handleOnChange}
                     >
-                        <option value=''>Select a Coffeebean</option>
+                        <option value=''>Select a Coffee Bean</option>
                         {this.renderCoffeeBeans()}
                     </select> <br />
                     <label htmlFor='coffee-bean-roast-date'>Roasted on </label>
@@ -171,18 +184,44 @@ class RecipeForm extends Component {
                         onChange={this.handleOnChange}
                     /> <br />
                     <label htmlFor='time'>Brew Time: </label> <br />
-                    <input 
-                        type='time' 
-                        name='time'
-                        value={this.state.time} 
+                    <select 
+                        type='number' 
+                        name='hrTime'
+                        value={this.state.hrTime} 
+                        max='24'
                         onChange={this.handleOnChange}
-                    /> <br />
+                    >
+                        <option value=''>Hour(s)</option>
+                        {this.renderNumOptions(24)}
+                    </select>
+                    <select 
+                        type='number' 
+                        name='minTime'
+                        value={this.state.minTime} 
+                        max='60'
+                        onChange={this.handleOnChange}
+                    >
+                        <option value=''>Minute(s)</option>
+                        {this.renderNumOptions(59)}
+                    </select> 
+                    <select 
+                        type='number' 
+                        name='secTime'
+                        value={this.state.secTime} 
+                        max='60'
+                        onChange={this.handleOnChange}
+                        >
+                        <option value=''>Second(s)</option>
+                        {this.renderNumOptions(59)}
+                    </select> <br />
+                    <label htmlFor='time'>Bloom Time: </label> <br />
                     <input 
                         type='time' 
                         name='bloomTime'
                         value={this.state.bloomTime} 
                         onChange={this.handleOnChange}
                     /> <br />
+                    <label htmlFor='recipe-notes'>Notes</label>
                     <input
                         type='text'
                         name='notes'
