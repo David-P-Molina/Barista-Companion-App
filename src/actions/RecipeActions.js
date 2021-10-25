@@ -13,13 +13,16 @@ export const sendRecipeFormDataAction = (data) => {
         }
 
         fetch(`${URL}/recipes`, configObj)
-        .then(async (response) => {
+        .then((response) => {
             if (response.ok) {
-                const data = await response.json()
-                dispatch({ type: 'ADD_RECIPE', payload: data })
+                return response.json()
+                .then((data) => {
+                dispatch({type: 'ADD_RECIPE', payload: data})})
             } else {
-                const errors = await response.json()
-                dispatch(displayRecipeError(errors))
+                return response.json()
+                .then((errors) => {
+                    dispatch(displayRecipeError(errors))
+                })
         }}
         )}
     }
@@ -27,18 +30,16 @@ export const fetchRecipes = () => {
     return (dispatch) => {
         dispatch({ type: 'START_LOADING RECIPES'})
         fetch(`${URL}/recipes`)
-        .then(async (response) => {
+        .then((response) => {
             if (response.ok) {
-                const recipes = await response.json()
-                let recipesArray = []
-                recipes.data.forEach((recipe) => recipesArray.push(recipe.attributes))
-                dispatch({ type: 'FETCH_RECIPES', recipes: recipesArray })
+                return response.json()
+                .then((recipes) => {
+                    let recipesArray = []
+                    recipes.data.forEach((recipe) => recipesArray.push(recipe.attributes))
+                dispatch({ type: 'FETCH_RECIPES', recipes: recipesArray})})
             } else {
-                try {
-                    return response.json()
-                } catch (errors) {
-                    return console.log(errors)
-                }
+                return response.json()
+                .catch((errors) => console.log(errors))
             }
         }).catch((errors) => {
             console.log(errors)
