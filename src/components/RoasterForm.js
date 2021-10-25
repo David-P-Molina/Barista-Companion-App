@@ -22,6 +22,7 @@ class RoasterForm extends React.Component {
             description: this.state.description,
             year_founded: this.state.yearFounded,
             website: this.state.website,
+            deletable: true,
         }
         this.props.sendRoasterDataWithDispatchFn(formData)
         this.setState({

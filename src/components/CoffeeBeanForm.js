@@ -34,6 +34,7 @@ class CoffeeBeanForm extends Component {
             region: this.state.region,
             processing_method: this.state.processingMethod,
             drying_method: this.state.dryingMethod,
+            deletable: true,
         }
         this.props.sendCoffeeBeanDataWithDispatchFn(formData)
         this.setState({

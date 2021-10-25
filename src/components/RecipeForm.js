@@ -41,7 +41,8 @@ class RecipeForm extends Component {
             filter: this.state.filter,
             time: (parseInt(this.state.hrTime) * 3600) + (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime),
             bloom_time: this.state.bloomTime,
-            notes: this.state.notes
+            notes: this.state.notes,
+            deletable: true,
         }
         this.props.sendRecipeFormDataWithDispatchFn(formData)
         this.setState({

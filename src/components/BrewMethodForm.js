@@ -20,6 +20,7 @@ class BrewMethodForm extends Component {
             name: this.state.name,
             description: this.state.description,
             equipment: this.state.equipment,
+            deletable: true,
         }
         this.props.sendBrewMethodDataWithDispatchFn(formData)
         this.setState({
