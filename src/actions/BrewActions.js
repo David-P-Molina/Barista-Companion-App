@@ -47,3 +47,19 @@ export const fetchBrewMethods= () => {
         })
     }
 }
+
+export const deleteBrewMethodAction = (id) => {
+    return (dispatch) => {
+        dispatch({ type: 'DELETE_BREW_METHOD', id })
+        const configDeleteObj = {
+            method: 'DELETE',
+            headers: {
+                "content-type": 'application/json',
+                "accepts": "application/json"
+            }
+        }
+        fetch(`${URL}/brew_methods/${id}`, configDeleteObj)
+        .then(response => response.json())
+        .then(response => alert(response))
+    }
+}
