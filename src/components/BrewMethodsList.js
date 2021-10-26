@@ -3,9 +3,8 @@ import BrewMethod from './BrewMethod'
 
 const BrewMethodsList = ({brewMethods, deleteBrewMethod}) => {
     
-    console.log({brewMethods, deleteBrewMethod})
     const brewMethodsList = () => brewMethods.map((brew) => {
-        return <BrewMethod key={brew.id} props={brew} deleteBrewMethod={deleteBrewMethod}/>
+        return <BrewMethod key={brew.id} brew={brew} deleteBrewMethod={deleteBrewMethod}/>
      })
     return (
     <div className='brew-method-list'>
