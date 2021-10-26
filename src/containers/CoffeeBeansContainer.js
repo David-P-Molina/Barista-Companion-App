@@ -14,8 +14,15 @@ class CoffeeBeansContainer extends Component {
     render() {
         return (
             <div className='coffee-bean-container'>
-                <CoffeeBeanForm addCoffeeBean={this.props.addCoffeeBean} roastersList={this.props.roastersList} errors={this.props.errors}/>
-                <CoffeeBeanList coffeeBeans={this.props.coffeeBeans}/>
+                <CoffeeBeanForm 
+                    addCoffeeBean={this.props.addCoffeeBean} 
+                    roastersList={this.props.roastersList} 
+                    errors={this.props.errors}
+                    />
+                <CoffeeBeanList 
+                    coffeeBeans={this.props.coffeeBeans}
+                    deleteCoffeeBean={this.props.deleteCoffeeBean}
+                />
             </div>
         )
     }
@@ -30,7 +37,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData })
+        addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData }),
+        deleteCoffeeBean: (id) => dispatch({ type: 'DELETE_COFFEE_BEAN', id})
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(CoffeeBeansContainer)
