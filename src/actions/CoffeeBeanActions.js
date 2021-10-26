@@ -48,3 +48,19 @@ export const fetchCoffeeBeans = () => {
         })
     }
 }
+
+export const deleteCoffeeBeanAction = (id) => {
+    return (dispatch) => {
+        dispatch({ type: 'DELETE_COFFEE_BEAN', id })
+        const configDeleteObj = {
+            method: 'DELETE',
+            headers: {
+                "content-type": 'application/json',
+                "accepts": "application/json"
+            }
+        }
+        fetch(`${URL}/coffee_beans/${id}`, configDeleteObj)
+        .then(() => alert('Successfully Deleted Coffee Bean Information'))
+        .catch(() => alert('Unable to Delete Coffee Bean'))
+    }
+}
