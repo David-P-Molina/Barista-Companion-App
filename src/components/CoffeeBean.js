@@ -6,7 +6,7 @@ class CoffeeBean extends React.Component {
     }
     render() {
         const renderDeleteEditBtn = () => {
-            if (this.props.coffeeBean.deletable === false) {
+            if (this.props.coffeeBean.deletable === true) {
                 return ( 
                 <>
                     <button onClick={() => this.handleOnClick(this.props.coffeeBean.id)}>Delete</button> 

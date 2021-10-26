@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import NavBar from './components/NavBar'
 // import Error from './components/Error'
 import Home from './components/Home'
@@ -31,12 +31,15 @@ class App extends Component {
       <Router>
         <NavBar />
         <br />
-        <Route exact path='/' component={Home} />
-        <Route exact path='/about' component={About} />
-        <Route path='/brew-methods' component={BrewMethodsContainer} />
-        <Route path='/coffee-beans' component={CoffeeBeansContainer} />
-        <Route path='/recipes' component={RecipesContainer} />
-        <Route path='/roasters' component={RoastersContainer} />
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route exact path='/about' component={About} />
+          <Route path='/brew-methods' component={BrewMethodsContainer} />
+          <Route path='/coffee-beans' component={CoffeeBeansContainer} />
+          <Route path='/recipes' component={RecipesContainer} />
+          <Route path='/roasters' component={RoastersContainer} />
+          <Route path='/' render={() => <h2>404! The Page You Are Trying To Access Does Not Exist</h2>} />
+        </Switch>
       </Router>
       </div>
     );
