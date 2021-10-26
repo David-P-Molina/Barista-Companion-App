@@ -10,8 +10,14 @@ class RoastersContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <RoasterForm addRoaster={this.props.addRoaster} errors={this.props.errors}/>
-                <RoastersList roasters={this.props.roasters} />
+                <RoasterForm 
+                    addRoaster={this.props.addRoaster} 
+                    errors={this.props.errors}
+                />
+                <RoastersList 
+                    roasters={this.props.roasters} 
+                    deleteRoaster={this.props.deleteRoaster}
+                    />
             </div>)
     }
 }
@@ -23,7 +29,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addRoaster: (formData) => dispatch({ type: "ADD_ROASTER", payload: formData })
+        addRoaster: (formData) => dispatch({ type: "ADD_ROASTER", payload: formData }),
+        deleteRoaster: (id) => dispatch({ type: 'DELETE_ROASTER', id})
     }
 }
 
