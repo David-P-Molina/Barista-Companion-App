@@ -11,8 +11,16 @@ class RecipesContainer extends Component {
     render() {
         return (
             <div className='recipes-container'>
-                <RecipeForm addRecipe={this.props.addRecipe} coffeeBeansList={this.props.coffeeBeans} brewMethodsList={this.props.brewMethods} errors={this.props.errors}/>
-                <RecipesList recipes={this.props.recipes} />
+                <RecipeForm 
+                    addRecipe={this.props.addRecipe} 
+                    coffeeBeansList={this.props.coffeeBeans} 
+                    brewMethodsList={this.props.brewMethods} 
+                    errors={this.props.errors}
+                    />
+                <RecipesList 
+                    recipes={this.props.recipes} 
+                    deleteRecipe={this.props.deleteRecipe}
+                    />
             </div>
         )
     }
@@ -28,7 +36,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatchFn) => {
     return {
-        addRecipe: (formData) => dispatchFn({ type: 'ADD_RECIPE', payload: formData })
+        addRecipe: (formData) => dispatchFn({ type: 'ADD_RECIPE', payload: formData }),
+        deleteRecipe: (id) => dispatchFn({ type: 'DELETE_RECIPE', id})
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer)

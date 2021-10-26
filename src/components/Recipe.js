@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Recipe = ({props}) => {
-    const deleteBtn = this
-    const ratio = (props.water_in_grams / props.coffee_in_grams).toFixed(1) 
+class Recipe extends React.Component {
+    render() {
+    const ratio = (this.props.recipe.water_in_grams / this.props.recipe.coffee_in_grams).toFixed(1) 
     const filter = () => {
-        if (props.filter) {
+        if (this.props.recipe.filter) {
             return "Filter Used"
         } else {
             return "No Filter Used"
@@ -30,18 +30,19 @@ const Recipe = ({props}) => {
         }
     }
     return (
-        <div className='recipe' id={props.id}>
-            <h1>{props.name} Brewed on {props.date_attempted}</h1> 
-            <h2><i>{props.brew_method_name}</i> - {filter()}</h2>
-            <h3>{props.coffee_bean_name} by <i>{props.roaster_name}</i> roasted on {props.roast_date}</h3>
-            <p>Coffee Weight: {props.coffee_in_grams}grams Grind Consistency: {props.grind}
-            Water: {props.water_in_grams}grams{props.temperature} °F</p>
+        <div className='recipe' id={this.props.recipe.id}>
+            <h1>{this.props.recipe.name} Brewed on {this.props.recipe.date_attempted}</h1> 
+            <h2><i>{this.props.recipe.brew_method_name}</i> - {filter()}</h2>
+            <h3>{this.props.recipe.coffee_bean_name} by <i>{this.props.recipe.roaster_name}</i> roasted on {this.props.recipe.roast_date}</h3>
+            <p>Coffee Weight: {this.props.recipe.coffee_in_grams}grams Grind Consistency: {this.props.recipe.grind}
+            Water: {this.props.recipe.water_in_grams}grams{this.props.recipe.temperature} °F</p>
              <h5>1:{ratio} Water to Coffee Ratio</h5>
             <p>
-            Brew Time: {convertTime(props.time)}, Bloom Time: {convertTime(props.bloom_time)}</p>
-            <p>Feedback/Tasting Notes: {props.notes}</p>
+            Brew Time: {convertTime(this.props.recipe.time)}, Bloom Time: {convertTime(this.props.recipe.bloom_time)}</p>
+            <p>Feedback/Tasting Notes: {this.props.recipe.notes}</p>
         </div>
     )
  }
+}
 
 export default Recipe
