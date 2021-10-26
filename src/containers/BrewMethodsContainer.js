@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addBrewMethod: (formData) => dispatch({ type: "ADD_BREW_METHOD", payload: formData }),
-        deleteBrewMethod: (id) => deleteBrewMethodAction(id)
+        deleteBrewMethod: (id) => dispatch(deleteBrewMethodAction(id))
     }
 }
 

@@ -59,7 +59,7 @@ export const deleteBrewMethodAction = (id) => {
             }
         }
         fetch(`${URL}/brew_methods/${id}`, configDeleteObj)
-        .then(response => response.json())
-        .then(response => alert(response))
+        .then(() => alert('Successfully Deleted Brew Method'))
+        .catch(() => alert('Unable to Delete Brew Method'))
     }
 }
