@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux' 
-import { sendBrewMethodDataAction } from '../actions/BrewActions'
 import Error from './Error'
 
 class BrewMethodForm extends Component {
@@ -22,7 +20,8 @@ class BrewMethodForm extends Component {
             equipment: this.state.equipment,
             deletable: true,
         }
-        this.props.sendBrewMethodDataWithDispatchFn(formData)
+        debugger
+        this.props.addBrewMethod(formData)
         this.setState({
             name: '',
             description: '',
@@ -65,9 +64,4 @@ class BrewMethodForm extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatchFn) => {
-    return {
-        sendBrewMethodDataWithDispatchFn: (data) => dispatchFn(sendBrewMethodDataAction(data))
-    }
-}
-export default connect(null, mapDispatchToProps)(BrewMethodForm)
+export default BrewMethodForm

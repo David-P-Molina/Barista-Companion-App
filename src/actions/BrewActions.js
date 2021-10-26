@@ -1,32 +1,38 @@
 import URL from "../URL"
 import { displayBrewMethodError } from "./ErrorAction"
 
-export const sendBrewMethodDataAction = (formData) => {
-     return (passingDispatch) => {
-         const configObj = {
-        headers: {
-            "content-type": 'application/json',
-            "accepts": "application/json"
-        }, 
-        method: 'POST',
-        body: JSON.stringify(formData)
+function addBrewMethodAction(formData) {
+    return {
+        type: "ADD_BREW_METHOD", 
+        formData 
     }
-    fetch(`${URL}/brew_methods`, configObj)
-    .then((response) => {
-        if (response.ok) {
-            return response.json()
-            .then((data) => {
-            passingDispatch({type: 'ADD_BREW_METHOD', payload: data})})
-        } else {
-            return response.json()
-            .then((errors) => {
-                passingDispatch(displayBrewMethodError(errors))
-                console.log(errors)
-            })
-    }}
-    )}
 }
 
+export const sendBrewMethodDataAction = (formData) => {
+    return (passingDispatch) => {
+        const configObj = {
+       headers: {
+           "content-type": 'application/json',
+           "accepts": "application/json"
+       }, 
+       method: 'POST',
+       body: JSON.stringify(formData)
+   }
+   fetch(`${URL}/brew_methods`, configObj)
+   .then((response) => {
+       if (response.ok) {
+           return response.json()
+           .then((data) => {
+           passingDispatch(addBrewMethodAction(data))})
+       } else {
+           return response.json()
+           .then((errors) => {
+               passingDispatch(displayBrewMethodError(errors))
+               console.log(errors)
+           })
+   }}
+   )}
+}
 export const fetchBrewMethods= () => {
     return (dispatch) => {
         dispatch({ type: "START_LOADING_BREW_METHODS"})
@@ -45,13 +51,6 @@ export const fetchBrewMethods= () => {
         })).catch(() => {
             alert('API Server Not Running!')
         })
-    }
-}
-
-export function addBrewMethodAction(formData) {
-    return {
-        type: "ADD_BREW_METHOD", 
-        formData 
     }
 }
 
