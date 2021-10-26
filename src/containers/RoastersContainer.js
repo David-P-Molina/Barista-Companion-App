@@ -8,17 +8,20 @@ class RoastersContainer extends Component {
     state = {
         roasters: [],
     }
+    handleOnClick = () => {
+        
+    }
     render() {
         return (
             <div className='brew-method-container'>
+                <RoastersList 
+                    roasters={this.props.roasters} 
+                    deleteRoaster={this.props.deleteRoaster}
+                />
                 <RoasterForm 
                     addRoaster={this.props.addRoaster} 
                     errors={this.props.errors}
                 />
-                <RoastersList 
-                    roasters={this.props.roasters} 
-                    deleteRoaster={this.props.deleteRoaster}
-                    />
             </div>)
     }
 }

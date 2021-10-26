@@ -15,14 +15,14 @@ class CoffeeBeansContainer extends Component {
     render() {
         return (
             <div className='coffee-bean-container'>
+                <CoffeeBeanList 
+                    coffeeBeans={this.props.coffeeBeans}
+                    deleteCoffeeBean={this.props.deleteCoffeeBean}
+                />
                 <CoffeeBeanForm 
                     addCoffeeBean={this.props.addCoffeeBean} 
                     roastersList={this.props.roastersList} 
                     errors={this.props.errors}
-                    />
-                <CoffeeBeanList 
-                    coffeeBeans={this.props.coffeeBeans}
-                    deleteCoffeeBean={this.props.deleteCoffeeBean}
                 />
             </div>
         )

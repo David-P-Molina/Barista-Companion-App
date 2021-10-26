@@ -1,6 +1,6 @@
 import './App.css';
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route} from 'react-router-dom'
 import NavBar from './components/NavBar'
 // import Error from './components/Error'
 import Home from './components/Home'
@@ -31,13 +31,13 @@ class App extends Component {
       <Router>
         <NavBar />
         <br />
-        <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
-            <Route exact path='/brew-methods' component={BrewMethodsContainer} />
-            <Route exact path='/coffee-beans' component={CoffeeBeansContainer} />
-            <Route exact path='/recipes' component={RecipesContainer} />
-            <Route exact path='/roasters' component={RoastersContainer} />
-        </Router>
+        <Route path='/brew-methods' component={BrewMethodsContainer} />
+        <Route path='/coffee-beans' component={CoffeeBeansContainer} />
+        <Route path='/recipes' component={RecipesContainer} />
+        <Route path='/roasters' component={RoastersContainer} />
+        <Route exact path='/' component={Home} />
+      </Router>
       </div>
     );
   }

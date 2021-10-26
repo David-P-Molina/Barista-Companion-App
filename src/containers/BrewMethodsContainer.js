@@ -11,13 +11,13 @@ class BrewMethodsContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <BrewMethodForm 
-                    addBrewMethod={this.props.sendBrewMethodDataWithDispatchFn} 
-                    errors={this.props.errors}
-                />
                 <BrewMethodsList 
                     brewMethods={this.props.brewMethods} 
                     deleteBrewMethod={this.props.deleteBrewMethod}
+                />
+                <BrewMethodForm 
+                    addBrewMethod={this.props.sendBrewMethodDataWithDispatchFn} 
+                    errors={this.props.errors}
                 />
             </div>)
     }
