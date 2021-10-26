@@ -49,6 +49,13 @@ export const fetchCoffeeBeans = () => {
     }
 }
 
+export function addCoffeeBeanAction(formData) {
+    return {
+        type: "ADD_COFFEE_BEAN", 
+        formData 
+    }
+}
+
 export const deleteCoffeeBeanAction = (id) => {
     return (dispatch) => {
         dispatch({ type: 'DELETE_COFFEE_BEAN', id })

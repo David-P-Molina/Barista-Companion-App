@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RoastersList from '../components/RoastersList'
 import RoasterForm from '../components/RoasterForm'
-import { deleteRoasterAction } from '../actions/RoasterActions'
+import { addRoasterAction, deleteRoasterAction } from '../actions/RoasterActions'
 
 class RoastersContainer extends Component {
     state = {
@@ -30,7 +30,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addRoaster: (formData) => dispatch({ type: "ADD_ROASTER", payload: formData }),
+        addRoaster: (formData) => dispatch(addRoasterAction(formData)),
         deleteRoaster: (id) => dispatch(deleteRoasterAction(id))
     }
 }

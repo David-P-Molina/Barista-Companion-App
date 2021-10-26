@@ -18,8 +18,10 @@ function brewMethodsReducer(
             }
         case 'ADD_BREW_METHOD':
             return { 
-                brewMethods: [...state.brewMethods, 
-                action.payload]
+                brewMethods: [
+                    ...state.brewMethods, 
+                    action.formData
+                ]
             }
             
         case 'DELETE_BREW_METHOD':

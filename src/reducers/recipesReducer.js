@@ -20,7 +20,7 @@ function recipesReducer(
             return { 
                 recipes: [
                     ...state.recipes, 
-                    action.payload
+                    action.formData
                 ]
             }
         case 'DELETE_RECIPE':

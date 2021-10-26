@@ -49,6 +49,13 @@ export const fetchRoasters = () => {
     }
 }
 
+export function addRoasterAction(formData) {
+    return {
+        type: "ADD_ROASTER", 
+        formData 
+    }
+}
+
 export const deleteRoasterAction = (id) => {
     return (dispatch) => {
         dispatch({ type: 'DELETE_ROASTER', id })

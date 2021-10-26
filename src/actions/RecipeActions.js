@@ -47,6 +47,13 @@ export const fetchRecipes = () => {
     }
 }
 
+export function addRecipeAction(formData) {
+    return {
+        type: "ADD_RECIPE", 
+        formData 
+    }
+}
+
 export const deleteRecipeAction = (id) => {
     return (dispatch) => {
         dispatch({ type: 'DELETE_RECIPE', id })

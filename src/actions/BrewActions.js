@@ -48,6 +48,13 @@ export const fetchBrewMethods= () => {
     }
 }
 
+export function addBrewMethodAction(formData) {
+    return {
+        type: "ADD_BREW_METHOD", 
+        formData 
+    }
+}
+
 export const deleteBrewMethodAction = (id) => {
     return (dispatch) => {
         dispatch({ type: 'DELETE_BREW_METHOD', id })

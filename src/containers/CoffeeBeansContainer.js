@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { deleteCoffeeBeanAction } from '../actions/CoffeeBeanActions'
+import { addCoffeeBeanAction, deleteCoffeeBeanAction } from '../actions/CoffeeBeanActions'
 import CoffeeBeanForm from '../components/CoffeeBeanForm'
 import CoffeeBeanList from '../components/CoffeeBeansList'
 
@@ -38,7 +38,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addCoffeeBean: (formData) => dispatch({ type: "ADD_COFFEE_BEAN", payload: formData }),
+        addCoffeeBean: (formData) => dispatch(addCoffeeBeanAction(formData)),
         deleteCoffeeBean: (id) => dispatch(deleteCoffeeBeanAction(id))
     }
 }

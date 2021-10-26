@@ -23,7 +23,7 @@ function coffeeBeansReducer(
                 ...state,
                 coffeeBeans: [
                     ...state.coffeeBeans, 
-                    action.payload
+                    action.formData
                 ]
             }
 

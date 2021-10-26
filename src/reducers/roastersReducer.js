@@ -22,7 +22,7 @@ function roastersReducer(
             return { 
                 roasters: [
                     ...state.roasters, 
-                    action.payload
+                    action.formData
                 ]
             }
             
