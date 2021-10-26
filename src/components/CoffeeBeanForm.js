@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { sendCoffeeBeanDataAction } from '../actions/CoffeeBeanActions'
 import Error from './Error'
 
 class CoffeeBeanForm extends Component {
@@ -36,7 +34,7 @@ class CoffeeBeanForm extends Component {
             drying_method: this.state.dryingMethod,
             deletable: true,
         }
-        this.props.sendCoffeeBeanDataWithDispatchFn(formData)
+        this.props.addCoffeeBean(formData)
         this.setState({
             name: '',
             roaster: '',
@@ -150,10 +148,4 @@ class CoffeeBeanForm extends Component {
     }
 }
 
-
-const mapDispatchToProps = (dispatchFn) => {
-    return {
-        sendCoffeeBeanDataWithDispatchFn: (data) => dispatchFn(sendCoffeeBeanDataAction(data))
-    }
-}
-export default connect(null, mapDispatchToProps)(CoffeeBeanForm)
+export default CoffeeBeanForm

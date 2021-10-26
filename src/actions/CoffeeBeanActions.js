@@ -1,6 +1,13 @@
 import URL from "../URL"
 import { displayCoffeeBeanError } from "./ErrorAction"
 
+function addCoffeeBeanAction(formData) {
+    return {
+        type: "ADD_COFFEE_BEAN", 
+        formData 
+    }
+}
+
 export const sendCoffeeBeanDataAction = (data) => {
     return (passingDispatchFn) => {
         const configObj = {
@@ -16,7 +23,7 @@ export const sendCoffeeBeanDataAction = (data) => {
             if (response.ok) {
                 return response.json()
                 .then((data) => {
-                passingDispatchFn({type: 'ADD_COFFEE_BEAN', payload: data})})
+                passingDispatchFn(addCoffeeBeanAction(data))})
             } else {
                 return response.json()
                 .then((errors) => {
@@ -46,13 +53,6 @@ export const fetchCoffeeBeans = () => {
         }).catch((errors) => {
             console.log(errors)
         })
-    }
-}
-
-export function addCoffeeBeanAction(formData) {
-    return {
-        type: "ADD_COFFEE_BEAN", 
-        formData 
     }
 }
 
