@@ -1,12 +1,15 @@
 import React from 'react'
 
 class CoffeeBean extends React.Component {
+    handleOnClick = () => {
+        this.props.deleteCoffeeBean(this.props.coffeeBean.id)
+    }
     render() {
         const renderDeleteEditBtn = () => {
-            if (this.this.props.coffeeBean.deletable === true) {
+            if (this.props.coffeeBean.deletable === false) {
                 return ( 
                 <>
-                    <button onClick={() => this.handleOnClick(this.this.props.coffeeBean.id)}>Delete</button> 
+                    <button onClick={() => this.handleOnClick(this.props.coffeeBean.id)}>Delete</button> 
                     {/* <button onClick='{this.props.coffeeBean.editCoffeeBean}'>Edit</button> */}
                 </>
                 )
