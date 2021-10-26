@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { deleteRecipeAction } from '../actions/RecipeActions'
 import RecipeForm from '../components/RecipeForm'
 import RecipesList from '../components/RecipesList'
 
@@ -37,7 +38,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatchFn) => {
     return {
         addRecipe: (formData) => dispatchFn({ type: 'ADD_RECIPE', payload: formData }),
-        deleteRecipe: (id) => dispatchFn({ type: 'DELETE_RECIPE', id})
+        deleteRecipe: (id) => dispatchFn(deleteRecipeAction(id))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RecipesContainer)

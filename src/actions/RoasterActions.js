@@ -48,3 +48,19 @@ export const fetchRoasters = () => {
         })
     }
 }
+
+export const deleteRoasterAction = (id) => {
+    return (dispatch) => {
+        dispatch({ type: 'DELETE_ROASTER', id })
+        const configDeleteObj = {
+            method: 'DELETE',
+            headers: {
+                "content-type": 'application/json',
+                "accepts": "application/json"
+            }
+        }
+        fetch(`${URL}/roaster/${id}`, configDeleteObj)
+        .then(() => alert('Successfully Deleted Roaster Information'))
+        .catch(() => alert('Unable to Delete Roaster'))
+    }
+}

@@ -46,3 +46,19 @@ export const fetchRecipes = () => {
         })
     }
 }
+
+export const deleteRecipeAction = (id) => {
+    return (dispatch) => {
+        dispatch({ type: 'DELETE_RECIPE', id })
+        const configDeleteObj = {
+            method: 'DELETE',
+            headers: {
+                "content-type": 'application/json',
+                "accepts": "application/json"
+            }
+        }
+        fetch(`${URL}/recipes/${id}`, configDeleteObj)
+        .then(() => alert('Successfully Deleted Recipe'))
+        .catch(() => alert('Unable to Delete Recipe'))
+    }
+}
