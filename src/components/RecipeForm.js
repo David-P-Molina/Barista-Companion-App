@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { sendRecipeFormDataAction } from '../actions/RecipeActions'
 import Error from './Error'
 
 class RecipeForm extends Component {
@@ -247,9 +245,4 @@ class RecipeForm extends Component {
     }
 }
 
-const mapDispatchToProps = (dispatchFn) => {
-    return {
-        sendRecipeFormDataWithDispatchFn: (data) => dispatchFn(sendRecipeFormDataAction(data))
-    }
-}
-export default connect(null, mapDispatchToProps)(RecipeForm)
+export default RecipeForm

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addRecipeAction, deleteRecipeAction } from '../actions/RecipeActions'
+import { deleteRecipeAction, sendRecipeFormDataAction } from '../actions/RecipeActions'
 import RecipeForm from '../components/RecipeForm'
 import RecipesList from '../components/RecipesList'
 
@@ -37,7 +37,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatchFn) => {
     return {
-        addRecipe: (formData) => dispatchFn(addRecipeAction(formData)),
+        addRecipe: (formData) => dispatchFn(sendRecipeFormDataAction(formData)),
         deleteRecipe: (id) => dispatchFn(deleteRecipeAction(id))
     }
 }

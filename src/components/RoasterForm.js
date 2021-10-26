@@ -1,6 +1,4 @@
 import React from 'react' 
-import { connect } from 'react-redux'
-import { sendRoasterDataAction } from '../actions/RoasterActions'
 import Error from './Error'
 
 class RoasterForm extends React.Component {
@@ -77,9 +75,4 @@ class RoasterForm extends React.Component {
     }
 }
 
-const mapDispatchToProps = (dispatchFn) => {
-    return {
-        sendRoasterDataWithDispatchFn: (data) => dispatchFn(sendRoasterDataAction(data))
-    }
-}
-export default connect(null, mapDispatchToProps)(RoasterForm)
+export default RoasterForm
