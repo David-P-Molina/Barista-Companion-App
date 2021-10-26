@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import BrewMethodsList from '../components/BrewMethodsList'
-import { connect } from 'react-redux'
 import BrewMethodForm from '../components/BrewMethodForm'
+import { connect } from 'react-redux'
 import { sendBrewMethodDataAction, deleteBrewMethodAction } from '../actions/BrewActions'
+import { Route, Switch} from 'react-router-dom'
 
 class BrewMethodsContainer extends Component {
     state = {
@@ -11,14 +12,20 @@ class BrewMethodsContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <BrewMethodsList 
-                    brewMethods={this.props.brewMethods} 
-                    deleteBrewMethod={this.props.deleteBrewMethod}
-                />
-                <BrewMethodForm 
-                    addBrewMethod={this.props.sendBrewMethodDataWithDispatchFn} 
-                    errors={this.props.errors}
-                />
+                <Switch>
+                    <Route exact path='/brew-methods'>
+                        <BrewMethodsList 
+                            brewMethods={this.props.brewMethods} 
+                            deleteBrewMethod={this.props.deleteBrewMethod}
+                        />
+                    </Route>
+                    <Route exact path='/brew-methods/new'>
+                        <BrewMethodForm 
+                            addBrewMethod={this.props.sendBrewMethodDataWithDispatchFn} 
+                            errors={this.props.errors}
+                        />
+                    </Route>
+                </Switch>
             </div>)
     }
 }

@@ -34,10 +34,10 @@ class App extends Component {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
-          <Route path='/brew-methods' render={() => <BrewMethodsContainer/> } />
-          <Route path='/coffee-beans' render={() => <CoffeeBeansContainer />} />
-          <Route path='/recipes' render={() => <RecipesContainer />} /> 
-          <Route path='/roasters' render={() => <RoastersContainer />} />
+          <Route path='/brew-methods' component={() => <BrewMethodsContainer/> } />
+          <Route path='/coffee-beans' component={() => <CoffeeBeansContainer />} />
+          <Route path='/recipes' component={() => <RecipesContainer />} /> 
+          <Route path='/roasters' component={() => <RoastersContainer />} />
           <Route path='/' render={() => <h2>404! The Page You Are Trying To Access Does Not Exist</h2>} />
         </Switch>
       </Router>

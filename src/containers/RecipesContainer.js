@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { deleteRecipeAction, sendRecipeFormDataAction } from '../actions/RecipeActions'
 import RecipeForm from '../components/RecipeForm'
 import RecipesList from '../components/RecipesList'
+import { connect } from 'react-redux'
+import { deleteRecipeAction, sendRecipeFormDataAction } from '../actions/RecipeActions'
 
 class RecipesContainer extends Component {
     state = {
