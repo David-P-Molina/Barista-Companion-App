@@ -44,8 +44,8 @@ class Recipe extends React.Component {
     }
     return (
         <div className='recipe' id={this.props.recipe.id}>
-            {renderDeleteEditBtn()}
             <h1>{this.props.recipe.name} Brewed on {this.props.recipe.date_attempted}</h1> 
+            {renderDeleteEditBtn()}
             <h2><i>{this.props.recipe.brew_method_name}</i> - {filter()}</h2>
             <h3>{this.props.recipe.coffee_bean_name} by <i>{this.props.recipe.roaster_name}</i> roasted on {this.props.recipe.roast_date}</h3>
             <p>Coffee Weight: {this.props.recipe.coffee_in_grams}grams Grind Consistency: {this.props.recipe.grind}

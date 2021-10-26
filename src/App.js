@@ -31,12 +31,12 @@ class App extends Component {
       <Router>
         <NavBar />
         <br />
+        <Route exact path='/' component={Home} />
         <Route exact path='/about' component={About} />
         <Route path='/brew-methods' component={BrewMethodsContainer} />
         <Route path='/coffee-beans' component={CoffeeBeansContainer} />
         <Route path='/recipes' component={RecipesContainer} />
         <Route path='/roasters' component={RoastersContainer} />
-        <Route exact path='/' component={Home} />
       </Router>
       </div>
     );

@@ -21,12 +21,12 @@ class BrewMethod extends React.Component {
         return (
             <div className='brew-method'>
                 <h1>{this.props.brew.id} - {this.props.brew.name}</h1>
+                {renderDeleteEditBtn()}
                 <p>{this.props.brew.description}</p>
                 <h4>What You Need</h4>
                 <ul>
                     {listOfEquipment}
                 </ul>
-                {renderDeleteEditBtn()}
             </div>
         )
     }

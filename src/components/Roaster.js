@@ -18,9 +18,9 @@ class Roaster extends React.Component {
     return (
         <div className='roaster-card' id={this.props.roaster.id}>
             <a href={this.props.roaster.url}><h1>{this.props.roaster.name}</h1></a>
+            {renderDeleteEditBtn()}
             <h3>{this.props.roaster.year_founded}</h3>
             <p>{this.props.roaster.description}</p>
-            {renderDeleteEditBtn()}
         </div>
     )
     }

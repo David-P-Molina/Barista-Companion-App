@@ -17,8 +17,8 @@ class CoffeeBean extends React.Component {
         }
         return (
             <div className='coffee-bean' id={this.props.coffeeBean.id}>
-                {renderDeleteEditBtn()}
                 <h1>{this.props.coffeeBean.name} by <i>{this.props.coffeeBean.roaster_name}</i></h1>
+                {renderDeleteEditBtn()}
                 <p>Type: {this.props.coffeeBean.blend_type}</p>
                 Region: {this.props.coffeeBean.region} 
                 <span>Tasting Notes: {this.props.coffeeBean.notes}</span>
