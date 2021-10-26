@@ -1,7 +1,20 @@
 import React from 'react'
 
 class Recipe extends React.Component {
+    handleOnClick = () => {
+        this.props.deleteRecipe(this.props.recipe.id)
+    }
     render() {
+    const renderDeleteEditBtn = () => {
+        if (this.props.recipe.deletable === true) {
+            return ( 
+            <>
+                <button onClick={() => this.handleOnClick(this.props.recipe.id)}>Delete</button> 
+                {/* <button onClick='{props.editRecipeMethod}'>Edit</button> */}
+            </>
+            )
+        }
+    }
     const ratio = (this.props.recipe.water_in_grams / this.props.recipe.coffee_in_grams).toFixed(1) 
     const filter = () => {
         if (this.props.recipe.filter) {
@@ -31,6 +44,7 @@ class Recipe extends React.Component {
     }
     return (
         <div className='recipe' id={this.props.recipe.id}>
+            {renderDeleteEditBtn}
             <h1>{this.props.recipe.name} Brewed on {this.props.recipe.date_attempted}</h1> 
             <h2><i>{this.props.recipe.brew_method_name}</i> - {filter()}</h2>
             <h3>{this.props.recipe.coffee_bean_name} by <i>{this.props.recipe.roaster_name}</i> roasted on {this.props.recipe.roast_date}</h3>
