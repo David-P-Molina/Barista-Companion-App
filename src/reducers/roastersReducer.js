@@ -4,7 +4,6 @@ function roastersReducer(
         loadingRoasters: false
     }, action
     ) {
-    let idx
     switch (action.type) {
         case 'START_LOADING_ROASTERS':
             return {
@@ -28,12 +27,9 @@ function roastersReducer(
             }
             
         case 'DELETE_ROASTER':
-            idx = state.roasters.findIndex((roaster) => roaster.id === action.id)
             return { 
-                roasters: [
-                    ...state.roasters.slice(0, idx), 
-                    ...state.roasters.slice(idx + 1)
-                ] 
+                ...state,
+                roasters: state.roasters.filter((roast) => roast.id !== action.id)
             }
         // case 'ADD_COFFEE_BEAN':
         //     let existingRoaster = state.roasters.filter(

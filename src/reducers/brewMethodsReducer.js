@@ -4,7 +4,6 @@ function brewMethodsReducer(
         loadingBrewMethods: false
     }, action
     ) {
-    let idx
     switch (action.type) {
         case "START_LOADING_BREW_METHODS":
             return {
@@ -24,9 +23,8 @@ function brewMethodsReducer(
             }
             
         case 'DELETE_BREW_METHOD':
-            // const brewMethods= state.brewMethods.filter((brew) => brew.id !== action.id)
-            // idx = state.brewMethods.findIndex((brew) => brew.id === action.id)
             return {
+                ...state,
                 brewMethods: state.brewMethods.filter((brew) => brew.id !== action.id)
             }
 

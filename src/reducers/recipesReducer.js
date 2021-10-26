@@ -23,6 +23,11 @@ function recipesReducer(
                     action.payload
                 ]
             }
+        case 'DELETE_RECIPE':
+            return {
+                ...state,
+                recipes: state.recipes.filter((recipe) => recipe.id !== action.id)
+            }
         default:
             return state
 }}

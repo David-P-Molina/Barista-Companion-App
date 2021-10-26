@@ -4,7 +4,6 @@ function coffeeBeansReducer(
         loadingCoffeeBeans: false
     }, action
     ) {
-    let idx
     switch (action.type) {
         case 'START_LOADING_COFFEE_BEANS':
             return {
@@ -29,13 +28,9 @@ function coffeeBeansReducer(
             }
 
         case 'DELETE_COFFEE_BEAN':
-            idx = state.coffeeBeans.findIndex((bean) => bean.id === action.id)
             return { 
                 ...state,
-                coffeeBeans: [
-                    ...state.coffeeBeans.slice(0, idx), 
-                    ...state.coffeeBeans.slice(idx + 1)
-                ]
+                coffeeBeans: state.coffeeBeans.filter((bean) => bean.id !== action.id)
             }
 
         default:
