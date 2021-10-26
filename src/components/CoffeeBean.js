@@ -1,18 +1,30 @@
 import React from 'react'
 
-const CoffeeBean =  ({props}) => {
-    const deleteBtn = this.test
+class CoffeeBean extends React.Component {
+    render() {
+        const renderDeleteEditBtn = () => {
+            if (this.this.props.coffeeBean.deletable === true) {
+                return ( 
+                <>
+                    <button onClick={() => this.handleOnClick(this.this.props.coffeeBean.id)}>Delete</button> 
+                    {/* <button onClick='{this.props.coffeeBean.editCoffeeBean}'>Edit</button> */}
+                </>
+                )
+            }
+        }
         return (
-            <div className='coffee-bean' id={props.id}>
-                <h1>{props.name} by <i>{props.roaster_name}</i></h1>
-                <p>Type: {props.blend_type}</p>
-                Region: {props.region} 
-                <span>Tasting Notes: {props.notes}</span>
-                <p>{props.description}</p>
-                Drying Method: {props.drying_method} 
-                Processing Method: {props.processing_method} 
-                Roast Level: {props.roast} {props.whole_bean}
+            <div className='coffee-bean' id={this.props.coffeeBean.id}>
+                {renderDeleteEditBtn()}
+                <h1>{this.props.coffeeBean.name} by <i>{this.props.coffeeBean.roaster_name}</i></h1>
+                <p>Type: {this.props.coffeeBean.blend_type}</p>
+                Region: {this.props.coffeeBean.region} 
+                <span>Tasting Notes: {this.props.coffeeBean.notes}</span>
+                <p>{this.props.coffeeBean.description}</p>
+                Drying Method: {this.props.coffeeBean.drying_method} 
+                Processing Method: {this.props.coffeeBean.processing_method} 
+                Roast Level: {this.props.coffeeBean.roast} {this.props.coffeeBean.whole_bean}
             </div>
         )
+    }
 }
 export default CoffeeBean
