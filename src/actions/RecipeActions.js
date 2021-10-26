@@ -1,6 +1,13 @@
 import URL from "../URL"
 import { displayRecipeError } from "./ErrorAction"
 
+function addRecipeAction(formData) {
+    return {
+        type: "ADD_RECIPE", 
+        formData 
+    }
+}
+
 export const sendRecipeFormDataAction = (data) => {
     return (dispatch) => {
         const configObj = {
@@ -17,7 +24,7 @@ export const sendRecipeFormDataAction = (data) => {
             if (response.ok) {
                 return response.json()
                 .then((data) => {
-                dispatch({type: 'ADD_RECIPE', payload: data})})
+                dispatch(addRecipeAction(data))})
             } else {
                 return response.json()
                 .then((errors) => {
@@ -44,13 +51,6 @@ export const fetchRecipes = () => {
         }).catch((errors) => {
             console.log(errors)
         })
-    }
-}
-
-export function addRecipeAction(formData) {
-    return {
-        type: "ADD_RECIPE", 
-        formData 
     }
 }
 

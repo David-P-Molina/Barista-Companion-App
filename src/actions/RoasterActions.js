@@ -1,6 +1,12 @@
 import URL from "../URL"
 import { displayRoasterError } from "./ErrorAction"
 
+function addRoasterAction(formData) {
+    return {
+        type: "ADD_ROASTER", 
+        formData 
+    }
+}
 export const sendRoasterDataAction = (data) => {
     return (passingDispatchFn) => {
         const configObj = {
@@ -17,7 +23,7 @@ export const sendRoasterDataAction = (data) => {
             if (response.ok) {
                 return response.json()
                 .then((data) => {
-                passingDispatchFn({type: 'ADD_ROASTER', payload: data})})
+                passingDispatchFn(addRoasterAction(data))})
             } else {
                 return response.json()
                 .then((errors) => {
@@ -46,13 +52,6 @@ export const fetchRoasters = () => {
         }).catch((errors) => {
             console.log(errors)
         })
-    }
-}
-
-export function addRoasterAction(formData) {
-    return {
-        type: "ADD_ROASTER", 
-        formData 
     }
 }
 
