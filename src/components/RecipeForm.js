@@ -60,7 +60,6 @@ class RecipeForm extends Component {
             bloomTime: '0',
             notes: '',
         })
-        this.props.return()
     }
 
     renderBrewMethods = () => {
@@ -241,6 +240,8 @@ class RecipeForm extends Component {
                     />
                     <button type='submit'>Create Recipe</button>
                 </form>
+                <br/>
+            <button onClick={() => this.props.return()}>Go Back To Recipes List</button>
             </div>
         )
     }

@@ -29,7 +29,6 @@ class RoasterForm extends React.Component {
             yearFounded: '',
             website: '',
         })
-        this.props.return()
     }
     render() {
         let currentYear = new Date().getFullYear()
@@ -71,6 +70,8 @@ class RoasterForm extends React.Component {
                     onChange={this.handleOnChange}/><br />
                 <button type='submit'>Add Roaster</button>
             </form>
+            <br/>
+            <button onClick={() => this.props.return()}>Go Back To Roasters List</button>
             </div>
         )
     }

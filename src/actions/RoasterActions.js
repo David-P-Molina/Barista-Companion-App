@@ -65,7 +65,7 @@ export const deleteRoasterAction = (id) => {
                 "accepts": "application/json"
             }
         }
-        fetch(`${URL}/roaster/${id}`, configDeleteObj)
+        fetch(`${URL}/roasters/${id}`, configDeleteObj)
         .then(() => alert('Successfully Deleted Roaster Information'))
         .catch(() => alert('Unable to Delete Roaster'))
     }
