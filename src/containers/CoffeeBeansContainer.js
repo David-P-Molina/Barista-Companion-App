@@ -38,7 +38,7 @@ class CoffeeBeansContainer extends Component {
                         const id = parseInt(routeInfo.match.params.id)
                         const foundCoffeeBean = this.props.coffeeBeans.find((bean) => bean.id === id)
                         const coffeeBeanInfo = <CoffeeBean coffeeBean={foundCoffeeBean}/>
-                        return (this.props.coffeeBeans.length > 0 ? coffeeBeanInfo : <h1>Loading Roaster...</h1>)
+                        return (this.props.coffeeBeans.length > 0 ? coffeeBeanInfo : <h1>Loading Coffee Bean...</h1>)
                     }}
                     />
                 </Switch>
