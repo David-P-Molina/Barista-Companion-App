@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import BrewMethodsList from '../components/BrewMethodsList'
 import BrewMethodForm from '../components/BrewMethodForm'
+import BrewMethod from '../components/BrewMethod'
 import { connect } from 'react-redux'
 import { sendBrewMethodDataAction, deleteBrewMethodAction } from '../actions/BrewActions'
 import { Route, Switch} from 'react-router-dom'
@@ -27,7 +28,14 @@ class BrewMethodsContainer extends Component {
                                 return={() => routeInfo.history.push('/brew-methods')}
                             />
                         )
-                    }}/>                      
+                    }}/>    
+                    <Route exact path='/brew-methods/:id' component={(routeInfo) => {
+                        const id = parseInt(routeInfo.match.params.id)
+                        const foundBrewMethod = this.props.brewMethods.find((brewMethod) => brewMethod.id === id)
+                        const brewMethodInfo = <BrewMethod brewMethod={foundBrewMethod}/>
+                        return (this.props.brewMethods.length > 0 ? brewMethodInfo : <h1>Loading Brew Method...</h1>)
+                    }}
+BrewMethod                  
                 </Switch>
             </div>)
     }

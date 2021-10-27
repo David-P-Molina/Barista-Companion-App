@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CoffeeBeanForm from '../components/CoffeeBeanForm'
 import CoffeeBeanList from '../components/CoffeeBeansList'
+import CoffeeBean from '../components/CoffeeBean'
 import { connect } from 'react-redux'
 import { deleteCoffeeBeanAction, sendCoffeeBeanDataAction } from '../actions/CoffeeBeanActions'
 import { Route, Switch} from 'react-router-dom'
@@ -33,7 +34,13 @@ class CoffeeBeansContainer extends Component {
                             />
                             )
                         }}/>
-                            
+                    <Route exact path='/coffee-beans/:id' component={(routeInfo) => {
+                        const id = parseInt(routeInfo.match.params.id)
+                        const foundCoffeeBean = this.props.coffeeBeans.find((bean) => bean.id === id)
+                        const coffeeBeanInfo = <CoffeeBean roaster={foundCoffeeBean}/>
+                        return (this.props.coffeeBeans.length > 0 ? coffeeBeanInfo : <h1>Loading Roaster...</h1>)
+                    }}
+                    />
                 </Switch>
             </div>
         )

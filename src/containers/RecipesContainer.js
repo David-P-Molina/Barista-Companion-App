@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RecipeForm from '../components/RecipeForm'
 import RecipesList from '../components/RecipesList'
+import Recipe from '../components/Recipe'
 import { connect } from 'react-redux'
 import { deleteRecipeAction, sendRecipeFormDataAction } from '../actions/RecipeActions'
 import { Route, Switch} from 'react-router-dom'
@@ -31,6 +32,13 @@ class RecipesContainer extends Component {
                             />
                         )
                     }}/>
+                    <Route exact path='/recipes/:id' component={(routeInfo) => {
+                        const id = parseInt(routeInfo.match.params.id)
+                        const foundRecipe = this.props.recipes.find((recipe) => recipe.id === id)
+                        const recipeInfo = <Recipe roaster={foundRecipe}/>
+                        return (this.props.recipes.length > 0 ? recipeInfo : <h1>Loading Recipe...</h1>)
+                    }}
+                    />
                 </Switch>
             </div>
         )
