@@ -36,8 +36,12 @@ class RoastersContainer extends Component {
                         )
                     }}/>
                         
-                    <Route exact path='/roasters/:id' component={() => {
-                        <Roaster />}}
+                    <Route exact path='/roasters/:id' component={(routeInfo) => {
+                        const id = parseInt(routeInfo.match.params.id)
+                        const foundRoaster = this.props.roasters.find((roaster) => roaster.id === id)
+                        const roasterInfo = <Roaster roaster={foundRoaster}/>
+                        return (this.props.roasters.length > 0 ? roasterInfo : <h1>Loading Roaster...</h1>)
+                    }}
                     />
                 </Switch>
             </div>)
