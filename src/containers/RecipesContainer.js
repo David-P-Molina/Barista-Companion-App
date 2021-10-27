@@ -20,14 +20,17 @@ class RecipesContainer extends Component {
                             deleteRecipe={this.props.deleteRecipe}
                         />
                     </Route>
-                    <Route exact path='/recipes/new'>
-                        <RecipeForm 
-                            addRecipe={this.props.addRecipe} 
-                            coffeeBeansList={this.props.coffeeBeans} 
-                            brewMethodsList={this.props.brewMethods} 
-                            errors={this.props.errors}
-                        />
-                    </Route>
+                    <Route exact path='/recipes/new' component={(routeInfo) => {
+                        return (
+                            <RecipeForm 
+                                addRecipe={this.props.addRecipe} 
+                                coffeeBeansList={this.props.coffeeBeans} 
+                                brewMethodsList={this.props.brewMethods} 
+                                errors={this.props.errors}
+                                return={() => routeInfo.history.push('/recipes')}
+                            />
+                        )
+                    }}/>
                 </Switch>
             </div>
         )

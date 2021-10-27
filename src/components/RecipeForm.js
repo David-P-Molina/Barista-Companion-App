@@ -60,6 +60,7 @@ class RecipeForm extends Component {
             bloomTime: '0',
             notes: '',
         })
+        this.props.return()
     }
 
     renderBrewMethods = () => {
