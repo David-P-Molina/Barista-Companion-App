@@ -42,7 +42,7 @@ class RecipeForm extends Component {
             notes: this.state.notes,
             deletable: true,
         }
-        this.props.sendRecipeFormDataWithDispatchFn(formData)
+        this.props.addRecipe(formData)
         this.setState({
             name: '',
             dateAttempted: '',
