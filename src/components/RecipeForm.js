@@ -241,7 +241,7 @@ class RecipeForm extends Component {
                     <button type='submit'>Create Recipe</button>
                 </form>
                 <br/>
-            <button onClick={() => this.props.return()}>Go Back To Recipes List</button>
+            <button onClick={() => this.props.return()}>Go Back To Recipes</button>
             </div>
         )
     }

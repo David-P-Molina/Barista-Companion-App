@@ -59,6 +59,8 @@ class BrewMethodForm extends Component {
                     onChange={this.handleOnChange} /><br /><br />
                 <button  type='submit'>Add Brew Method</button>
             </form>
+            <br/>
+            <button onClick={() => this.props.return()}>Go Back To Brew Methods</button>
             </div>
         )
     }

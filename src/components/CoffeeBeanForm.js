@@ -143,6 +143,8 @@ class CoffeeBeanForm extends Component {
                         onChange={this.handleOnChange}/><br /><br />
                     <button type='submit'>Add Coffee Bean</button>
                 </form>
+                <br/>
+            <button onClick={() => this.props.return()}>Go Back To Coffee Beans</button>
             </div>
         )
     }

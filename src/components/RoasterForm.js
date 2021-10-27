@@ -70,8 +70,8 @@ class RoasterForm extends React.Component {
                     onChange={this.handleOnChange}/><br />
                 <button type='submit'>Add Roaster</button>
             </form>
-            <br/>
-            <button onClick={() => this.props.return()}>Go Back To Roasters List</button>
+            <br />
+            <button onClick={() => this.props.return()}>Go Back To Roasters</button>
             </div>
         )
     }
