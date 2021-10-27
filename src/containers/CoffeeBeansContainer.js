@@ -22,6 +22,7 @@ class CoffeeBeansContainer extends Component {
                             coffeeBeans={this.props.coffeeBeans}
                             deleteCoffeeBean={this.props.deleteCoffeeBean}
                         />
+                        </Route>
                     <Route exact path='/coffee-beans/new'>
                         <CoffeeBeanForm 
                             addCoffeeBean={this.props.addCoffeeBean} 

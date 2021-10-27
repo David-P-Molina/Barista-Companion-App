@@ -22,13 +22,14 @@ class RoasterForm extends React.Component {
             website: this.state.website,
             deletable: true,
         }
-        this.props.sendRoasterDataWithDispatchFn(formData)
+        this.props.addRoaster(formData)
         this.setState({
             name: '',
             description: '',
             yearFounded: '',
             website: '',
         })
+        this.props.return()
     }
     render() {
         let currentYear = new Date().getFullYear()

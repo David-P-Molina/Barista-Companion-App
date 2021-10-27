@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import RoastersList from '../components/RoastersList'
 import RoasterForm from '../components/RoasterForm'
+import Roaster from '../components/Roaster'
 import { connect } from 'react-redux'
 import { deleteRoasterAction, sendRoasterDataAction } from '../actions/RoasterActions'
 import { Route, Switch} from 'react-router-dom'
@@ -16,18 +17,28 @@ class RoastersContainer extends Component {
         return (
             <div className='brew-method-container'>
                 <Switch>
-                    <Route exact path='/roasters'>
-                        <RoastersList 
-                            roasters={this.props.roasters} 
-                            deleteRoaster={this.props.deleteRoaster}
-                        />
-                    </Route>
-                    <Route exact path='/roasters/new'>
-                        <RoasterForm 
-                            addRoaster={this.props.addRoaster} 
-                            errors={this.props.errors}
-                        />
-                    </Route>
+                    <Route exact path='/roasters' component={(routeInfo) => {
+                        return (
+                            <RoastersList 
+                                roasters={this.props.roasters} 
+                                deleteRoaster={this.props.deleteRoaster}
+                            />
+                        )
+                    }}
+                    />
+                    <Route exact path='/roasters/new' component={(routeInfo) => {
+                        return (
+                            <RoasterForm 
+                                addRoaster={this.props.addRoaster} 
+                                errors={this.props.errors}
+                                return={() => routeInfo.history.push('/roasters')}
+                            />
+                        )
+                    }}/>
+                        
+                    <Route exact path='/roasters/:id' component={() => {
+                        <Roaster />}}
+                    />
                 </Switch>
             </div>)
     }
