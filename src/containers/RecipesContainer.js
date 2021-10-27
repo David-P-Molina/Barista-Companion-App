@@ -13,16 +13,22 @@ class RecipesContainer extends Component {
     render() {
         return (
             <div className='recipes-container'>
-                <RecipesList 
-                    recipes={this.props.recipes} 
-                    deleteRecipe={this.props.deleteRecipe}
-                />
-                <RecipeForm 
-                    addRecipe={this.props.addRecipe} 
-                    coffeeBeansList={this.props.coffeeBeans} 
-                    brewMethodsList={this.props.brewMethods} 
-                    errors={this.props.errors}
-                />
+                <Switch>
+                    <Route exact path='/recipes'>
+                        <RecipesList 
+                            recipes={this.props.recipes} 
+                            deleteRecipe={this.props.deleteRecipe}
+                        />
+                    </Route>
+                    <Route exact path='/recipes/new'>
+                        <RecipeForm 
+                            addRecipe={this.props.addRecipe} 
+                            coffeeBeansList={this.props.coffeeBeans} 
+                            brewMethodsList={this.props.brewMethods} 
+                            errors={this.props.errors}
+                        />
+                    </Route>
+                </Switch>
             </div>
         )
     }

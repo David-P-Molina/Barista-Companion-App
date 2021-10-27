@@ -15,14 +15,20 @@ class RoastersContainer extends Component {
     render() {
         return (
             <div className='brew-method-container'>
-                <RoastersList 
-                    roasters={this.props.roasters} 
-                    deleteRoaster={this.props.deleteRoaster}
-                />
-                <RoasterForm 
-                    addRoaster={this.props.addRoaster} 
-                    errors={this.props.errors}
-                />
+                <Switch>
+                    <Route exact path='/roasters'>
+                        <RoastersList 
+                            roasters={this.props.roasters} 
+                            deleteRoaster={this.props.deleteRoaster}
+                        />
+                    </Route>
+                    <Route exact path='/roasters/new'>
+                        <RoasterForm 
+                            addRoaster={this.props.addRoaster} 
+                            errors={this.props.errors}
+                        />
+                    </Route>
+                </Switch>
             </div>)
     }
 }

@@ -16,15 +16,20 @@ class CoffeeBeansContainer extends Component {
     render() {
         return (
             <div className='coffee-bean-container'>
-                <CoffeeBeanList 
-                    coffeeBeans={this.props.coffeeBeans}
-                    deleteCoffeeBean={this.props.deleteCoffeeBean}
-                />
-                <CoffeeBeanForm 
-                    addCoffeeBean={this.props.addCoffeeBean} 
-                    roastersList={this.props.roastersList} 
-                    errors={this.props.errors}
-                />
+                <Switch>
+                    <Route exact path='/coffee-beans'>
+                        <CoffeeBeanList 
+                            coffeeBeans={this.props.coffeeBeans}
+                            deleteCoffeeBean={this.props.deleteCoffeeBean}
+                        />
+                    <Route exact path='/coffee-beans/new'>
+                        <CoffeeBeanForm 
+                            addCoffeeBean={this.props.addCoffeeBean} 
+                            roastersList={this.props.roastersList} 
+                            errors={this.props.errors}
+                        />
+                    </Route>
+                </Switch>
             </div>
         )
     }
