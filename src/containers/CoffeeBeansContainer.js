@@ -37,7 +37,7 @@ class CoffeeBeansContainer extends Component {
                     <Route exact path='/coffee-beans/:id' component={(routeInfo) => {
                         const id = parseInt(routeInfo.match.params.id)
                         const foundCoffeeBean = this.props.coffeeBeans.find((bean) => bean.id === id)
-                        const coffeeBeanInfo = <CoffeeBean roaster={foundCoffeeBean}/>
+                        const coffeeBeanInfo = <CoffeeBean coffeeBean={foundCoffeeBean}/>
                         return (this.props.coffeeBeans.length > 0 ? coffeeBeanInfo : <h1>Loading Roaster...</h1>)
                     }}
                     />

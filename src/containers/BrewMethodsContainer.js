@@ -31,13 +31,15 @@ class BrewMethodsContainer extends Component {
                     }}/>    
                     <Route exact path='/brew-methods/:id' component={(routeInfo) => {
                         const id = parseInt(routeInfo.match.params.id)
-                        const foundBrewMethod = this.props.brewMethods.find((brewMethod) => brewMethod.id === id)
-                        const brewMethodInfo = <BrewMethod brewMethod={foundBrewMethod}/>
-                        return (this.props.brewMethods.length > 0 ? brewMethodInfo : <h1>Loading Brew Method...</h1>)
+                        debugger
+                        const foundBrewMethod = this.props.brewMethods.find((brew) => brew.id === id)
+                        const brewMethodInfo = <BrewMethod brew={foundBrewMethod}/>
+                        return (this.props.brewMethods.length > 0 ? brewMethodInfo : <h1>Loading Roaster...</h1>)
                     }}
-BrewMethod                  
+                    />           
                 </Switch>
-            </div>)
+            </div>
+        )
     }
 }
 const mapStateToProps = (state) => {

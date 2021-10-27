@@ -35,7 +35,7 @@ class RecipesContainer extends Component {
                     <Route exact path='/recipes/:id' component={(routeInfo) => {
                         const id = parseInt(routeInfo.match.params.id)
                         const foundRecipe = this.props.recipes.find((recipe) => recipe.id === id)
-                        const recipeInfo = <Recipe roaster={foundRecipe}/>
+                        const recipeInfo = <Recipe recipe={foundRecipe}/>
                         return (this.props.recipes.length > 0 ? recipeInfo : <h1>Loading Recipe...</h1>)
                     }}
                     />
