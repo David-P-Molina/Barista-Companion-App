@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { clearErrorsAction } from '../actions/ErrorAction'
 
-export class Error extends Component {
-    componentDidUpdate() {
-       if(this.props.errors.length !== 0) {
-           return setTimeout(() => this.props.clearErrors() , 5500)
-       } 
-    }
+class Error extends Component {
+    // componentDidUpdate() {
+    //    if(this.props.errors.length !== 0) {
+    //        return setTimeout(() => this.props.clearErrors() , 500)
+    //    } 
+    // }
     render() {
         const renderErrors = this.props.errors.map((e) => <div key={e}>{e}</div>)
         return (

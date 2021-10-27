@@ -1,5 +1,5 @@
 export function displayBrewMethodError(errors) {
-  return {type: 'DISPLAY__ERROR', errors}
+  return {type: 'DISPLAY_BREW_METHOD_ERROR', errors}
 }
 export function displayCoffeeBeanError(errors) {
   return {type: 'DISPLAY_COFFEE_BEAN_ERROR', errors}
