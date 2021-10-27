@@ -23,13 +23,17 @@ class CoffeeBeansContainer extends Component {
                             deleteCoffeeBean={this.props.deleteCoffeeBean}
                         />
                         </Route>
-                    <Route exact path='/coffee-beans/new'>
-                        <CoffeeBeanForm 
-                            addCoffeeBean={this.props.addCoffeeBean} 
-                            roastersList={this.props.roastersList} 
-                            errors={this.props.errors}
-                        />
-                    </Route>
+                    <Route exact path='/coffee-beans/new' component={(routeInfo) => {
+                        return (
+                            <CoffeeBeanForm 
+                                addCoffeeBean={this.props.addCoffeeBean} 
+                                roastersList={this.props.roastersList} 
+                                errors={this.props.errors}
+                                return={() => routeInfo.history.push('/coffee-beans')}
+                            />
+                            )
+                        }}/>
+                            
                 </Switch>
             </div>
         )

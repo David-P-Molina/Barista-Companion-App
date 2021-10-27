@@ -19,12 +19,15 @@ class BrewMethodsContainer extends Component {
                             deleteBrewMethod={this.props.deleteBrewMethod}
                         />
                     </Route>
-                    <Route exact path='/brew-methods/new'>
-                        <BrewMethodForm 
-                            addBrewMethod={this.props.sendBrewMethodDataWithDispatchFn} 
-                            errors={this.props.errors}
-                        />
-                    </Route>
+                    <Route exact path='/brew-methods/new' component={(routeInfo) => {
+                        return(
+                            <BrewMethodForm 
+                                addBrewMethod={this.props.sendBrewMethodDataWithDispatchFn} 
+                                errors={this.props.errors}
+                                return={() => routeInfo.history.push('/brew-methods')}
+                            />
+                        )
+                    }}/>                      
                 </Switch>
             </div>)
     }
