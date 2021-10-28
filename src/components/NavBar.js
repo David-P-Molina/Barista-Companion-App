@@ -1,12 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import { NavLink } from 'react-router-dom'
 import * as ReactBootStrap from 'react-bootstrap'
 
-class NavigationBar extends Component {
-    render() {
-        return (
-            <ReactBootStrap.Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <ReactBootStrap.Container>
+const NavigationBar = () => {
+    return (
+        <ReactBootStrap.Navbar sticky='top' collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <ReactBootStrap.Container>
             <ReactBootStrap.Navbar.Brand href="/">Barista Companion</ReactBootStrap.Navbar.Brand>
             <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
@@ -30,13 +29,13 @@ class NavigationBar extends Component {
                 </ReactBootStrap.NavDropdown>
               </ReactBootStrap.Nav>
               <ReactBootStrap.Nav>
-                <ReactBootStrap.Nav.Link eventKey={2} href="/about">
-                  About
-                </ReactBootStrap.Nav.Link>
-              </ReactBootStrap.Nav>
-            </ReactBootStrap.Navbar.Collapse>
-            </ReactBootStrap.Container>
-          </ReactBootStrap.Navbar>
+            <ReactBootStrap.Nav.Link eventKey={2} href="/about">
+              About
+            </ReactBootStrap.Nav.Link>
+            </ReactBootStrap.Nav>
+        </ReactBootStrap.Navbar.Collapse>
+        </ReactBootStrap.Container>
+        </ReactBootStrap.Navbar>
             // <div>
             //     <NavLink to='/'><img src="https://www.freepnglogos.com/uploads/coffee-logo-png/coffee-logo-design-creative-idea-logo-elements-2.png" width="50" alt="coffee logo design creative idea logo elements" /></NavLink>
             //     <NavLink to='/roasters'> Roasters </NavLink>
@@ -45,8 +44,7 @@ class NavigationBar extends Component {
             //     <NavLink to='/recipes'> Recipes </NavLink>
             //     <NavLink to='/about'>About</NavLink>
             // </div>
-        )
-    }
+    )
 }
 <img src="https://www.freepnglogos.com/uploads/coffee-logo-png/coffee-logo-design-creative-idea-logo-elements-2.png" width="200" alt="coffee logo design creative idea logo elements" />
 export default NavigationBar
