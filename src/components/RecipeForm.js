@@ -163,10 +163,11 @@ class RecipeForm extends Component {
                         onChange={this.handleOnChange}
                     >
                         <option value=''>--Select Grind Level--</option>
+                        <option value='Extra Coarse'>Extra Coarse</option>
                         <option value='Coarse'>Coarse</option>
-                        <option value='Medium Coarse'>Medium-Coarse</option>
+                        <option value='Medium Coarse'>Medium Coarse</option>
                         <option value='Medium'>Medium</option>
-                        <option value='Medium-Fine'>Medium-Fine</option>
+                        <option value='Medium Fine'>Medium Fine</option>
                         <option value='Fine'>Fine</option>
                         <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
                     </select> <br />

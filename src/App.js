@@ -30,6 +30,7 @@ class App extends Component {
       <Router>
         <NavigationBar />
         <br />
+        <div className='website'>
         <Switch>
           <Route exact path='/' component={Home} />
           <Route exact path='/about' component={About} />
@@ -39,6 +40,7 @@ class App extends Component {
           <Route path='/roasters' component={() => <RoastersContainer />} />
           <Route path='/' render={() => <h2>404! The Page You Are Trying To Access Does Not Exist</h2>} />
         </Switch>
+        </div>
       </Router>
       </div>
     );
