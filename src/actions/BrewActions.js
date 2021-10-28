@@ -24,6 +24,9 @@ export const sendBrewMethodDataAction = (formData) => {
            return response.json()
            .then((data) => {
            passingDispatch(addBrewMethodAction(data))})
+           .then(() => {
+               alert('Successfully Added brew-method')
+           })
        } else {
            return response.json()
            .then((errors) => {

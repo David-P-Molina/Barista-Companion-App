@@ -25,6 +25,9 @@ export const sendRecipeFormDataAction = (data) => {
                 return response.json()
                 .then((data) => {
                 dispatch(addRecipeAction(data))})
+                .then(() => {
+                    alert("Successfully Added Recipe's Information")
+                })
             } else {
                 return response.json()
                 .then((errors) => {

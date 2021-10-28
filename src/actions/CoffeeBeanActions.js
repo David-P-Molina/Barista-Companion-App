@@ -24,6 +24,9 @@ export const sendCoffeeBeanDataAction = (data) => {
                 return response.json()
                 .then((data) => {
                 passingDispatchFn(addCoffeeBeanAction(data))})
+                .then(() => {
+                    alert('Successfully Added Coffee Bean Information')
+                })
             } else {
                 return response.json()
                 .then((errors) => {

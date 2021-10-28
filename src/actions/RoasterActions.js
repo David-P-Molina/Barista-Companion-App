@@ -24,6 +24,9 @@ export const sendRoasterDataAction = (data) => {
                 return response.json()
                 .then((data) => {
                 passingDispatchFn(addRoasterAction(data))})
+                .then(() => {
+                    alert("Successfully Added Roaster's Information")
+                })
             } else {
                 return response.json()
                 .then((errors) => {
