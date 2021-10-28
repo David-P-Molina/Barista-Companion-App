@@ -38,7 +38,7 @@ class App extends Component {
           <Route path='/coffee-beans' component={() => <CoffeeBeansContainer />} />
           <Route path='/recipes' component={() => <RecipesContainer />} /> 
           <Route path='/roasters' component={() => <RoastersContainer />} />
-          <Route path='/' render={() => <h2>404! The Page You Are Trying To Access Does Not Exist</h2>} />
+          <Route path='/' render={() => <div className='error-route'><h2>!404! The page you are trying to access cannot be found! !404!</h2></div>} />
         </Switch>
         </div>
       </Router>
