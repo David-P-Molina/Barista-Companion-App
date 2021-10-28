@@ -11,10 +11,12 @@ class NavigationBar extends Component {
             <ReactBootStrap.Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <ReactBootStrap.Navbar.Collapse id="responsive-navbar-nav">
               <ReactBootStrap.Nav className="me-auto">
-                <ReactBootStrap.NavDropdown title="Roasters" id="collasible-nav-dropdown">
+                <ReactBootStrap.NavDropdown title="Roasters & Coffee" id="collasible-nav-dropdown">
                   <ReactBootStrap.NavDropdown.Item href="/roasters">View All Roasters</ReactBootStrap.NavDropdown.Item>
+                  <ReactBootStrap.NavDropdown.Item href="/coffee-beans">View All Coffee Beans</ReactBootStrap.NavDropdown.Item>
                   <ReactBootStrap.NavDropdown.Divider />
                   <ReactBootStrap.NavDropdown.Item href="/roasters/new">Add Roaster</ReactBootStrap.NavDropdown.Item>
+                  <ReactBootStrap.NavDropdown.Item href="/coffee-beans/new">Add a Coffee Bean</ReactBootStrap.NavDropdown.Item>
                 </ReactBootStrap.NavDropdown>
                 <ReactBootStrap.NavDropdown title="Brewing Methods" id="collasible-nav-dropdown">
                   <ReactBootStrap.NavDropdown.Item href="/brew-methods">View All Brewing Methods</ReactBootStrap.NavDropdown.Item>
