@@ -29,8 +29,8 @@ const NavigationBar = () => {
                 </ReactBootStrap.NavDropdown>
               </ReactBootStrap.Nav>
               <ReactBootStrap.Nav>
-            <ReactBootStrap.Nav.Link eventKey={2} href="/about">
-              About
+            <ReactBootStrap.Nav.Link eventKey={2} href="/learn-about-coffee">
+              Learn About Coffee
             </ReactBootStrap.Nav.Link>
             </ReactBootStrap.Nav>
         </ReactBootStrap.Navbar.Collapse>

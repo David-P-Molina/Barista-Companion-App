@@ -33,7 +33,7 @@ class App extends Component {
         <div className='website'>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/about' component={About} />
+          <Route exact path='/learn-about-coffee' component={About} />
           <Route path='/brew-methods' component={() => <BrewMethodsContainer/> } />
           <Route path='/coffee-beans' component={() => <CoffeeBeansContainer />} />
           <Route path='/recipes' component={() => <RecipesContainer />} /> 
