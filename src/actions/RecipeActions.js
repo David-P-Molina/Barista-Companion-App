@@ -46,11 +46,9 @@ export const fetchRecipes = () => {
                 dispatch({ type: 'FETCH_RECIPES', recipes: recipesArray})})
             } else {
                 return response.json()
-                .catch((errors) => console.log(errors))
+                .catch((errors) => alert(errors))
             }
-        }).catch((errors) => {
-            console.log(errors)
-        })
+        }).catch((errors) => console.log(errors))
     }
 }
 

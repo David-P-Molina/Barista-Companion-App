@@ -28,7 +28,6 @@ export const sendBrewMethodDataAction = (formData) => {
            return response.json()
            .then((errors) => {
                passingDispatch(displayBrewMethodError(errors))
-               console.log(errors)
            })
    }}
    )}
@@ -48,8 +47,8 @@ export const fetchBrewMethods= () => {
                 return response.json()
                 .catch((errors) => console.log(errors))
             }
-        })).catch(() => {
-            alert('API Server Not Running!')
+        })).catch((errors) => {
+            alert(errors)
         })
     }
 }

@@ -47,7 +47,7 @@ export const fetchRoasters = () => {
                 })
             } else {
                 return response.json()
-                .catch((errors) => console.log(errors))
+                .catch((errors) => alert(errors))
             }
         }).catch((errors) => {
             console.log(errors)
