@@ -14,7 +14,7 @@ class Error extends Component {
             <div className='error-messages'>
                 <br/>
                 {renderErrors}
-                <br/>
+
             </div>
         )
     }

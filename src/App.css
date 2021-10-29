@@ -6,6 +6,11 @@
   padding: 3rem;
 }
 
+.form-background {
+  padding: 10%;
+  border-radius: 8px;
+  background-color: #bcdbe4;
+}
 .error-route {
   text-align: center;
 }

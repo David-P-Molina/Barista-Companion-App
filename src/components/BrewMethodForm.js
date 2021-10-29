@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Col, Row, Jumbotron, Form, Button} from 'react-bootstrap'
+import { Container, Col, Row, Form, Button } from "react-bootstrap";
 import Error from './Error'
 
 class BrewMethodForm extends Component {
@@ -45,15 +45,13 @@ class BrewMethodForm extends Component {
         return (
             <div>
                 <Container>
-                <h1>Brew Method Form</h1>
-                <p>
-                    Do you have a unique way of brewing coffee? 
-                    Perhaps you brew using six filters, a sandwich bag, 
-                    and a shoe! Fill out this form and add you'll have
-                     access to that brewing method in our recipes section!
-                </p>
-                <span><i>*When filling out the equipment section please separate each item with a comma to display correctly.</i></span>
-                <div className='errors'>
+                    <Row>
+                        <Col md={{ span: 8, offset: 2 }}>
+                        <div className='form-background'>
+                                <h1>Brew Method Form</h1>
+                                <p>Do you have a unique way of brewing coffee? Perhaps you brew using six filters, a sandwich bag, and a shoe! Fill out this form and add you'll have access to that brewing method in our recipes section!</p>
+                                <span><i>*When filling out the equipment section please separate each item with a comma to display correctly.</i></span>
+                                <div className='errors'>
                     <Error errors={this.props.errors}/>
                 </div>
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
@@ -78,10 +76,13 @@ class BrewMethodForm extends Component {
                     placeholder='List of equipment needed'
                     value={this.state.equipment} 
                     onChange={this.handleOnChange} /><br /><br />
-                <button  type='submit'>Add Brew Method</button>
+                <Button variant='success' size='lg' type='submit'>Add Brew Method</Button>
             </form>
             <br/>
-            <button onClick={() => this.props.return()}>Go Back To Brew Methods</button>
+            <Button variant='secondary' size='sm' onClick={() => this.props.return()}>Go Back To Brew Methods</Button>
+            </div>
+            </Col>
+            </Row>
             </Container>
             </div>
         )
