@@ -68,13 +68,13 @@ class CoffeeBeanForm extends Component {
                     <Error errors={this.props.errors}/>
                 </div>
                 <form className='coffee-bean-form' onSubmit={this.handleOnSubmit}>
-                    <label htmlFor='coffee-bean-name'>Name: </label> <br />
+                    <label htmlFor='coffee-bean-name'>Name: </label> 
                     <input 
                         required type='text' 
                         name='name'
                         placeholder='Coffee Bean'
                         value={this.state.name} 
-                        onChange={this.handleOnChange} /> <br />
+                        onChange={this.handleOnChange} /> 
                     <label htmlFor='roaster'>Roaster: </label>
                     <select 
                         type='text'
@@ -84,7 +84,7 @@ class CoffeeBeanForm extends Component {
                         >
                             <option value=''>Select a Roaster From List</option>
                         {this.renderRoasters()}
-                    </select> <br />
+                    </select> 
                     <label htmlFor='blend-type'>Blend Type: </label>
                     <select
                         name='blendType'
@@ -93,8 +93,8 @@ class CoffeeBeanForm extends Component {
                     >
                         <option value=''>Select Blend Type</option>
                         {this.renderBlendType()}
-                        </select> <br />
-                    <label htmlFor='roast-level'>Roast Level: </label><br />
+                        </select> 
+                    <label htmlFor='roast-level'>Roast Level: </label>
                     <select 
                         type='select' 
                         name='roast'
@@ -103,45 +103,45 @@ class CoffeeBeanForm extends Component {
                     >
                         <option value=''>Select Roast Level: </option>
                         {this.renderRoastLevels()}
-                    </select> <br />
+                    </select> 
                     <label htmlFor='whole-bean-boolean'>Whole Bean: </label>
                     <input 
                         type='checkbox' 
                         name='wholeBean'
                         value={this.state.wholeBean} 
-                        onChange={this.handleOnChange} /><br />
+                        onChange={this.handleOnChange} />
                     <label htmlFor='region'>Region: </label>
                     <input 
                         type='text' 
                         name='region'
                         value={this.state.region} 
-                        onChange={this.handleOnChange} /><br />
+                        onChange={this.handleOnChange} />
                     <label htmlFor='processing-method'>Processing Method: </label>
                     <input 
                         type='text' 
                         name='processingMethod'
                         value={this.state.processingMethod} 
-                        onChange={this.handleOnChange} /><br />
+                        onChange={this.handleOnChange} />
                     <label htmlFor='drying-method'>Drying Method: </label>
                     <input 
                         type='text' 
                         name='dryingMethod'
                         value={this.state.dryingMethod} 
-                        onChange={this.handleOnChange} /><br />    
-                    <label htmlFor='description'>Description: </label><br />
+                        onChange={this.handleOnChange} />    
+                    <label htmlFor='description'>Description: </label>
                     <input 
                         type='text' 
                         name='description'
                         placeholder='Story behind the bean'
                         value={this.state.description} 
-                        onChange={this.handleOnChange}/><br />
-                    <label htmlFor='notes'>Tasting Notes: </label><br />
+                        onChange={this.handleOnChange}/>
+                    <label htmlFor='notes'>Tasting Notes: </label>
                     <input 
                         type='text' 
                         name='notes'
                         placeholder='Hint of Lemon, Dark Chocolate, etc.'
                         value={this.state.notes} 
-                        onChange={this.handleOnChange}/><br /><br />
+                        onChange={this.handleOnChange}/>
                     <button type='submit'>Add Coffee Bean</button>
                 </form>
                 <br/>

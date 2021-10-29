@@ -40,38 +40,37 @@ class RoasterForm extends React.Component {
                     <Error errors={this.props.errors}/>
                 </div>
             <form className='roaster-form' onSubmit={this.handleOnSubmit} >
-                <label htmlFor='roaster-brand-name'>Roaster Brand: </label><br />
+                <label htmlFor='roaster-brand-name'>Roaster Brand: </label>
                 <input
                     required type='text'
                     name='name'
                     placeholder='Brand Name'
                     value={this.state.name}
-                    onChange={this.handleOnChange}/><br />
-                <label htmlFor='roaster-description'>Description: </label><br />
+                    onChange={this.handleOnChange}/>
+                <label htmlFor='roaster-description'>Description: </label>
                 <input
                     required type='text'
                     name='description'
                     placeholder='History of Brand'
                     value={this.state.description}
-                    onChange={this.handleOnChange}/><br />
-                <label htmlFor='roaster-year-founded'>Year Established/Founded: </label><br />
+                    onChange={this.handleOnChange}/>
+                <label htmlFor='roaster-year-founded'>Year Established/Founded: </label>
                 <input
                     type='number'
                     name='yearFounded'
                     min='1870'
                     max={currentYear}
                     value={this.state.yearFounded}
-                    onChange={this.handleOnChange}/><br />
-                <label htmlFor='roaster-website'>Website: </label><br />
+                    onChange={this.handleOnChange}/>
+                <label htmlFor='roaster-website'>Website: </label>
                 <input
                     type='url'
                     name='website'
                     placeholder='www.roaster-website-url.com'
                     value={this.state.website}
-                    onChange={this.handleOnChange}/><br />
+                    onChange={this.handleOnChange}/>
                 <button type='submit'>Add Roaster</button>
-            </form>
-            <br />
+            </form><br />
             <button onClick={() => this.props.return()}>Go Back To Roasters</button>
             </div>
         )

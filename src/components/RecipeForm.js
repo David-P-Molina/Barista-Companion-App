@@ -113,22 +113,22 @@ class RecipeForm extends Component {
                     <Error errors={this.props.errors}/>
                 </div>
                 <form className='recipe-form' onSubmit={this.handleOnSubmit}>
-                    <label htmlFor='recipe-name'>Recipe Name: </label> <br />
+                    <label htmlFor='recipe-name'>Recipe Name: </label> 
                     <input 
                         required type='text' 
                         name='name'
                         placeholder='Take 2, Use Different Filter, etc.'
                         value={this.state.name} 
                         onChange={this.handleOnChange}
-                    />  <br />
+                    />  
                     <label htmlFor='date-recipe-attempted'>Brew Date: </label>
                     <input 
                         required type='date'
                         name='dateAttempted'
                         value={this.state.dateAttempted}
                         onChange={this.handleOnChange}
-                    /><br />
-                    <label htmlFor='brew-method'>Brew Method: </label> <br />
+                    />
+                    <label htmlFor='brew-method'>Brew Method: </label> 
                     <select 
                         required type='text' 
                         name='brewMethod'
@@ -138,8 +138,8 @@ class RecipeForm extends Component {
                          <option value=''>Select a Brew Method</option>   
                         {this.renderBrewMethods()}
                     </select>
-                         <br />
-                    <label htmlFor='coffee-bean'>Coffee Bean: </label> <br />
+                         
+                    <label htmlFor='coffee-bean'>Coffee Bean: </label> 
                     <select 
                         required type='text' 
                         name='coffeeBean'
@@ -148,15 +148,15 @@ class RecipeForm extends Component {
                     >
                         <option value=''>Select a Coffee Bean</option>
                         {this.renderCoffeeBeans()}
-                    </select> <br />
+                    </select> 
                     <label htmlFor='coffee-bean-roast-date'>Roasted on </label>
                     <input 
                         type='date'
                         name='roastDate'
                         value={this.state.roastDate}
                         onChange={this.handleOnChange}
-                    /> <br />
-                    <label htmlFor='grind'>Grind Size: </label> <br />
+                    /> 
+                    <label htmlFor='grind'>Grind Size: </label> 
                     <select
                         type='text' 
                         name='grind'
@@ -171,36 +171,36 @@ class RecipeForm extends Component {
                         <option value='Medium Fine'>Medium Fine</option>
                         <option value='Fine'>Fine</option>
                         <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
-                    </select> <br />
-                    <label htmlFor='coffee-weight'>Coffee Weight: </label> <br />
+                    </select> 
+                    <label htmlFor='coffee-weight'>Coffee Weight: </label> 
                     <input 
                         type='number' 
                         name='coffeeWeight'
                         value={this.state.coffeeWeight} 
-                        onChange={this.handleOnChange}/> Grams<br />
-                    <label htmlFor='water-weight'>Water Weight: </label> <br />
+                        onChange={this.handleOnChange}/> Grams
+                    <label htmlFor='water-weight'>Water Weight: </label> 
                     <input 
                         type='number' 
                         name='waterWeight'
                         value={this.state.waterWeight} 
                         onChange={this.handleOnChange}
-                    /> Grams<br />
-                    <label htmlFor='temperature'>Temperature: </label> <br />
+                    /> Grams
+                    <label htmlFor='temperature'>Temperature: </label> 
                     <input 
                         type='number' 
                         name='temperature'
                         placeholder='Fahrenheit'
                         value={this.state.temperature} 
                         onChange={this.handleOnChange}
-                    /> °F <br />
+                    /> °F 
                     <label htmlFor='filter'>Filter Needed: </label>
                     <input
                         type='checkbox'
                         name='filter'
                         value={this.state.filter}
                         onChange={this.handleOnChange}
-                    /> <br />
-                    <label htmlFor='time'>Brew Time: </label> <br />
+                    /> 
+                    <label htmlFor='time'>Brew Time: </label> 
                     {this.renderHourTimerForColdBrew()}
                     <select 
                         type='number' 
@@ -221,8 +221,8 @@ class RecipeForm extends Component {
                         >
                         <option value='0'>Sec(s)</option>
                         {this.renderNumOptions(59)}
-                    </select> <br />
-                    <label htmlFor='time'>Bloom Time: </label> <br />
+                    </select> 
+                    <label htmlFor='time'>Bloom Time: </label> 
                     <select
                         type='number' 
                         name='bloomTime'
@@ -231,7 +231,7 @@ class RecipeForm extends Component {
                     >
                         <option value='0'> Select Bloom Time </option>
                         {this.renderNumOptions(60)} 
-                    </select> <br />
+                    </select> 
                     <label htmlFor='recipe-notes'>Notes</label>
                     <input
                         type='text'
