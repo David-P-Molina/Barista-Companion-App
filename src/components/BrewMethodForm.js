@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container, Col, Row, Jumbotron, Form, Button} from 'react-bootstrap'
 import Error from './Error'
 
 class BrewMethodForm extends Component {
@@ -43,7 +44,15 @@ class BrewMethodForm extends Component {
     render() {
         return (
             <div>
-                <h1>Add A New Brew Method</h1>
+                <Container>
+                <h1>Brew Method Form</h1>
+                <p>
+                    Do you have a unique way of brewing coffee? 
+                    Perhaps you brew using six filters, a sandwich bag, 
+                    and a shoe! Fill out this form and add you'll have
+                     access to that brewing method in our recipes section!
+                </p>
+                <span><i>*When filling out the equipment section please separate each item with a comma to display correctly.</i></span>
                 <div className='errors'>
                     <Error errors={this.props.errors}/>
                 </div>
@@ -73,6 +82,7 @@ class BrewMethodForm extends Component {
             </form>
             <br/>
             <button onClick={() => this.props.return()}>Go Back To Brew Methods</button>
+            </Container>
             </div>
         )
     }
