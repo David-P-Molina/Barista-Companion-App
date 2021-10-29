@@ -1,5 +1,8 @@
 .App {
   text-align:inherit;
+  font-family: Avenir, sans-serif;
+  position: relative;
+  font-weight: 400;
 }
 
 .website {

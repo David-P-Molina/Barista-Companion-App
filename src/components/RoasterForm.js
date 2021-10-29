@@ -45,7 +45,7 @@ class RoasterForm extends React.Component {
                                 <Error errors={this.props.errors}/>
                             </div>
                         <Form className='roaster-form' onSubmit={this.handleOnSubmit} >
-                            <Form.Group classname='mb-3' controlId='formRoasterName'>    
+                            <Form.Group className='mb-3'>    
                                 <Form.Label htmlFor='roaster-brand-name'>Name: </Form.Label>
                                 <Form.Control
                                     required type='text'
@@ -57,7 +57,7 @@ class RoasterForm extends React.Component {
                                     *required
                                 </Form.Text>
                             </Form.Group>
-                            <Form.Group classname='mb-3' controlId='formRoasterHistory'>        
+                            <Form.Group className='mb-3'>        
                                 <Form.Label htmlFor='roaster-description'>History: </Form.Label><br />
                                 <Form.Control
                                     required type='text'
@@ -71,7 +71,7 @@ class RoasterForm extends React.Component {
                             </Form.Group>
                             <Row>
                                 <Col>
-                                    <Form.Group classname='mb-3' controlId='formYearFounded'>    
+                                    <Form.Group className='mb-3' >    
                                         <Form.Label htmlFor='roaster-year-founded'>Year Established/Founded: </Form.Label><br />
                                         <Form.Control
                                             type='number'
@@ -86,7 +86,7 @@ class RoasterForm extends React.Component {
                                     </Form.Group>
                                 </Col>
                                 <Col>
-                                    <Form.Group classname='mb-3' controlId='formWebsite'>    
+                                    <Form.Group className='mb-3'>    
                                         <Form.Label htmlFor='roaster-website'>Website: </Form.Label><br />
                                         <Form.Control
                                             type='url'
