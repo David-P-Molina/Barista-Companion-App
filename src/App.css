@@ -3,16 +3,16 @@
 }
 
 .website {
-  padding: 3rem;
+  padding: 2rem;
+  margin-left: 2rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .error-route {
   text-align: center;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
 }
 
 .App-header {

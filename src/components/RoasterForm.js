@@ -69,7 +69,7 @@ class RoasterForm extends React.Component {
                     placeholder='www.roaster-website-url.com'
                     value={this.state.website}
                     onChange={this.handleOnChange}/>
-                <button type='submit'>Add Roaster</button>
+                <button className='submit' type='submit'>Add Roaster</button>
             </form><br />
             <button onClick={() => this.props.return()}>Go Back To Roasters</button>
             </div>

@@ -240,7 +240,7 @@ class RecipeForm extends Component {
                         value={this.state.notes}
                         onChange={this.handleOnChange}
                     />
-                    <button type='submit'>Create Recipe</button>
+                    <button className='submit' type='submit'>Create Recipe</button>
                 </form>
                 <br/>
             <button onClick={() => this.props.return()}>Go Back To Recipes</button>

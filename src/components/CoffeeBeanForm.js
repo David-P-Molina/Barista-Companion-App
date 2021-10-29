@@ -106,6 +106,7 @@ class CoffeeBeanForm extends Component {
                     </select> 
                     <label htmlFor='whole-bean-boolean'>Whole Bean: </label>
                     <input 
+                        className='checkbox'
                         type='checkbox' 
                         name='wholeBean'
                         value={this.state.wholeBean} 
@@ -142,7 +143,7 @@ class CoffeeBeanForm extends Component {
                         placeholder='Hint of Lemon, Dark Chocolate, etc.'
                         value={this.state.notes} 
                         onChange={this.handleOnChange}/>
-                    <button type='submit'>Add Coffee Bean</button>
+                    <button className='submit' type='submit'>Add Coffee Bean</button>
                 </form>
                 <br/>
             <button onClick={() => this.props.return()}>Go Back To Coffee Beans</button>

@@ -8,6 +8,12 @@ input {
     box-shadow: 0 0 4px rgba(38, 36, 36, 0.5);
 }
 
+.checkbox {
+    width: 5;
+    border: 10px;
+    box-shadow: 0 0 0px);
+}
+
 textarea {
     resize: both;
 }
@@ -38,7 +44,7 @@ button {
   }
 
 .submit {
-    background-color: #005771; 
+    background-color: #007396; 
     border: none;
     color: white;
     padding: 10px 24px;
