@@ -46,5 +46,4 @@ const NavigationBar = () => {
             // </div>
     )
 }
-<img src="https://www.freepnglogos.com/uploads/coffee-logo-png/coffee-logo-design-creative-idea-logo-elements-2.png" width="200" alt="coffee logo design creative idea logo elements" />
 export default NavigationBar
