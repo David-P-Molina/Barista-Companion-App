@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Error from './Error'
+import '../css/form.css'
 
 class BrewMethodForm extends Component {
     state = {
@@ -48,28 +49,28 @@ class BrewMethodForm extends Component {
                     <Error errors={this.props.errors}/>
                 </div>
             <form className='brew-method-form' onSubmit={this.handleOnSubmit}>
-                <label htmlFor='brew-method-name'>Brew Method: </label><br />
+                <label htmlFor='brew-method-name'>Brew Method: </label>
                 <input 
                     required type='text' 
                     name='name'
                     placeholder='Brewing Method'
                     value={this.state.name} 
-                    onChange={this.handleOnChange} /><br />
-                <label htmlFor='brew-method-description'>Description: </label><br />
+                    onChange={this.handleOnChange} />
+                <label htmlFor='brew-method-description'>Description: </label>
                 <input 
-                    required type='text' 
+                    required type='textarea' 
                     name='description'
                     placeholder='Description'
                     value={this.state.description} 
-                    onChange={this.handleOnChange} /><br />
-                <label htmlFor='brew-method-equipment'>Equipment: (Please Separate by ",")</label><br />
+                    onChange={this.handleOnChange} />
+                <label htmlFor='brew-method-equipment'>Equipment: (Please Separate by ",")</label>
                 <input 
-                    required type='text' 
+                    required type='textarea' 
                     name='equipment'
                     placeholder='List of equipment needed'
                     value={this.state.equipment} 
-                    onChange={this.handleOnChange} /><br /><br />
-                <button  type='submit'>Add Brew Method</button>
+                    onChange={this.handleOnChange} />
+                <button className='submit' type='submit'>Add Brew Method</button>
             </form>
             <br/>
             <button onClick={() => this.props.return()}>Go Back To Brew Methods</button>

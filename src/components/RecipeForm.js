@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Error from './Error'
+import '../css/form.css'
 
 class RecipeForm extends Component {
     state = {

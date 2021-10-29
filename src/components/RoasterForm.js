@@ -1,5 +1,6 @@
 import React from 'react' 
 import Error from './Error'
+import '../css/form.css'
 
 class RoasterForm extends React.Component {
     state = {

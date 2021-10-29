@@ -1,0 +1,49 @@
+form {
+    width: 300px;
+    
+}
+input {
+    width: 100%;
+    border: 1px solid#ddd;
+    box-shadow: 0 0 4px rgba(38, 36, 36, 0.5);
+}
+
+textarea {
+    resize: both;
+}
+
+button {
+    background-color: #007396;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 4px;
+  }
+  button:hover {
+    background-color: #003849; 
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    border-radius: 4px;
+  }
+
+.submit {
+    background-color: #005771; 
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
