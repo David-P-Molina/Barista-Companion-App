@@ -13,7 +13,8 @@ import { fetchBrewMethods } from './actions/BrewActions'
 import { fetchRecipes } from './actions/RecipeActions'
 import { fetchCoffeeBeans } from './actions/CoffeeBeanActions'
 import { fetchRoasters } from './actions/RoasterActions'
-import Layout from '../src/components/Layout'
+import Layout from './components/styling/Layout'
+import { Header } from './components/styling/Header';
 
 class App extends Component {
   fetchCalls = () => {
@@ -30,6 +31,7 @@ class App extends Component {
       <div className="App">
       <Router>
         <NavigationBar />
+        <Header />
         <Layout>
         <br />
         <div className='website'>
