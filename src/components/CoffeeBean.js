@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 class CoffeeBean extends React.Component {
     handleOnClick = () => {
@@ -9,7 +10,7 @@ class CoffeeBean extends React.Component {
             if (this.props.coffeeBean.deletable === true) {
                 return ( 
                 <>
-                    <button onClick={() => this.handleOnClick(this.props.coffeeBean.id)}>Delete</button> 
+                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.coffeeBean.id)}>Delete</Button> 
                     {/* <button onClick='{this.props.coffeeBean.editCoffeeBean}'>Edit</button> */}
                 </>
                 )

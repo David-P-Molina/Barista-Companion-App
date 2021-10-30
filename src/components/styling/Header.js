@@ -5,8 +5,8 @@ import welcome from '../../assets/welcome.jpg'
 
 const Styles = styled.div`
   .jumbo {
-    background: url(${welcome}) no-repeat fixed bottom;
-    background-size:cover;
+    background: url(${welcome}) no-repeat ;
+    background-size: cover;
     color: #efefef;
     height: 300px;
     position: relative;

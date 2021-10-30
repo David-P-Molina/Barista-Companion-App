@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 class BrewMethod extends React.Component {
     handleOnClick = () => {
@@ -9,7 +10,7 @@ class BrewMethod extends React.Component {
             if (this.props.brew.deletable === true) {
                 return ( 
                 <>
-                    <button onClick={() => this.handleOnClick(this.props.brew.id)}>Delete</button> 
+                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.brew.id)}>Delete</Button> 
                     {/* <button onClick='{props.editBrewMethod}'>Edit</button> */}
                 </>
                 )

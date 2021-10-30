@@ -1,4 +1,5 @@
 import React from 'react'
+import { Button } from 'react-bootstrap'
 
 class Recipe extends React.Component {
     handleOnClick = () => {
@@ -9,7 +10,7 @@ class Recipe extends React.Component {
         if (this.props.recipe.deletable === true) {
             return ( 
             <>
-                <button onClick={() => this.handleOnClick(this.props.recipe.id)}>Delete</button> 
+                <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.recipe.id)}>Delete</Button> 
                 {/* <button onClick='{props.editRecipeMethod}'>Edit</button> */}
             </>
             )

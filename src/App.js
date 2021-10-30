@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import NavigationBar from './components/NavBar'
 import Home from './components/Home'
-import About from './components/About'
 import RecipesContainer from './containers/RecipesContainer'
 import BrewMethodsContainer from './containers/BrewMethodsContainer';
 import CoffeeBeansContainer from './containers/CoffeeBeansContainer'
@@ -38,7 +37,6 @@ class App extends Component {
         <div className='website'>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/learn-about-coffee' component={About} />
           <Route path='/brew-methods' component={() => <BrewMethodsContainer/> } />
           <Route path='/coffee-beans' component={() => <CoffeeBeansContainer />} />
           <Route path='/recipes' component={() => <RecipesContainer />} /> 
@@ -47,7 +45,7 @@ class App extends Component {
         </Switch>
         </div>
       </Layout>
-      <br />
+      <br /><br /><br />
       <Footer />
       </Router>
       </div>
