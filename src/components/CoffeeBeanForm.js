@@ -65,7 +65,7 @@ class CoffeeBeanForm extends Component {
             <div>
                 <Container>
                     <Row>
-                        <Col md={{ span: 8, offset: 2 }}>
+                        <Col md={{ span: 10, offset: 1 }}>
                             <div className='form-background'>
                                 <h1>Coffee Bean Form</h1>
                                 <p>Every Coffee Bean has a story, starting with it's origins, how it is harvested, by who, how do they prepare the coffee for sale, etc. This is the place to add as much or as little information about a coffee bean as you like.</p>
