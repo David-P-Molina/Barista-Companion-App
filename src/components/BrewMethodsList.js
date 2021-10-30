@@ -7,6 +7,7 @@ const BrewMethodsList = ({brewMethods, deleteBrewMethod}) => {
      })
     return (
     <div className='brew-method-list'>
+        <h1>Brew Methods</h1><br />
         {brewMethodsList()}
     </div>
     )

@@ -7,6 +7,7 @@ const RoastersList = ({ roasters, deleteRoaster }) => {
      })
     return (
         <div className='roaster-list'>
+            <h1>Roasters</h1><br />
             {roastersList}
         </div>
     )

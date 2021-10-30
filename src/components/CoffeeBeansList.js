@@ -7,6 +7,7 @@ const CoffeeBeansList = ({ coffeeBeans, deleteCoffeeBean }) => {
      })
     return (
         <div className='coffee-bean-list'>
+            <h1>Coffee Beans</h1><br />
             {coffeeBeansList}
         </div>
     )

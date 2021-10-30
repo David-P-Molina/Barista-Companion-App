@@ -25,7 +25,7 @@ class CoffeeBean extends React.Component {
                 <p>{this.props.coffeeBean.description}</p>
                 Drying Method: {this.props.coffeeBean.drying_method} 
                 Processing Method: {this.props.coffeeBean.processing_method} 
-                Roast Level: {this.props.coffeeBean.roast} {this.props.coffeeBean.whole_bean}
+                Roast Level: {this.props.coffeeBean.roast} 
             </div>
         )
     }
