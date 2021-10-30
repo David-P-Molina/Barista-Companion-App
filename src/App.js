@@ -13,6 +13,7 @@ import { fetchBrewMethods } from './actions/BrewActions'
 import { fetchRecipes } from './actions/RecipeActions'
 import { fetchCoffeeBeans } from './actions/CoffeeBeanActions'
 import { fetchRoasters } from './actions/RoasterActions'
+import Layout from '../src/components/Layout'
 
 class App extends Component {
   fetchCalls = () => {
@@ -29,6 +30,7 @@ class App extends Component {
       <div className="App">
       <Router>
         <NavigationBar />
+        <Layout>
         <br />
         <div className='website'>
         <Switch>
@@ -41,6 +43,7 @@ class App extends Component {
           <Route path='/' render={() => <div className='error-route'><h2>!404! The page you are trying to access cannot be found! !404!</h2></div>} />
         </Switch>
         </div>
+      </Layout>
       </Router>
       </div>
     );
