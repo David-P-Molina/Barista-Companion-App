@@ -30,6 +30,12 @@
   color: white;
 }
 
+.footer {
+  background-color: #282c34;
+  padding: 1em;
+  color: #efefef;
+  
+}
 .App-link {
   color: #61dafb;
 }

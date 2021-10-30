@@ -15,6 +15,7 @@ import { fetchCoffeeBeans } from './actions/CoffeeBeanActions'
 import { fetchRoasters } from './actions/RoasterActions'
 import Layout from './components/styling/Layout'
 import { Header } from './components/styling/Header';
+import Footer from './components/styling/Footer';
 
 class App extends Component {
   fetchCalls = () => {
@@ -46,6 +47,8 @@ class App extends Component {
         </Switch>
         </div>
       </Layout>
+      <br />
+      <Footer />
       </Router>
       </div>
     );
