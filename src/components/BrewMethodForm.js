@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Col, Row, Form, Button } from "react-bootstrap";
+import { Container, Col, Row, Form, Button } from 'react-bootstrap';
 import Error from './Error'
 
 class BrewMethodForm extends Component {
@@ -55,7 +55,7 @@ class BrewMethodForm extends Component {
                                     <Error errors={this.props.errors}/>
                             </div>
                             <Form className='brew-method-form' onSubmit={this.handleOnSubmit}>
-                                    <Form.Group className="mb-3" controlId='formBrewMethodName'>
+                                    <Form.Group className='mb-3'>
                                         <Form.Label htmlFor='brew-method-name'>Name: </Form.Label><br />
                                         <Form.Control 
                                             required type='text' 
@@ -67,7 +67,7 @@ class BrewMethodForm extends Component {
                                             *required
                                         </Form.Text>
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId='formBrewMethodDescription'>
+                                    <Form.Group className='mb-3'>
                                         <Form.Label htmlFor='brew-method-description'>Description: </Form.Label><br />
                                         <Form.Control
                                             required type='text' 
@@ -79,8 +79,8 @@ class BrewMethodForm extends Component {
                                             *required
                                         </Form.Text>
                                     </Form.Group>
-                                    <Form.Group className="mb-3" controlId='formBrewMethodEquipment'>
-                                        <Form.Label htmlFor='brew-method-equipment'>Equipment: (Please Separate by ",")</Form.Label><br />
+                                    <Form.Group className='mb-3'>
+                                        <Form.Label htmlFor='brew-method-equipment'>Equipment: (Please Separate by ',')</Form.Label><br />
                                         <Form.Control 
                                             required type='text' 
                                             name='equipment'
@@ -91,9 +91,13 @@ class BrewMethodForm extends Component {
                                             *required
                                         </Form.Text>
                                     </Form.Group>
-                                    <Button variant='success' size='lg' type='submit'>Add Brew Method</Button>
+                                    <Row>
+                                        <Button mx='auto' variant='success' size='lg' type='submit'>Add Brew Method</Button>
+                                    </Row>
                             </Form><br/>
-                            <Button variant='secondary' size='sm' onClick={() => this.props.return()}>Go Back To Brew Methods</Button>
+                            <Row>
+                                <Button mx='auto' variant='secondary' size='sm' onClick={() => this.props.return()}>Go Back To Brew Methods</Button>
+                            </Row>
                             </div>
                         </Col>
                     </Row>
