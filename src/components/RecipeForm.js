@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Container, Col, Row, Form, Button } from "react-bootstrap";
+import { InputGroup, Container, Col, Row, Form, Button } from "react-bootstrap";
 import Error from './Error'
 
 class RecipeForm extends Component {
@@ -14,6 +14,7 @@ class RecipeForm extends Component {
         waterWeight: '',
         temperature: '',
         filter: '',
+        wholeBean: '',
         hrTime: '0',
         minTime: '0',
         secTime: '0',
@@ -46,6 +47,7 @@ class RecipeForm extends Component {
             water_in_grams: this.state.waterWeight,
             temperature: this.state.temperature,
             filter: this.state.filter,
+            wholeBean: this.state.wholeBean,
             time: this.processBrewTime(e),
             bloom_time: this.state.bloomTime,
             notes: this.state.notes,
@@ -63,6 +65,7 @@ class RecipeForm extends Component {
             waterWeight: '',
             temperature: '',
             filter: '',
+            wholeBean: '',
             hrTime: '0',
             minTime: '0',
             secTime: '0',
@@ -74,7 +77,13 @@ class RecipeForm extends Component {
     renderBrewMethods = () => {
         return (
             this.props.brewMethodsList.map((brew) => {
-                return <option key={brew.name} value={brew.id}>{brew.name}</option>
+                return (
+                <option 
+                    key={brew.name} 
+                    value={brew.id}>
+                        {brew.name}
+                </option>
+                )
             })
         )
     }
@@ -93,168 +102,253 @@ class RecipeForm extends Component {
         for (let i = 0; i <= numbers; i++) {
             numArray.push(i)
         }
-        return numArray.map((number) => (
-            <option key={number} value={number}>{number}</option>
-        ))
+        return numArray.map((number) => {
+            return (
+                <option 
+                key={number} 
+                value={number}>
+                    {number}
+                </option>
+            )
+            })
     }
     renderHourTimerForColdBrew = () => {
         if (this.state.brewMethod === "6" || this.state.brewMethod === "10") {
             return (
-                <select 
-                    type='number' 
-                    name='hrTime'
-                    value={this.state.hrTime} 
-                    max='24'
-                    onChange={this.handleOnChange}
-                >
-                    <option value='0'>Hour(s)</option>
-                    {this.renderNumOptions(24)}
-                 </select>
+                    <Form.Select 
+                        type='number' 
+                        name='hrTime'
+                        value={this.state.hrTime} 
+                        max='24'
+                        onChange={this.handleOnChange}
+                    >
+                        <option value='0'>Hour(s)</option>
+                        {this.renderNumOptions(24)}
+                    </Form.Select>
             )
         }
     }
     render() {
         return (
             <div>
-                <h1>Create Recipe</h1>
-                <div className='errors'>
-                    <Error errors={this.props.errors}/>
-                </div>
-                <form className='recipe-form' onSubmit={this.handleOnSubmit}>
-                    <label htmlFor='recipe-name'>Recipe Name: </label> <br />
-                    <input 
-                        required type='text' 
-                        name='name'
-                        placeholder='Take 2, Use Different Filter, etc.'
-                        value={this.state.name} 
-                        onChange={this.handleOnChange}
-                    />  <br />
-                    <label htmlFor='date-recipe-attempted'>Brew Date: </label>
-                    <input 
-                        required type='date'
-                        name='dateAttempted'
-                        value={this.state.dateAttempted}
-                        onChange={this.handleOnChange}
-                    /><br />
-                    <label htmlFor='brew-method'>Brew Method: </label> <br />
-                    <select 
-                        required type='text' 
-                        name='brewMethod'
-                        value={this.state.brewMethod} 
-                        onChange={this.handleOnChange}
-                    >
-                         <option value=''>Select a Brew Method</option>   
-                        {this.renderBrewMethods()}
-                    </select>
-                         <br />
-                    <label htmlFor='coffee-bean'>Coffee Bean: </label> <br />
-                    <select 
-                        required type='text' 
-                        name='coffeeBean'
-                        value={this.state.coffeeBean} 
-                        onChange={this.handleOnChange}
-                    >
-                        <option value=''>Select a Coffee Bean</option>
-                        {this.renderCoffeeBeans()}
-                    </select> <br />
-                    <label htmlFor='coffee-bean-roast-date'>Roasted on </label>
-                    <input 
-                        type='date'
-                        name='roastDate'
-                        value={this.state.roastDate}
-                        onChange={this.handleOnChange}
-                    /> <br />
-                    <label htmlFor='grind'>Grind Size: </label> <br />
-                    <select
-                        type='text' 
-                        name='grind'
-                        value={this.state.grind} 
-                        onChange={this.handleOnChange}
-                    >
-                        <option value=''>--Select Grind Level--</option>
-                        <option value='Extra Coarse'>Extra Coarse</option>
-                        <option value='Coarse'>Coarse</option>
-                        <option value='Medium Coarse'>Medium Coarse</option>
-                        <option value='Medium'>Medium</option>
-                        <option value='Medium Fine'>Medium Fine</option>
-                        <option value='Fine'>Fine</option>
-                        <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
-                    </select> <br />
-                    <label htmlFor='coffee-weight'>Coffee Weight: </label> <br />
-                    <input 
-                        type='number' 
-                        name='coffeeWeight'
-                        value={this.state.coffeeWeight} 
-                        onChange={this.handleOnChange}/> Grams<br />
-                    <label htmlFor='water-weight'>Water Weight: </label> <br />
-                    <input 
-                        type='number' 
-                        name='waterWeight'
-                        value={this.state.waterWeight} 
-                        onChange={this.handleOnChange}
-                    /> Grams<br />
-                    <label htmlFor='temperature'>Temperature: </label> <br />
-                    <input 
-                        type='number' 
-                        name='temperature'
-                        placeholder='Fahrenheit'
-                        value={this.state.temperature} 
-                        onChange={this.handleOnChange}
-                    /> °F <br />
-                    <label htmlFor='filter'>Filter Needed: </label>
-                    <input
-                        type='checkbox'
-                        name='filter'
-                        value={this.state.filter}
-                        onChange={this.handleOnChange}
-                    /> <br />
-                    <label htmlFor='time'>Brew Time: </label> <br />
-                    {this.renderHourTimerForColdBrew()}
-                    <select 
-                        type='number' 
-                        name='minTime'
-                        value={this.state.minTime} 
-                        max='60'
-                        onChange={this.handleOnChange}
-                    >
-                        <option value='0'>Minute(s)</option>
-                        {this.renderNumOptions(59)}
-                    </select> 
-                    <select 
-                        type='number' 
-                        name='secTime'
-                        value={this.state.secTime} 
-                        max='60'
-                        onChange={this.handleOnChange}
-                        >
-                        <option value='0'>Sec(s)</option>
-                        {this.renderNumOptions(59)}
-                    </select> <br />
-                    <label htmlFor='time'>Bloom Time: </label> <br />
-                    <select
-                        type='number' 
-                        name='bloomTime'
-                        value={this.state.bloomTime} 
-                        onChange={this.handleOnChange}
-                    >
-                        <option value='0'> Select Bloom Time </option>
-                        {this.renderNumOptions(60)} 
-                    </select> <br />
-                    <label htmlFor='recipe-notes'>Notes</label>
-                    <input
-                        type='text'
-                        name='notes'
-                        placeholder='Tasting Notes, Changes to be made, etc'
-                        value={this.state.notes}
-                        onChange={this.handleOnChange}
-                    />
-                    <button type='submit'>Create Recipe</button>
-                </form>
-                <br/>
-            <button onClick={() => this.props.return()}>Go Back To Recipes</button>
+                <Container>
+                    <Row>
+                        <Col md={{ span: 10, offset: 1 }}>
+                        <div className='form-background'>
+                            <h1>Create Recipe</h1>
+                            <p>This is the place for experimenting with your coffee making skills! This is the place to nerd out about coffee, take note of any ways the coffee changes when you change the temperature, coffee/water ratio, level of grind, etc. use this form as a journal entry to remember what brewing techniques you've tried!</p>
+                            <div className='errors'>
+                                <Error errors={this.props.errors}/>
+                            </div>
+                            <Form className='recipe-form' onSubmit={this.handleOnSubmit}>
+                                <Row>
+                                    <Col xs={5}>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='recipe-name'>Recipe Name: </Form.Label> <br />
+                                            <Form.Control 
+                                                required type='text'
+                                                name='name'
+                                                placeholder='Take 2, Use Different Filte etc.'
+                                                value={this.state.name}
+                                                onChange={this.handleOnChange}
+                                                /> 
+                                        </Form.Group><br />
+                                    </Col>
+                                    <Col xs={3}>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='date-recipe-attempted'>Brew Date: </Form.Label>
+                                            <Form.Control 
+                                                required type='date'
+                                                name='dateAttempted'
+                                                value={this.state.dateAttempted}
+                                                onChange={this.handleOnChange}
+                                            />
+                                        </Form.Group><br />
+                                    </Col>
+                                    <Col xs='auto'>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='brew-method'>Brew Method: </Form.Label> <br />
+                                            <Form.Select 
+                                                required type='text' 
+                                                name='brewMethod'
+                                                value={this.state.brewMethod} 
+                                                onChange={this.handleOnChange}
+                                                >
+                                                 <option value=''>Select a Brew Method</option>   
+                                                {this.renderBrewMethods()}
+                                            </Form.Select>
+                                        </Form.Group><br />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col xs={5}>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='coffee-bean'>Coffee Bean: </Form.Label> <br />
+                                            <Form.Select 
+                                                required type='text' 
+                                                name='coffeeBean'
+                                                value={this.state.coffeeBean} 
+                                                onChange={this.handleOnChange}
+                                            >
+                                                <option value=''>Select a Coffee Bean</option>
+                                                {this.renderCoffeeBeans()}
+                                            </Form.Select> 
+                                        </Form.Group> <br />
+                                    </Col>
+                                    <Col xs={3}>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='coffee-bean-roast-date'>Roasted on </Form.Label>
+                                            <Form.Control 
+                                                type='date'
+                                                name='roastDate'
+                                                value={this.state.roastDate}
+                                                onChange={this.handleOnChange}/> 
+                                        </Form.Group><br />
+                                    </Col>
+                                    <Col xs='auto'>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='grind'>Grind Size: </Form.Label> <br />
+                                            <Form.Select
+                                                type='text' 
+                                                name='grind'
+                                                value={this.state.grind} 
+                                                onChange={this.handleOnChange}>
+                                                <option value=''>--Select Grind Level--</option>
+                                                <option value='Extra Coarse'>Extra Coarse</option>
+                                                <option value='Coarse'>Coarse</option>
+                                                <option value='Medium Coarse'>Medium Coarse</option>
+                                                <option value='Medium'>Medium</option>
+                                                <option value='Medium Fine'>Medium Fine</option>
+                                                <option value='Fine'>Fine</option>
+                                                <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
+                                            </Form.Select> <br />
+                                        </Form.Group>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='coffee-weight'>Coffee Weight(g): </Form.Label> <br />
+                                            <Form.Control 
+                                                type='number' 
+                                                name='coffeeWeight'
+                                                placeholder='grams'
+                                                value={this.state.coffeeWeight} 
+                                                onChange={this.handleOnChange}/>
+                                        </Form.Group><br />
+                                    </Col>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='water-weight'>Water Weight(g): </Form.Label> <br />
+                                            <Form.Control 
+                                                type='number' 
+                                                name='waterWeight'
+                                                placeholder='grams'
+                                                value={this.state.waterWeight} 
+                                                onChange={this.handleOnChange} />
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='temperature'>Temperature(°F): </Form.Label> <br />
+                                            <Form.Control 
+                                                type='number' 
+                                                name='temperature'
+                                                placeholder='Fahrenheit'
+                                                value={this.state.temperature} 
+                                                onChange={this.handleOnChange}
+                                            /> 
+                                        </Form.Group>
+                                    </Col>
+                                    <Col>
+                                        <Form.Group htmlFor='wholebean-boolean'>
+                                            <Form.Check
+                                                label='Whole Bean'
+                                                type='checkbox'
+                                                name='wholeBean'
+                                                value={this.state.wholeBean}
+                                                onChange={this.handleOnChange}/> 
+                                        </Form.Group>
+                                        <Form.Group htmlFor='filter'>
+                                            <Form.Check
+                                                label='Filter'
+                                                type='checkbox'
+                                                name='filter'
+                                                value={this.state.filter}
+                                                onChange={this.handleOnChange}/> 
+                                        </Form.Group>
+                                    </Col>
+                            
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <InputGroup>
+                                        <InputGroup.Text>Brew Time: </InputGroup.Text>
+                                            {this.renderHourTimerForColdBrew()}
+                                            <Form.Select 
+                                                type='number' 
+                                                name='minTime'
+                                                value={this.state.minTime} 
+                                                max='60'
+                                                onChange={this.handleOnChange}>
+                                                <option value='0'>Minute(s)</option>
+                                                {this.renderNumOptions(59)}
+                                            </Form.Select>
+                                            <Form.Select
+                                                type='number' 
+                                                name='secTime'
+                                                value={this.state.secTime} 
+                                                max='60'
+                                                onChange={this.handleOnChange}
+                                                >
+                                                <option value='0'>Sec(s)</option>
+                                                {this.renderNumOptions(59)}
+                                            </Form.Select>
+                                        </InputGroup>
+                                    </Col>
+                                    <Col xs='auto'>
+                                        <InputGroup>
+                                            <InputGroup.Text htmlFor='time'>Bloom Time: </InputGroup.Text>
+                                            <Form.Select
+                                                type='number' 
+                                                name='bloomTime'
+                                                value={this.state.bloomTime} 
+                                                onChange={this.handleOnChange}>
+                                                <option value='0'> Seconds </option>
+                                                {this.renderNumOptions(60)} 
+                                            </Form.Select>
+                                        </InputGroup>
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Col>
+                                        <Form.Group>
+                                            <Form.Label htmlFor='recipe-notes'>Notes</Form.Label>
+                                            <Form.Control
+                                                as='textarea'
+                                                name='notes'
+                                                placeholder='Tasting Notes, Changes to be made, etc'
+                                                value={this.state.notes}
+                                                onChange={this.handleOnChange}
+                                                rows={3}/>
+                                        </Form.Group><br />
+                                    </Col>
+                                </Row>
+                                <Row>
+                                    <Button mx='auto' variant='success' size='lg' type='submit'>Create Recipe</Button>
+                                </Row> <br /> <br />
+                            </Form>
+                            <Row>    
+                                <Button mx='auto' variant='secondary' size='sm' onClick={() => this.props.return()}>Go Back To Recipes</Button>
+                            </Row>
+                        </div>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         )
     }
 }
+
 
 export default RecipeForm
