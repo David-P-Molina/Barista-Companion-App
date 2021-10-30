@@ -67,69 +67,72 @@ class CoffeeBeanForm extends Component {
                     <Row>
                         <Col md={{ span: 8, offset: 2 }}>
                             <div className='form-background'>
-                                <h1>Create Coffee Bean Information</h1>
+                                <h1>Coffee Bean Form</h1>
                                 <p></p>
                                 <div className='errors'>
                                     <Error errors={this.props.errors}/>
                                 </div>
                             <Form className='coffee-bean-form' onSubmit={this.handleOnSubmit}>
                             <Row>
-                                <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='coffee-bean-name'>Name: </Form.Label> <br />
-                                    <Form.Control 
-                                    required type='text' 
-                                    name='name'
-                                    placeholder='Coffee Bean'
-                                    value={this.state.name} 
-                                    onChange={this.handleOnChange} />
-                                </Form.Group> 
+                                <Col xs={7}>
+                                    <Form.Group>
+                                        <Form.Label htmlFor='coffee-bean-name'>Name: </Form.Label> <br />
+                                        <Form.Control 
+                                        required type='text' 
+                                        name='name'
+                                        placeholder='Coffee Bean'
+                                        value={this.state.name} 
+                                        onChange={this.handleOnChange} />
+                                    <Form.Text className='text-muted'>
+                                        *required
+                                    </Form.Text>
+                                    </Form.Group> 
                                 </Col>
                                 <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='roaster'>Roaster: </Form.Label>
-                                    <Form.Select 
-                                        type='text'
-                                        name='roaster'
-                                        value={this.state.roaster} 
-                                        onChange={this.handleOnChange}
-                                        >
-                                            <option value=''>Select a Roaster From List</option>
-                                        {this.renderRoasters()}
-                                    </Form.Select>
-                                </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label htmlFor='roaster'>Roaster: </Form.Label>
+                                        <Form.Select 
+                                            type='text'
+                                            name='roaster'
+                                            value={this.state.roaster} 
+                                            onChange={this.handleOnChange}>
+                                                <option value=''>Select a Roaster From List</option>
+                                            {this.renderRoasters()}
+                                        </Form.Select>
+                                        <Form.Text className='text-muted'>
+                                            *required
+                                        </Form.Text>
+                                    </Form.Group>
                                 </Col>
-                                </Row>
-                                <Row>
-                                    <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='blend-type'>Blend Type: </Form.Label>
-                                    <Form.Select
-                                        name='blendType'
-                                        value={this.state.blendType}
-                                        onChange={this.handleOnChange}
-                                    >
-                                        <option value=''>Select Blend Type</option>
-                                        {this.renderBlendType()}
-                                        </Form.Select> 
-                                </Form.Group>
-                                    </Col>
-                                    <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='roast-level'>Roast Level: </Form.Label><br />
-                                    <Form.Select 
-                                        type='select' 
-                                        name='roast'
-                                        value={this.state.roast} 
-                                        onChange={this.handleOnChange}
-                                    >
-                                        <option value=''>Select Roast Level: </option>
-                                        {this.renderRoastLevels()}
-                                    </Form.Select>
-                                </Form.Group> 
+                            </Row>
+                            <Row>
+                                <Col xs='auto'>
+                                    <Form.Group>
+                                        <Form.Label htmlFor='blend-type'>Blend Type: </Form.Label>
+                                        <Form.Select
+                                            name='blendType'
+                                            value={this.state.blendType}
+                                            onChange={this.handleOnChange}>
+                                            <option value=''>Select Blend Type</option>
+                                            {this.renderBlendType()}
+                                            </Form.Select> 
+                                    </Form.Group>
                                 </Col>
-                                </Row>
-                                <Row>
+                                <Col >
+                                    <Form.Group>
+                                        <Form.Label htmlFor='roast-level'>Roast Level: </Form.Label><br />
+                                        <Form.Select 
+                                            type='select' 
+                                            name='roast'
+                                            value={this.state.roast} 
+                                            onChange={this.handleOnChange}>
+                                            <option value=''>Select Roast Level: </option>
+                                            {this.renderRoastLevels()}
+                                        </Form.Select>
+                                    </Form.Group> 
+                                </Col>
+                            </Row>
+                            <Row>
                                     {/* <Col><br />
                                 <Form.Group controlId='formWholeBean'>
                                     <Form.Check 
@@ -141,47 +144,61 @@ class CoffeeBeanForm extends Component {
                                 </Form.Group>
                                 </Col> */}
                                 <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='processing-method'>Processing Method: </Form.Label>
-                                    <Form.Control 
-                                        type='text' 
-                                        name='processingMethod'
-                                        value={this.state.processingMethod} 
-                                        onChange={this.handleOnChange} />
-                                </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label htmlFor='processing-method'>Processing Method: </Form.Label>
+                                        <Form.Control 
+                                            type='text' 
+                                            placeholder='Natural, Washed, Wet-Hulled, etc.'
+                                            name='processingMethod'
+                                            value={this.state.processingMethod} 
+                                            onChange={this.handleOnChange} />
+                                    </Form.Group>
                                 </Col>
                                 <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='drying-method'>Drying Method: </Form.Label>
-                                    <Form.Control 
-                                        type='text' 
-                                        name='dryingMethod'
-                                        value={this.state.dryingMethod} 
-                                        onChange={this.handleOnChange} />
-                                </Form.Group>
+                                    <Form.Group>
+                                        <Form.Label htmlFor='drying-method'>Drying Method: </Form.Label>
+                                        <Form.Control 
+                                            type='text' 
+                                            placeholder='Raised Bed, Mechanical Dryer, etc.'
+                                            name='dryingMethod'
+                                            value={this.state.dryingMethod} 
+                                            onChange={this.handleOnChange} />
+                                    </Form.Group>
                                 </Col><br /> 
-                                </Row>
-                                <Row>
+                            </Row>
+                            <Row>
                                 <Col>
-                                <Form.Group>
-                                    <Form.Label htmlFor='region'>Region: </Form.Label>
-                                    <Form.Control 
-                                        type='text' 
-                                        name='region'
-                                        value={this.state.region} 
-                                    onChange={this.handleOnChange} />
+                                    <Form.Group>
+                                        <Form.Label htmlFor='region'>Region: </Form.Label>
+                                        <Form.Control 
+                                            type='text' 
+                                            name='region'
+                                            placeholder='Costa Rica, Ethiopia, Yirgacheffe, etc.'
+                                            value={this.state.region} 
+                                            onChange={this.handleOnChange} />
+                                    </Form.Group>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Col>
+                                    <Form.Group>   
+                                        <Form.Label htmlFor='description'>Description: </Form.Label><br />
+                                        <Form.Control 
+                                            as='textarea' 
+                                            name='description'
+                                            placeholder='Story behind the bean.'
+                                            value={this.state.description} 
+                                            onChange={this.handleOnChange}
+                                            rows={3}
+                                            />
+                                            <Form.Text className='text-muted'>
+                                            *required
+                                        </Form.Text>
                                 </Form.Group>
                                 </Col>
-                                </Row>
-                                <Form.Group>   
-                                    <Form.Label htmlFor='description'>Description: </Form.Label><br />
-                                    <Form.Control 
-                                        type='text' 
-                                        name='description'
-                                        placeholder='Story behind the bean'
-                                        value={this.state.description} 
-                                        onChange={this.handleOnChange}/>
-                                </Form.Group><br />
+                            </Row>
+                            <Row>
+                                <Col>
                                 <Form.Group>
                                     <Form.Label htmlFor='notes'>Tasting Notes: </Form.Label><br />
                                     <Form.Control 
@@ -190,10 +207,16 @@ class CoffeeBeanForm extends Component {
                                         placeholder='Hint of Lemon, Dark Chocolate, etc.'
                                         value={this.state.notes} 
                                         onChange={this.handleOnChange}/>
-                                </Form.Group><br /><br />
-                                <Button variant='success' size='lg' type='submit'>Add Coffee Bean</Button>
-                            </Form><br/>
-                            <Button variant='secondary' size='sm' onClick={() => this.props.return()}>Go Back To Coffee Beans</Button>
+                                </Form.Group><br />
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Button mx='auto' variant='success' size='lg' type='submit'>Add Coffee Bean</Button>
+                            </Row>
+                            </Form><br />
+                            <Row>
+                                <Button mx='auto' variant='secondary' size='sm' onClick={() => this.props.return()}>Coffee Beans List</Button>
+                            </Row>
                             </div>
                         </Col>
                     </Row>
