@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Container, Col, Row, Form, Button } from "react-bootstrap";
 import Error from './Error'
 
 class RecipeForm extends Component {
@@ -24,6 +25,14 @@ class RecipeForm extends Component {
             [e.target.name]: e.target.value
         })
     }
+    processBrewTime = (e) => {
+        const brew = e.target.elements.brewMethod.value 
+        if (brew === '6' || brew === '10'){
+            return (parseInt(this.state.hrTime) * 3600) + (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime)
+        } else {
+            return (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime)
+        }
+    }
     handleOnSubmit = (e) => {
         e.preventDefault()
         let formData = {
@@ -37,7 +46,7 @@ class RecipeForm extends Component {
             water_in_grams: this.state.waterWeight,
             temperature: this.state.temperature,
             filter: this.state.filter,
-            time: (parseInt(this.state.hrTime) * 3600) + (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime),
+            time: this.processBrewTime(e),
             bloom_time: this.state.bloomTime,
             notes: this.state.notes,
             deletable: true,
