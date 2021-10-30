@@ -23,6 +23,13 @@ class Recipe extends React.Component {
             return "No Filter Used"
         }
     }
+    const wholeBean = () => {
+        if (this.props.recipe.wholeBean) {
+            return "Whole Bean"
+        } else {
+            return "Ground"
+        }
+    }
     const convertTime = (num) => {
         if( num === '0' ) {
             return 'N/A'
@@ -30,7 +37,6 @@ class Recipe extends React.Component {
             const hours = Math.floor(num / 3600)
             const minutes = Math.floor(num % 3600 / 60)
             const seconds = Math.floor(num % 3600 % 60)
-            // debugger
             if (hours > 0) {
                 return hours + ' hr ' + minutes + ' min ' + seconds + ' sec '
             } else if (hours === 0 && minutes === 0) {
@@ -48,7 +54,7 @@ class Recipe extends React.Component {
             {renderDeleteEditBtn()}
             <h2><i>{this.props.recipe.brew_method_name}</i> - {filter()}</h2>
             <h3>{this.props.recipe.coffee_bean_name} by <i>{this.props.recipe.roaster_name}</i> roasted on {this.props.recipe.roast_date}</h3>
-            <p>Coffee Weight: {this.props.recipe.coffee_in_grams}grams Grind Consistency: {this.props.recipe.grind}
+            <p>Coffee Weight: {this.props.recipe.coffee_in_grams}grams Grind Consistency: {this.props.recipe.grind} - {wholeBean()}
             Water: {this.props.recipe.water_in_grams}grams{this.props.recipe.temperature} °F</p>
              <h5>1:{ratio} Water to Coffee Ratio</h5>
             <p>
