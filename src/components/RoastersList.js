@@ -6,7 +6,7 @@ const RoastersList = ({ roasters, deleteRoaster }) => {
         return <Roaster key={index} roaster={roaster} deleteRoaster={deleteRoaster}/>
      })
     return (
-        <div className='roaster-list'>
+        <div className='list'>
             <h1>Roasters</h1><br />
             {roastersList}
         </div>

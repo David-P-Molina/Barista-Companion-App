@@ -6,7 +6,7 @@ const RecipesList = ({ recipes, deleteRecipe }) => {
         return <Recipe key={index} recipe={recipe} deleteRecipe={deleteRecipe}/>
      })
     return (
-        <div className='recipe-list'>
+        <div className='list'>
             <h1>Recipes</h1><br />
             {recipesList}
         </div>

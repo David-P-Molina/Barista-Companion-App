@@ -45,7 +45,9 @@ a:focus, a:hover {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
+.list {
+  margin: 4em;
+}
 .footer {
   background-color: #282c34;
   padding: 1em;
@@ -55,7 +57,15 @@ a:focus, a:hover {
 .App-link {
   color: #61dafb;
 }
-
+.coffee-bean {
+  margin: 4em;
+}
+.roaster {
+  margin: 4em;
+}
+.recipe {
+  margin: 4em;
+}
 .brew-method {
   margin: 4em;
 }
