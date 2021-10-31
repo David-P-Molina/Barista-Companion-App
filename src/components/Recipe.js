@@ -6,26 +6,29 @@ class Recipe extends React.Component {
         this.props.deleteRecipe(this.props.recipe.id)
     }
     render() {
+        const {
+            recipe: { id, name, date_attempted, whole_bean, brew_method_name, coffee_bean_name, roaster_name, roast_date, grind, coffee_in_grams, water_in_grams, temperature, filter, time, bloom_time, notes, deletable}
+        } = this.props
     const renderDeleteEditBtn = () => {
-        if (this.props.recipe.deletable === true) {
+        if (deletable === true) {
             return ( 
             <>
-                <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.recipe.id)}>Delete</Button> 
+                <Button variant='danger' size='sm' onClick={() => this.handleOnClick(id)}>Delete</Button> 
                 {/* <button onClick='{props.editRecipeMethod}'>Edit</button> */}
             </>
             )
         }
     }
-    const ratio = (this.props.recipe.water_in_grams / this.props.recipe.coffee_in_grams).toFixed(1) 
-    const filter = () => {
-        if (this.props.recipe.filter) {
+    const ratio = (water_in_grams / coffee_in_grams).toFixed(1) 
+    const filterBoolean = () => {
+        if (filter) {
             return "Filter Used"
         } else {
             return "No Filter Used"
         }
     }
     const wholeBean = () => {
-        if (this.props.recipe.wholeBean) {
+        if (whole_bean) {
             return "Whole Bean"
         } else {
             return "Ground"
@@ -50,17 +53,17 @@ class Recipe extends React.Component {
         }
     }
     return (
-        <div className='recipe' id={this.props.recipe.id}>
-            <h1>{this.props.recipe.name} Brewed on {this.props.recipe.date_attempted}</h1> 
+        <div className='recipe' id={id}>
+            <h1>{name} Brewed on {date_attempted}</h1> 
             {renderDeleteEditBtn()}
-            <h2><i>{this.props.recipe.brew_method_name}</i> - {filter()}</h2>
-            <h3>{this.props.recipe.coffee_bean_name} by <i>{this.props.recipe.roaster_name}</i> roasted on {this.props.recipe.roast_date}</h3>
-            <p>Coffee Weight: {this.props.recipe.coffee_in_grams}grams Grind Consistency: {this.props.recipe.grind} - {wholeBean()}
-            Water: {this.props.recipe.water_in_grams}grams{this.props.recipe.temperature} °F</p>
+            <h2><i>{brew_method_name}</i> - {filterBoolean()}</h2>
+            <h3>{coffee_bean_name} by <i>{roaster_name}</i> roasted on {roast_date}</h3>
+            <p>Coffee Weight: {coffee_in_grams}grams Grind Consistency: {grind} - {wholeBean()}
+            Water: {water_in_grams}grams{temperature} °F</p>
              <h5>1:{ratio} Water to Coffee Ratio</h5>
             <p>
-            Brew Time: {convertTime(this.props.recipe.time)}, Bloom Time: {convertTime(this.props.recipe.bloom_time)}</p>
-            <p>Feedback/Tasting Notes: {this.props.recipe.notes}</p>
+            Brew Time: {convertTime(time)}, Bloom Time: {convertTime(bloom_time)}</p>
+            <p>Feedback/Tasting Notes: {notes}</p>
         </div>
     )
  }

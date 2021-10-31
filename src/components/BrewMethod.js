@@ -6,24 +6,27 @@ class BrewMethod extends React.Component {
         this.props.deleteBrewMethod(this.props.brew.id)
     }
     render() {
+        const {
+            brew: { id, name, description, equipment, deletable}
+        } = this.props
         const renderDeleteEditBtn = () => {
-            if (this.props.brew.deletable === true) {
+            if (deletable === true) {
                 return ( 
                 <>
-                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.brew.id)}>Delete</Button> 
+                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(id)}>Delete</Button> 
                     {/* <button onClick='{props.editBrewMethod}'>Edit</button> */}
                 </>
                 )
             }
         }
-        const equipmentArray =  this.props.brew.equipment.split(",")
+        const equipmentArray =  equipment.split(",")
         const listOfEquipment = equipmentArray.map((equipment, index) => <li key={index}>{equipment}</li>)
         
         return (
             <div className='brew-method'>
-                <h1>{this.props.brew.id} - {this.props.brew.name}</h1>
+                <h1>{id} - {name}</h1>
                 {renderDeleteEditBtn()}
-                <p>{this.props.brew.description}</p>
+                <p>{description}</p>
                 <h4>What You Need</h4>
                 <ul>
                     {listOfEquipment}

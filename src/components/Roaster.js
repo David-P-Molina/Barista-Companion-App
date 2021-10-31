@@ -6,22 +6,25 @@ class Roaster extends React.Component {
         this.props.deleteRoaster(this.props.roaster.id)
     }
     render() {
+        const {
+            roaster: {id, name, description, year_founded, deletable, website}
+        } = this.props
         const renderDeleteEditBtn = () => {
-            if (this.props.roaster.deletable === true) {
+            if (deletable === true) {
                 return ( 
                 <>
-                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.roaster.id)}>Delete</Button> 
-                    {/* <button onClick='{this.props.roaster.editRoasterMethod}'>Edit</button> */}
+                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(id)}>Delete</Button> 
+                    {/* <button onClick='{editRoasterMethod}'>Edit</button> */}
                 </>
                 )
             }
         }
     return (
-        <div className='roaster-card' id={this.props.roaster.id}>
-            <a href={this.props.roaster.url}><h1>{this.props.roaster.name}</h1></a>
+        <div className='roaster-card' id={id}>
+            <a href={website} target='_blank'><h1>{name}</h1></a>
             {renderDeleteEditBtn()}
-            <h3>{this.props.roaster.year_founded}</h3>
-            <p>{this.props.roaster.description}</p>
+            <h3>{year_founded}</h3>
+            <p>{description}</p>
         </div>
     )
     }

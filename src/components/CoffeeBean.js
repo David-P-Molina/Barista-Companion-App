@@ -8,7 +8,6 @@ class CoffeeBean extends React.Component {
     render() {
         const {
             coffeeBean: { id, name, roaster_name, roast, description, notes, blend_type, region, processing_method, drying_method, deletable},
-            deleteCoffeeBean
         } = this.props
         const elevation = () =>  this.props.coffeeBean.elevation === null ? "Not Available" : this.props.coffeeBean.elevation
         const renderDeleteEditBtn = () => {
