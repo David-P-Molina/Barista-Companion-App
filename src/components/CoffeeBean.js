@@ -5,6 +5,11 @@ class CoffeeBean extends React.Component {
     handleOnClick = () => {
         this.props.deleteCoffeeBean(this.props.coffeeBean.id)
     }
+    elevation = () => {
+            if (this.props.coffeeBean.elevation === null) {
+                return "Not Available"
+            }
+    }
     render() {
         const renderDeleteEditBtn = () => {
             if (this.props.coffeeBean.deletable === true) {
@@ -26,7 +31,8 @@ class CoffeeBean extends React.Component {
                 <p>{this.props.coffeeBean.description}</p>
                 Drying Method: {this.props.coffeeBean.drying_method} 
                 Processing Method: {this.props.coffeeBean.processing_method} 
-                Roast Level: {this.props.coffeeBean.roast} 
+                Roast Level: {this.props.coffeeBean.roast} Elevation: {this.elevation()}
+                <br />
             </div>
         )
     }

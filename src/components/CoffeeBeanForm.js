@@ -7,7 +7,7 @@ class CoffeeBeanForm extends Component {
         name: '',
         roaster: '',
         roast: '',
-        wholeBean: '',
+        elevation: '',
         description: '',
         notes: '',
         blendType: '',
@@ -26,7 +26,7 @@ class CoffeeBeanForm extends Component {
             name: this.state.name ,
             roaster_id: this.state.roaster ,
             roast: this.state.roast ,
-            // whole_bean: this.state.wholeBean ,
+            elevation: this.state.elevation,
             description: this.state.description ,
             notes: this.state.notes ,
             blend_type: this.state.blendType,
@@ -40,7 +40,7 @@ class CoffeeBeanForm extends Component {
             name: '',
             roaster: '',
             roast: '',
-            // wholeBean: '',
+            elevation: '',
             description: '',
             notes: '',
             blendType: '',
@@ -134,16 +134,16 @@ class CoffeeBeanForm extends Component {
                                 </Col>
                             </Row>
                             <Row>
-                                    {/* <Col><br />
-                                <Form.Group controlId='formWholeBean'>
-                                    <Form.Check 
-                                        label='Whole Bean'
-                                        type='checkbox' 
-                                        name='wholeBean'
-                                        value={this.state.wholeBean} 
-                                        onChange={this.handleOnChange} />
-                                </Form.Group>
-                                </Col> */}
+                                <Col>
+                                    <Form.Group htmlFor='elevation'>
+                                        <Form.Label>Elevation: </Form.Label>
+                                        <Form.Control
+                                            type='number' 
+                                            name='elevation'
+                                            value={this.state.elevation} 
+                                            onChange={this.handleOnChange} />
+                                    </Form.Group>
+                                </Col>
                                 <Col>
                                     <Form.Group>
                                         <Form.Label htmlFor='processing-method'>Processing Method: </Form.Label>
