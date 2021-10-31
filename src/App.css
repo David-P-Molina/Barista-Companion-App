@@ -55,3 +55,7 @@ a:focus, a:hover {
 .App-link {
   color: #61dafb;
 }
+
+.brew-method {
+  margin: 4em;
+}

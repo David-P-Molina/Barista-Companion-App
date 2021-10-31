@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import {Row, Col, Button } from 'react-bootstrap'
 
 class BrewMethod extends React.Component {
     handleOnClick = () => {
@@ -24,13 +24,24 @@ class BrewMethod extends React.Component {
         
         return (
             <div className='brew-method'>
-                <h1>{id} - {name}</h1>
-                {renderDeleteEditBtn()}
-                <p>{description}</p>
+                <Row>
+                    <Col xs='auto'>
+                        <h1>{name}</h1>
+                    </Col>
+                    <Col xs={1}>
+                        {renderDeleteEditBtn()}
+                    </Col>
+                </Row>
+                <Row>
+                    <p>{description}</p>
+                </Row>
                 <h4>What You Need</h4>
-                <ul>
-                    {listOfEquipment}
-                </ul>
+                <Row>
+                    <Col>
+                        {listOfEquipment}
+                    </Col>
+                </Row>
+                <br />
             </div>
         )
     }
