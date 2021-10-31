@@ -21,7 +21,7 @@ class Roaster extends React.Component {
         }
     return (
         <div className='roaster-card' id={id}>
-            <a href={website} target='_blank'><h1>{name}</h1></a>
+            <a href={website} target='_blank' rel='noopener noreferrer'><h1>{name}</h1></a>
             {renderDeleteEditBtn()}
             <h3>{year_founded}</h3>
             <p>{description}</p>
