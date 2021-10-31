@@ -29,7 +29,7 @@ export const Header = () => (
     <div className="jumbo">
       <div className="overlay"></div>
       <Container>
-        <br /><br />
+      <br /><br /><br /><br /><br /><br />
         <h1>Welcome</h1>
         <p>for coffee enthusiasts in pursuit of the perfect cup</p>
       </Container>
