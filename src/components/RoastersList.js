@@ -1,5 +1,6 @@
 import React from 'react'
 import Roaster from './Roaster'
+import { RoasterHeader } from './styling/RoasterHeader'
 
 const RoastersList = ({ roasters, deleteRoaster }) => {
     const roastersList = roasters.map((roaster, index) => {
@@ -7,7 +8,7 @@ const RoastersList = ({ roasters, deleteRoaster }) => {
      })
     return (
         <div className='list'>
-            <h1>Roasters</h1><br />
+            <RoasterHeader /><br />
             {roastersList}
         </div>
     )

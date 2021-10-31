@@ -1,5 +1,6 @@
 import React from 'react'
 import Recipe from './Recipe'
+import { RecipeHeader } from './styling/RecipeHeader'
 
 const RecipesList = ({ recipes, deleteRecipe }) => {
     const recipesList = recipes.map((recipe, index) => {
@@ -7,7 +8,7 @@ const RecipesList = ({ recipes, deleteRecipe }) => {
      })
     return (
         <div className='list'>
-            <h1>Recipes</h1><br />
+            <RecipeHeader /><br />
             {recipesList}
         </div>
     )
