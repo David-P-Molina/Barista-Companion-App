@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Row, Col, Button } from 'react-bootstrap'
 
 class Roaster extends React.Component {
     handleOnClick = () => {
@@ -21,10 +21,17 @@ class Roaster extends React.Component {
         }
     return (
         <div className='roaster-card' id={id}>
-            <a href={website} target='_blank' rel='noopener noreferrer'><h1>{name}</h1></a>
-            {renderDeleteEditBtn()}
-            <h3>{year_founded}</h3>
-            <p>{description}</p>
+            <Row>
+                <Col xs='auto'>
+                    <h1><a href={website} target='_blank' rel='noopener noreferrer'>{name}</a> - <i>{year_founded}</i></h1>
+                </Col>
+                <Col>
+                    {renderDeleteEditBtn()}
+                </Col>
+            </Row>
+            <Row>
+                <p>{description}</p>
+            </Row>
         </div>
     )
     }
