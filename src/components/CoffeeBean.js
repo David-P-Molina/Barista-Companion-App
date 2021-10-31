@@ -5,33 +5,33 @@ class CoffeeBean extends React.Component {
     handleOnClick = () => {
         this.props.deleteCoffeeBean(this.props.coffeeBean.id)
     }
-    elevation = () => {
-            if (this.props.coffeeBean.elevation === null) {
-                return "Not Available"
-            }
-    }
     render() {
+        const {
+            coffeeBean: { id, name, roaster_name, roast, description, notes, blend_type, region, processing_method, drying_method, deletable},
+            deleteCoffeeBean
+        } = this.props
+        const elevation = () =>  this.props.coffeeBean.elevation === null ? "Not Available" : this.props.coffeeBean.elevation
         const renderDeleteEditBtn = () => {
-            if (this.props.coffeeBean.deletable === true) {
+            if (deletable === true) {
                 return ( 
                 <>
-                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(this.props.coffeeBean.id)}>Delete</Button> 
-                    {/* <button onClick='{this.props.coffeeBean.editCoffeeBean}'>Edit</button> */}
+                    <Button variant='danger' size='sm' onClick={() => this.handleOnClick(id)}>Delete</Button> 
+                    {/* <button onClick='{editCoffeeBean}'>Edit</button> */}
                 </>
                 )
             }
         }
         return (
-            <div className='coffee-bean' id={this.props.coffeeBean.id}>
-                <h1>{this.props.coffeeBean.name} by <i>{this.props.coffeeBean.roaster_name}</i></h1>
+            <div className='coffee-bean' id={id}>
+                <h1>{name} by <i>{roaster_name}</i></h1>
                 {renderDeleteEditBtn()}
-                <p>Type: {this.props.coffeeBean.blend_type}</p>
-                Region: {this.props.coffeeBean.region} 
-                <span>Tasting Notes: {this.props.coffeeBean.notes}</span>
-                <p>{this.props.coffeeBean.description}</p>
-                Drying Method: {this.props.coffeeBean.drying_method} 
-                Processing Method: {this.props.coffeeBean.processing_method} 
-                Roast Level: {this.props.coffeeBean.roast} Elevation: {this.elevation()}
+                <p>Type: {blend_type}</p>
+                Region: {region} 
+                <span>Tasting Notes: {notes}</span>
+                <p>{description}</p>
+                Drying Method: {drying_method} 
+                Processing Method: {processing_method} 
+                Roast Level: {roast} Elevation: {elevation()}
                 <br />
             </div>
         )
