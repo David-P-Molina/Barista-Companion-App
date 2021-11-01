@@ -134,8 +134,9 @@ class CoffeeBeanForm extends Component {
                                     <Form.Group htmlFor='elevation'>
                                         <Form.Label>Elevation: </Form.Label>
                                         <Form.Control
-                                            type='number' 
+                                            type='text' 
                                             name='elevation'
+                                            placeholder='Meters above or below Sea-Level'
                                             value={this.state.elevation} 
                                             onChange={this.handleOnChange} />
                                     </Form.Group>

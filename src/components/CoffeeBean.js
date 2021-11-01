@@ -38,19 +38,21 @@ class CoffeeBean extends React.Component {
                         <p><b>Region: </b>{valueExist(region)}</p>
                     </Col>
                     <Col xs='auto'>
-                        <p><b>Notes: </b>{valueExist(notes)}</p>
+                        <p><b>Tasting Notes: </b>{valueExist(notes)}</p>
                     </Col>
                 </Row>
                 <Row>
                     <p>{valueExist(description)}</p>
                 </Row>
                 <Row>
-                    <Col>
+                    <Col xs='auto'>
                         <p><b>Roast Level:</b> {valueExist(roast)}</p>
                     </Col>
                     <Col xs='auto'>
                         <p><b>Drying Method:</b> {valueExist(drying_method)} </p>
                     </Col>
+                </Row>
+                <Row>
                     <Col xs='auto'>
                         <p><b>Processing Method:</b> {valueExist(processing_method)} </p>
                     </Col>

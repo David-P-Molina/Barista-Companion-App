@@ -25,7 +25,7 @@ class Recipe extends React.Component {
         const wholeBean = () => whole_bean ? "Whole Bean" : "Pre-Ground"
         const convertTime = (num) => {
             if( num === '0' ) {
-                return 'N/A'
+                return 'Not Available'
             } else {
                 const hours = Math.floor(num / 3600)
                 const minutes = Math.floor(num % 3600 / 60)
