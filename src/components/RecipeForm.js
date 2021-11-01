@@ -28,11 +28,7 @@ class RecipeForm extends Component {
     }
     processBrewTime = (e) => {
         const brew = e.target.elements.brewMethod.value 
-        if (brew === '6' || brew === '10'){
-            return (parseInt(this.state.hrTime) * 3600) + (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime)
-        } else {
-            return (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime)
-        }
+        return brew === '6' || brew === '10' ? (parseInt(this.state.hrTime) * 3600) + (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime) : (parseInt(this.state.minTime) * 60) + parseInt(this.state.secTime)
     }
     handleOnSubmit = (e) => {
         e.preventDefault()
@@ -74,61 +70,40 @@ class RecipeForm extends Component {
         })
     }
 
-    renderBrewMethods = () => {
-        return (
-            this.props.brewMethodsList.map((brew) => {
-                return (
-                <option 
-                    key={brew.name} 
-                    value={brew.id}>
-                        {brew.name}
-                </option>
+    render() {
+        const renderCoffeeBeans = () => {
+            return (
+                this.props.coffeeBeansList.map((b) => <option key={b.name} value={b.id}>{b.name} by {b.roaster_name} </option>)
                 )
-            })
-        )
-    }
-    renderCoffeeBeans = () => {
-        return (
-            this.props.coffeeBeansList.map((bean) => (
-                <option 
-                    key={bean.name} 
-                    value={bean.id}>
-                    {bean.name} by {bean.roaster_name} 
-                </option>)
-            ))
-    }
-    renderNumOptions(numbers) {
-        const numArray = []
-        for (let i = 0; i <= numbers; i++) {
-            numArray.push(i)
         }
-        return numArray.map((number) => {
-            return (
-                <option 
-                key={number} 
-                value={number}>
-                    {number}
-                </option>
-            )
-            })
-    }
-    renderHourTimerForColdBrew = () => {
-        if (this.state.brewMethod === "6" || this.state.brewMethod === "10") {
-            return (
+        const renderNumOptions = (numbers) => {
+            const numArray = []
+            for (let i = 0; i <= numbers; i++) {
+                numArray.push(i)
+            }
+            return numArray.map((number) => <option key={number} value={number}>{number}</option>)
+        }
+        const renderHourTimerForColdBrew = () => {
+            if (this.state.brewMethod === "6" || this.state.brewMethod === "10") {
+                return (
                     <Form.Select 
                         type='number' 
                         name='hrTime'
                         value={this.state.hrTime} 
                         max='24'
                         onChange={this.handleOnChange}
-                    >
+                     >
                         <option value='0'>Hour(s)</option>
-                        {this.renderNumOptions(24)}
+                        {renderNumOptions(24)}
                     </Form.Select>
+                )
+            }
+        }
+        const renderBrewMethods = () => {
+            return (
+                this.props.brewMethodsList.map((brew) =>  <option key={brew.name} value={brew.id}>{brew.name}</option>)
             )
         }
-    }
-    render() {
         return (
             <div>
                 <Container>
@@ -175,7 +150,7 @@ class RecipeForm extends Component {
                                                 onChange={this.handleOnChange}
                                                 >
                                                  <option value=''>Select a Brew Method</option>   
-                                                {this.renderBrewMethods()}
+                                                {renderBrewMethods()}
                                             </Form.Select>
                                         </Form.Group><br />
                                     </Col>
@@ -191,7 +166,7 @@ class RecipeForm extends Component {
                                                 onChange={this.handleOnChange}
                                             >
                                                 <option value=''>Select a Coffee Bean</option>
-                                                {this.renderCoffeeBeans()}
+                                                {renderCoffeeBeans()}
                                             </Form.Select> 
                                         </Form.Group> <br />
                                     </Col>
@@ -284,7 +259,7 @@ class RecipeForm extends Component {
                                     <Col>
                                         <InputGroup>
                                         <InputGroup.Text>Brew Time: </InputGroup.Text>
-                                            {this.renderHourTimerForColdBrew()}
+                                            {renderHourTimerForColdBrew()}
                                             <Form.Select 
                                                 type='number' 
                                                 name='minTime'
@@ -292,7 +267,7 @@ class RecipeForm extends Component {
                                                 max='60'
                                                 onChange={this.handleOnChange}>
                                                 <option value='0'>Minute(s)</option>
-                                                {this.renderNumOptions(59)}
+                                                {renderNumOptions(59)}
                                             </Form.Select>
                                             <Form.Select
                                                 type='number' 
@@ -302,7 +277,7 @@ class RecipeForm extends Component {
                                                 onChange={this.handleOnChange}
                                                 >
                                                 <option value='0'>Sec(s)</option>
-                                                {this.renderNumOptions(59)}
+                                                {renderNumOptions(59)}
                                             </Form.Select>
                                         </InputGroup>
                                     </Col>
@@ -315,7 +290,7 @@ class RecipeForm extends Component {
                                                 value={this.state.bloomTime} 
                                                 onChange={this.handleOnChange}>
                                                 <option value='0'> Seconds </option>
-                                                {this.renderNumOptions(60)} 
+                                                {renderNumOptions(60)} 
                                             </Form.Select>
                                         </InputGroup>
                                     </Col>
@@ -349,6 +324,5 @@ class RecipeForm extends Component {
         )
     }
 }
-
 
 export default RecipeForm
