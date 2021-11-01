@@ -31,7 +31,7 @@ class Roaster extends React.Component {
             </Row>
             <Row>
                 <p>{description}</p>
-            </Row>
+            </Row><br />
         </div>
     )
     }

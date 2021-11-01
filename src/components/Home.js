@@ -1,11 +1,15 @@
 import React from 'react'
+import { RoastLevelHeader } from './styling/RoastLevelsHeader'
+import { GrindSizeHeader } from './styling/GrindSizeHeader'
+import { CoffeeBlendHeader } from './styling/CoffeeBlendHeader'
+import { BloomTimeHeader } from './styling/BloomTimeHeader'
 
 const Home = () => {
     return (
         <div>
             <div className='roast-levels'>
             {/* source: https://howtostartanllc.com/coffee/coffee-roast-level-guide */}
-                <h1>Roast Levels</h1>
+                <RoastLevelHeader />
                 <ul>
                     <li>
                         <h3>Light Roast</h3>
@@ -43,7 +47,7 @@ const Home = () => {
             </div>
             <div className='grind-size'>
                 {/* source: https://coffeeaffection.com/coffee-grind-size-chart/ */}
-                <h1>Grind Sizes</h1>
+                <GrindSizeHeader />
                 <h3>Extra Fine</h3>
                 <p>The extra-fine grind size has a texture like powder or flour.</p>
                 <h3>Fine</h3>
@@ -60,7 +64,7 @@ const Home = () => {
                 <p>Extra coarse beans are only slightly ground, often using the largest setting on a burr grinder. They have a very rough texture, and you can still see the shape of the original beans.</p>
             </div>
             <div className='coffee-blend-types'>
-                <h1>Coffee Blend Types</h1>
+                <CoffeeBlendHeader />
                 <h3>Single-Origin</h3>
                 <p>Originating in a single location, whether that be a country, region, or farm, this coffee has very distinct flavors.</p>
                 <h3>Blend</h3>
@@ -72,7 +76,7 @@ const Home = () => {
             </div>
             <div className='bloom-time'>
                 {/* source: https://www.beanpoet.com/the-purpose-of-blooming-coffee/ */}
-                <h1>What's a Bloom Time</h1>
+                <BloomTimeHeader />
                 <p>Blooming coffee at the start of brewing can help your coffee achieve its full flavor and aroma. The purpose of blooming coffee is to draw trapped carbon dioxide gas out of the roasted coffee grounds. It’s a simple process, and if you want to avoid unnecessary sour notes in your brew, it’s 30 or 40 seconds well spent.</p>
             </div>
         </div>
