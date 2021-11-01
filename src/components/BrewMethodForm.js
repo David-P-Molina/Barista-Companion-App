@@ -22,24 +22,11 @@ class BrewMethodForm extends Component {
             deletable: true,
         }
         this.props.addBrewMethod(formData)
-        //setTimeout(() => this.updateState(), 10000)
         this.setState({
             name: '',
             description: '',
             equipment: '',
         })
-    }
-    updateState = () => {
-        if (this.props.errors.length === 0) {
-            return (
-                this.setState({
-                name: '',
-                description: '',
-                equipment: '',  
-                }),
-            this.props.return()
-            )
-        }
     }
     render() {
         return (
