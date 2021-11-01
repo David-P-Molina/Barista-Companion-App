@@ -47,6 +47,11 @@ a:focus, a:hover {
 }
 .list {
   margin: 4em;
+  margin-top: 0;
+}
+.info {
+  margin: 2em;
+  margin-top: 0;
 }
 .footer {
   background-color: #282c34;
