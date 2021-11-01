@@ -69,8 +69,10 @@ class RecipeForm extends Component {
             notes: '',
         })
     }
-
+    
     render() {
+        const grindArray = ['Extra Coarse', 'Course', 'Medium Course', 'Medium', 'Medium Fine', 'Fine', 'Extra-Fine/Espresso']
+        const displayArray = (array) => array.map((item) => <option key={item} value={item}>{item}</option>)
         const renderCoffeeBeans = () => {
             return (
                 this.props.coffeeBeansList.map((b) => <option key={b.name} value={b.id}>{b.name} by {b.roaster_name} </option>)
@@ -127,6 +129,9 @@ class RecipeForm extends Component {
                                                 value={this.state.name}
                                                 onChange={this.handleOnChange}
                                                 /> 
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group><br />
                                     </Col>
                                     <Col xs={3}>
@@ -137,7 +142,10 @@ class RecipeForm extends Component {
                                                 name='dateAttempted'
                                                 value={this.state.dateAttempted}
                                                 onChange={this.handleOnChange}
-                                            />
+                                            /> 
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group><br />
                                     </Col>
                                     <Col xs='auto'>
@@ -151,7 +159,10 @@ class RecipeForm extends Component {
                                                 >
                                                  <option value=''>Select a Brew Method</option>   
                                                 {renderBrewMethods()}
-                                            </Form.Select>
+                                            </Form.Select> 
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group><br />
                                     </Col>
                                 </Row>
@@ -167,36 +178,39 @@ class RecipeForm extends Component {
                                             >
                                                 <option value=''>Select a Coffee Bean</option>
                                                 {renderCoffeeBeans()}
-                                            </Form.Select> 
+                                            </Form.Select>  
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group> <br />
                                     </Col>
                                     <Col xs={3}>
                                         <Form.Group>
                                             <Form.Label htmlFor='coffee-bean-roast-date'>Roasted on </Form.Label>
                                             <Form.Control 
-                                                type='date'
+                                                required type='date'
                                                 name='roastDate'
                                                 value={this.state.roastDate}
-                                                onChange={this.handleOnChange}/> 
+                                                onChange={this.handleOnChange}/>  
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group><br />
                                     </Col>
                                     <Col xs='auto'>
                                         <Form.Group>
                                             <Form.Label htmlFor='grind'>Grind Size: </Form.Label> <br />
                                             <Form.Select
-                                                type='text' 
+                                                required type='text' 
                                                 name='grind'
                                                 value={this.state.grind} 
                                                 onChange={this.handleOnChange}>
                                                 <option value=''>--Select Grind Level--</option>
-                                                <option value='Extra Coarse'>Extra Coarse</option>
-                                                <option value='Coarse'>Coarse</option>
-                                                <option value='Medium Coarse'>Medium Coarse</option>
-                                                <option value='Medium'>Medium</option>
-                                                <option value='Medium Fine'>Medium Fine</option>
-                                                <option value='Fine'>Fine</option>
-                                                <option value='Extra-Fine/Espresso'>Extra-Fine/Espresso</option>
-                                            </Form.Select> <br />
+                                                {displayArray(grindArray)}
+                                            </Form.Select> 
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text> 
                                         </Form.Group>
                                     </Col>
                                 </Row>
@@ -205,34 +219,43 @@ class RecipeForm extends Component {
                                         <Form.Group>
                                             <Form.Label htmlFor='coffee-weight'>Coffee Weight(g): </Form.Label> <br />
                                             <Form.Control 
-                                                type='number' 
+                                                required type='number' 
                                                 name='coffeeWeight'
                                                 placeholder='grams'
                                                 value={this.state.coffeeWeight} 
                                                 onChange={this.handleOnChange}/>
-                                        </Form.Group><br />
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
+                                        </Form.Group> 
                                     </Col>
                                     <Col>
                                         <Form.Group>
                                             <Form.Label htmlFor='water-weight'>Water Weight(g): </Form.Label> <br />
                                             <Form.Control 
-                                                type='number' 
+                                                required type='number' 
                                                 name='waterWeight'
                                                 placeholder='grams'
                                                 value={this.state.waterWeight} 
                                                 onChange={this.handleOnChange} />
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group>
                                     </Col>
                                     <Col>
                                         <Form.Group>
                                             <Form.Label htmlFor='temperature'>Temperature(°F): </Form.Label> <br />
                                             <Form.Control 
-                                                type='number' 
+                                                required type='number' 
                                                 name='temperature'
                                                 placeholder='Fahrenheit'
                                                 value={this.state.temperature} 
                                                 onChange={this.handleOnChange}
-                                            /> 
+                                            />  
+                                            <Form.Text className='text-muted'>
+                                                *required
+                                            </Form.Text>
                                         </Form.Group>
                                     </Col>
                                     <Col>
@@ -253,7 +276,6 @@ class RecipeForm extends Component {
                                                 onChange={this.handleOnChange}/> 
                                         </Form.Group>
                                     </Col>
-                            
                                 </Row>
                                 <Row>
                                     <Col>
@@ -291,7 +313,7 @@ class RecipeForm extends Component {
                                                 onChange={this.handleOnChange}>
                                                 <option value='0'> Seconds </option>
                                                 {renderNumOptions(60)} 
-                                            </Form.Select>
+                                            </Form.Select> 
                                         </InputGroup>
                                     </Col>
                                 </Row>
