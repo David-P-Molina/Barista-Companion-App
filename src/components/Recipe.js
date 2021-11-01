@@ -22,7 +22,7 @@ class Recipe extends React.Component {
         }
         const ratio = () => (water_in_grams / coffee_in_grams).toFixed(1) 
         const filterBoolean = () => filter ? "Filter Used" : "No Filter Used"
-        const wholeBean = () => whole_bean ? "Whole Bean" : "Ground"
+        const wholeBean = () => whole_bean ? "Whole Bean" : "Pre-Ground"
         const convertTime = (num) => {
             if( num === '0' ) {
                 return 'N/A'
@@ -70,16 +70,16 @@ class Recipe extends React.Component {
                 </Row>
                 <Row>
                     <Col xs='auto'>
-                    <p><b>Coffee Weight:</b> {coffee_in_grams}grams</p>
+                    <p><b>Coffee Weight:</b> {coffee_in_grams} grams</p>
                     </Col>
                     <Col xs='auto'>
-                    <p><b>Water:</b> {water_in_grams}grams</p>
+                    <p><b>Water:</b> {water_in_grams} grams</p>
                     </Col>
                     <Col xs='auto'>
                     <b><p>{temperature} °F</p></b>
                     </Col>
                     <Col xs='auto'>
-                    <p>1:{ratio()} <b>Water : Coffee Ratio</b></p>
+                    <p><b>Ratio:</b> 1 gram Water / {ratio()} grams Coffee </p>
                     </Col>
                 </Row>
                 <Row>
