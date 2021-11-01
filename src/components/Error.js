@@ -10,12 +10,12 @@ class Error extends Component {
     // }
     render() {
         const renderErrors = this.props.errors.map((e) => <div key={e}>{e}</div>)
+        const container = this.props.errors.length > 0 ? <div className='error-messages'>{renderErrors}</div> : <div></div>
+        
         return (
-            <div className='error-messages'>
-                <br/>
-                {renderErrors}
-
-            </div>
+            <>
+                {container}
+            </>
         )
     }
 }

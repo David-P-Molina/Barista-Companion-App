@@ -74,3 +74,8 @@ a:focus, a:hover {
 .brew-method {
   margin: 4em;
 }
+.error-messages {
+  background-color: rgb(232, 83, 83);
+  padding: 1rem;
+  border-radius: 4px;
+}

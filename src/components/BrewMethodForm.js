@@ -53,7 +53,7 @@ class BrewMethodForm extends Component {
                                 <span><i>*When filling out the equipment section please separate each item with a comma to display correctly.</i></span>
                                 <div className='errors'>
                                     <Error errors={this.props.errors}/>
-                            </div>
+                                </div><br />
                             <Form className='brew-method-form' onSubmit={this.handleOnSubmit}>
                                 <Row>
                                     <Form.Group className='mb-3'>
