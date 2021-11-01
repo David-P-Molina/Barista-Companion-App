@@ -23,7 +23,7 @@ class Roaster extends React.Component {
         <div className='roaster-card' id={id}>
             <Row>
                 <Col xs='auto'>
-                    <h1><a href={website} target='_blank' rel='noopener noreferrer'>{name}</a> - <i>{year_founded}</i></h1>
+                    <h2><a href={website} target='_blank' rel='noopener noreferrer'>{name}</a> - <i>{year_founded}</i></h2>
                 </Col>
                 <Col>
                     {renderDeleteEditBtn()}

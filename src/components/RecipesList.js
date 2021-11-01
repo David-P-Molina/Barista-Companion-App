@@ -8,7 +8,7 @@ const RecipesList = ({ recipes, deleteRecipe }) => {
      })
     return (
         <div className='list'>
-            <RecipeHeader /><br />
+            <RecipeHeader />
             {recipesList}
         </div>
     )

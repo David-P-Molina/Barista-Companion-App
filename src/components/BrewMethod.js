@@ -26,7 +26,7 @@ class BrewMethod extends React.Component {
             <div className='brew-method'>
                 <Row>
                     <Col xs='auto'>
-                        <h1>{name}</h1>
+                        <h2>{name}</h2>
                     </Col>
                     <Col xs={1}>
                         {renderDeleteEditBtn()}

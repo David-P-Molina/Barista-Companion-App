@@ -8,7 +8,7 @@ const CoffeeBeansList = ({ coffeeBeans, deleteCoffeeBean }) => {
      })
     return (
         <div className='list'>
-            <CoffeeBeanHeader /> <br />
+            <CoffeeBeanHeader />
             {coffeeBeansList}
         </div>
     )
