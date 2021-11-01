@@ -18,6 +18,7 @@ function brewMethodsReducer(
             }
         case 'ADD_BREW_METHOD':
             return { 
+                ...state,
                 brewMethods: [
                     ...state.brewMethods, 
                     action.formData

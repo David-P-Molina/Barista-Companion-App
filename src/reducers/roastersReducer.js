@@ -20,6 +20,7 @@ function roastersReducer(
 
         case 'ADD_ROASTER':
             return { 
+                ...state,
                 roasters: [
                     ...state.roasters, 
                     action.formData

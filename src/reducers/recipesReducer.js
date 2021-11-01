@@ -18,6 +18,7 @@ function recipesReducer(
             }
         case 'ADD_RECIPE':
             return { 
+                ...state,
                 recipes: [
                     ...state.recipes, 
                     action.formData
