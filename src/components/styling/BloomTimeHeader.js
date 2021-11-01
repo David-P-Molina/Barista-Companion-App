@@ -8,13 +8,16 @@ const Styles = styled.div`
     background: url(${bloom}) no-repeat ;
     background-size: cover;
     color: #efefef;
-    height: 300px;
+    height: 225px;
     position: relative;
     z-index: -2;
   }
+  .text {
+    text-align: center;
+  }
   .overlay {
     background-color: #000;
-    opacity: 0.6;
+    opacity: 0.4;
     position: absolute;
     top: 0;
     left: 0;
@@ -28,9 +31,9 @@ export const BloomTimeHeader = () => (
   <Styles>
     <div className="jumbo">
       <div className="overlay"></div>
-      <Container>
-      <br /><br /><br /><br /><br /><br />
-        <h1>Bloom Time</h1>
+      <Container className='text'>
+      <br /><br /><br /><br />
+        <h1>Bloom Time</h1><hr />
       </Container>
     </div>
   </Styles>
