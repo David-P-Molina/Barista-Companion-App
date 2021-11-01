@@ -49,18 +49,14 @@ class CoffeeBeanForm extends Component {
             dryingMethod: '',
         })
     }
-    renderRoasters = () => {
-        return this.props.roastersList.map((roaster) => <option key={roaster.name} value={roaster.id}>{roaster.name}</option>)
-    }
-    renderRoastLevels = () => {
-        const roastArray = ['Blonde Roast', 'Light/ City Roast', 'Light-Medium/ City +', 'Medium/ Full City', 'Medium-Dark/ Full City +', 'Dark Roast/ Vienna-French']
-        return roastArray.map((r) => <option key={r} value={r}>{r}</option>)
-    }
-    renderBlendType = () => {
-        const blendsArray = ["Espresso", "Single-Origin", "Blend", "Decaf", "Decaf Espresso"]
-        return blendsArray.map((blend) => <option key={blend} value={blend}>{blend}</option>)
-    }
+    
     render() {
+        const renderRoasters = () => {
+            return this.props.roastersList.map((roaster) => <option key={roaster.name} value={roaster.id}>{roaster.name}</option>)
+        }
+        const blendsArray = ["Espresso", "Single-Origin", "Blend", "Decaf", "Decaf Espresso"]
+        const roastArray = ['Blonde Roast', 'Light/ City Roast', 'Light-Medium/ City +', 'Medium/ Full City', 'Medium-Dark/ Full City +', 'Dark Roast/ Vienna-French']
+        const displayArray = (array) => array.map((item) => <option key={item} value={item}>{item}</option>)
         return (
             <div>
                 <Container>
@@ -98,7 +94,7 @@ class CoffeeBeanForm extends Component {
                                             value={this.state.roaster} 
                                             onChange={this.handleOnChange}>
                                                 <option value=''>Select a Roaster From List</option>
-                                            {this.renderRoasters()}
+                                            {renderRoasters()}
                                         </Form.Select>
                                         <Form.Text className='text-muted'>
                                             *required
@@ -115,7 +111,7 @@ class CoffeeBeanForm extends Component {
                                             value={this.state.blendType}
                                             onChange={this.handleOnChange}>
                                             <option value=''>Select Blend Type</option>
-                                            {this.renderBlendType()}
+                                            {displayArray(blendsArray)}
                                             </Form.Select> 
                                     </Form.Group>
                                 </Col>
@@ -128,7 +124,7 @@ class CoffeeBeanForm extends Component {
                                             value={this.state.roast} 
                                             onChange={this.handleOnChange}>
                                             <option value=''>Select Roast Level: </option>
-                                            {this.renderRoastLevels()}
+                                            {displayArray(roastArray)}
                                         </Form.Select>
                                     </Form.Group> 
                                 </Col>

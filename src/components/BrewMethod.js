@@ -20,7 +20,7 @@ class BrewMethod extends React.Component {
             }
         }
         const equipmentArray =  equipment.split(",")
-        const listOfEquipment = equipmentArray.map((equipment, index) => <li key={index}>{equipment}</li>)
+        const listOfEquipment = equipmentArray.map((equipment, index) => <Col xs='auto' key={index}>{equipment}</Col>)
         
         return (
             <div className='brew-method'>
@@ -37,11 +37,8 @@ class BrewMethod extends React.Component {
                 </Row>
                 <h4>What You Need</h4>
                 <Row>
-                    <Col>
-                        {listOfEquipment}
-                    </Col>
-                </Row>
-                <br />
+                    {listOfEquipment}
+                </Row><hr />
             </div>
         )
     }
