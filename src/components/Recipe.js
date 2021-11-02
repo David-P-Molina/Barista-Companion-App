@@ -2,9 +2,16 @@ import React from 'react'
 import { Button, Row, Col } from 'react-bootstrap'
 
 class Recipe extends React.Component {
+    state = {
+        clicked: false
+    }
     handleOnClick = () => {
         this.props.deleteRecipe(this.props.recipe.id)
     }
+    handleLike = () => {
+        this.state.clicked === false ? this.setState({clicked: true}) : this.setState({clicked: false})
+    }
+    
     render() {
         const {
             recipe: { id, name, date_attempted, whole_bean, brew_method_name, coffee_bean_name, roaster_name, roast_date, grind, coffee_in_grams, water_in_grams, temperature, filter, time, bloom_time, notes, deletable}
@@ -41,7 +48,10 @@ class Recipe extends React.Component {
                 }
             }
         }
-    
+        const renderHeart = () => {
+          return this.state.clicked ?  "<3" : ''
+        }
+
         return (
             <div className='recipe' >
                 <Row>
@@ -51,6 +61,8 @@ class Recipe extends React.Component {
                     <Col xs='auto'>
                         {renderDeleteEditBtn()}
                     </Col>
+                    {renderHeart()}
+                    <button onClick={this.handleLike}>Like</button>
                 </Row>
                 <Row>
                     <Col xs='auto'>
