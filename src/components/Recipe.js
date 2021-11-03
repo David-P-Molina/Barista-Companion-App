@@ -61,8 +61,6 @@ class Recipe extends React.Component {
                     <Col xs='auto'>
                         {renderDeleteEditBtn()}
                     </Col>
-                    {renderHeart()}
-                    <button onClick={this.handleLike}>Like</button>
                 </Row>
                 <Row>
                     <Col xs='auto'>
@@ -105,6 +103,12 @@ class Recipe extends React.Component {
             <Row>
                 <Col xs='auto'>
                     <p><b>Feedback/Tasting Notes:</b> {valueExist(notes)}</p>
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    {renderHeart()}
+                    <Button className='like'xs='auto' size='sm' variant='danger' onClick={this.handleLike}>Like</Button>
                 </Col>
             </Row><hr />
         </div>

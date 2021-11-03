@@ -59,6 +59,9 @@ a:focus, a:hover {
   color: #efefef;
   
 }
+.like {
+  max-width: 10ch;
+}
 .App-link {
   color: #61dafb;
 }

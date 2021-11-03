@@ -1,6 +1,0 @@
-Like button to recipe that when clicked adds a heart to the page 
-and remove on click second toggle
-Recipe Component
--create the heart
--create toggle ternary
--onclick
