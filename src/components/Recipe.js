@@ -49,9 +49,9 @@ class Recipe extends React.Component {
             }
         }
         const renderHeart = () => {
-          return this.state.clicked ?  "<3" : ''
+          return this.state.clicked ? ' ❤️' : " ♡"
         }
-
+        const renderLikeStatus = () => this.state.clicked ? 'Dislike' : 'Like'
         return (
             <div className='recipe' >
                 <Row>
@@ -107,8 +107,8 @@ class Recipe extends React.Component {
             </Row>
             <Row>
                 <Col>
+                    <Button className='like'xs='auto' size='sm' variant='danger' onClick={this.handleLike}>{renderLikeStatus()}</Button>
                     {renderHeart()}
-                    <Button className='like'xs='auto' size='sm' variant='danger' onClick={this.handleLike}>Like</Button>
                 </Col>
             </Row><hr />
         </div>
