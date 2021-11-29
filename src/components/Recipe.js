@@ -48,15 +48,13 @@ class Recipe extends React.Component {
                 }
             }
         }
-        const renderHeart = () => {
-          return this.state.clicked ? ' ❤️' : " ♡"
-        }
+        const renderHeart = () => this.state.clicked ? ' ❤️' : " ♡"
         const renderLikeStatus = () => this.state.clicked ? 'Dislike' : 'Like'
         return (
             <div className='recipe' >
                 <Row>
                     <Col xs='auto'>
-                        <h2>{name}  <i>{date_attempted}</i></h2> 
+                        <h2>{name}  <i>{date_attempted}</i> {renderHeart()} </h2> 
                     </Col>
                     <Col xs='auto'>
                         {renderDeleteEditBtn()}
@@ -108,7 +106,6 @@ class Recipe extends React.Component {
             <Row>
                 <Col>
                     <Button className='like'xs='auto' size='sm' variant='danger' onClick={this.handleLike}>{renderLikeStatus()}</Button>
-                    {renderHeart()}
                 </Col>
             </Row><hr />
         </div>
