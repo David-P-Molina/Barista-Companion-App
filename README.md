@@ -1,5 +1,5 @@
 # Barista Companion App
- This app aims to be the coffee connoisseur's friend. There is something magical about enjoying a new blend, but nothing is worse than brewing a bad cup. With this app you can record any minor changes you make to a recipe and identify what aspect of the recipe needs to change, Maybe the coffee to water ratio is off or you need to grind the beans finer. Add and compare different ways to brew! If you are new to coffee, No Worries! The Home page has a bunch of useful information.
+ This app aims to be the coffee connoisseur's friend, its the equivalent to a bar guide for coffee addicts. There is something magical about enjoying a new blend, but nothing is worse than brewing a bad cup. With this app you can record any minor changes you make to a recipe and identify what aspect of the recipe needs to change, Maybe the coffee to water ratio is off or you need to grind the beans finer. Add and compare different ways to brew! If you are new to coffee, No Worries! The Home page has a bunch of useful information.
 
 ## Features
 -Add Roasters, Coffee Beans, Recipes, and Brew Methods.  
