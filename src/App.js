@@ -1,17 +1,20 @@
 import './App.css';
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import { connect } from 'react-redux'
+
 import NavigationBar from './components/NavBar'
 import Home from './components/Home'
 import RecipesContainer from './containers/RecipesContainer'
 import BrewMethodsContainer from './containers/BrewMethodsContainer';
 import CoffeeBeansContainer from './containers/CoffeeBeansContainer'
 import RoastersContainer from './containers/RoastersContainer'
-import { connect } from 'react-redux'
+
 import { fetchBrewMethods } from './actions/BrewActions'
 import { fetchRecipes } from './actions/RecipeActions'
 import { fetchCoffeeBeans } from './actions/CoffeeBeanActions'
 import { fetchRoasters } from './actions/RoasterActions'
+
 import Layout from './components/styling/Layout'
 import { Header } from './components/styling/Header';
 import Footer from './components/styling/Footer';
