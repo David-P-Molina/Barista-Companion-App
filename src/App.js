@@ -10,25 +10,25 @@ import BrewMethodsContainer from './containers/BrewMethodsContainer';
 import CoffeeBeansContainer from './containers/CoffeeBeansContainer'
 import RoastersContainer from './containers/RoastersContainer'
 
-// import { fetchBrewMethods } from './actions/BrewActions'
-// import { fetchRecipes } from './actions/RecipeActions'
-// import { fetchCoffeeBeans } from './actions/CoffeeBeanActions'
-// import { fetchRoasters } from './actions/RoasterActions'
-import { fetchCalls } from './actions/fetchActions';
+import { fetchBrewMethods } from './actions/BrewActions'
+import { fetchRecipes } from './actions/RecipeActions'
+import { fetchCoffeeBeans } from './actions/CoffeeBeanActions'
+import { fetchRoasters } from './actions/RoasterActions'
+// import { fetchCalls } from './actions/fetchActions';
 
 import Layout from './components/styling/Layout'
 import { Header } from './components/styling/Header';
 import Footer from './components/styling/Footer';
 
 class App extends Component {
-  // fetchCalls = () => {
-  //   this.props.fetchBrewMethods()
-  //   this.props.fetchRoasters()
-  //   this.props.fetchCoffeeBeans()
-  //   this.props.fetchRecipes()
-  // }
+  fetchCalls = () => {
+    this.props.fetchBrewMethods()
+    this.props.fetchRoasters()
+    this.props.fetchCoffeeBeans()
+    this.props.fetchRecipes()
+  }
   componentDidMount() {
-    fetchCalls()
+    this.fetchCalls()
   }
   render() {
     return (
@@ -63,6 +63,7 @@ const mapDispatchToProps = (dispatchFn) => {
     fetchRoasters: () => dispatchFn(fetchRoasters()),
     fetchCoffeeBeans: () => dispatchFn(fetchCoffeeBeans()),
     fetchRecipes: () => dispatchFn(fetchRecipes()),
+    // fetchCalls: () => dispatchFn(fetchCalls()),
   }
 }
 
