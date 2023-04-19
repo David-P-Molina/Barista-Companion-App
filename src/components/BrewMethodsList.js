@@ -7,10 +7,10 @@ const BrewMethodsList = ({brewMethods, deleteBrewMethod}) => {
         return <BrewMethod key={brew.name} brew={brew} deleteBrewMethod={deleteBrewMethod}/>
      })
     return (
-    <div className='list'>
-        <BrewMethodHeader /><br />
-        {brewMethodsList()}
-    </div>
+        <div className='list'>
+            <BrewMethodHeader /><br />
+            {brewMethodsList()}
+        </div>
     )
     }
 

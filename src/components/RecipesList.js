@@ -9,7 +9,7 @@ const RecipesList = ({ recipes, deleteRecipe }) => {
     return (
         <div className='list'>
             <RecipeHeader />
-            {recipesList}
+            {recipesList()}
         </div>
     )
 }
