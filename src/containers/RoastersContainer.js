@@ -10,9 +10,7 @@ class RoastersContainer extends Component {
     state = {
         roasters: [],
     }
-    handleOnClick = () => {
-        
-    }
+
     render() {
         return (
             <div className='brew-method-container'>
